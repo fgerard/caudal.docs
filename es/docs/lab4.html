@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>Lab 4 - Estadísticas | Caudal</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://hexo.io/es/docs/lab4.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://hexo.io/docs/lab4.html">
+    
+      <link rel="alternative" hreflang="es" href="https://hexo.io/es/docs/lab4.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Caudal">
+  <!-- Open Graph -->
+  <meta name="description" content="Una guía para recuperar y producir estadísticas. Requerimientos Completar el Lab 3 - Streamers  CuentaContando eventosEsta sección explica como contar cada evento recibido.  Cambia el directorio actua">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Lab 4 - Estadísticas">
+<meta property="og:url" content="https://hexo.io/es/docs/lab4.html">
+<meta property="og:site_name" content="Caudal">
+<meta property="og:description" content="Una guía para recuperar y producir estadísticas. Requerimientos Completar el Lab 3 - Streamers  CuentaContando eventosEsta sección explica como contar cada evento recibido.  Cambia el directorio actua">
+<meta property="og:locale" content="es">
+<meta property="og:updated_time" content="2018-01-31T21:59:47.480Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Lab 4 - Estadísticas">
+<meta name="twitter:description" content="Una guía para recuperar y producir estadísticas. Requerimientos Completar el Lab 3 - Streamers  CuentaContando eventosEsta sección explica como contar cada evento recibido.  Cambia el directorio actua">
+<meta name="twitter:site" content="caudal_iw">
+  <!-- Google Analytics -->
+  
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/es/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/" class="main-nav-link">Caudal</a><a href="/es/docs/" class="main-nav-link">Documentación</a>
+      <a href="https://github.com/interwaremx/caudal" class="main-nav-link"><i class="fa fa-github-alt"></i></a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <input type="search" id="search-input" placeholder="Search...">
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>Español</span></label>
+      <select id="lang-select" data-canonical="docs/lab4.html">
+        
+          <option value="en">English</option>
+        
+          <option value="es" selected>Español</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">Lab 4 - Estadísticas</h1>
+                <a href="https://github.com/interwaremx/caudal-wiki/edit/master/source/es/docs/lab4.md" class="article-edit-link" title="Mejorar este documento"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <p>Una guía para recuperar y producir estadísticas.</p>
+<h2 id="Requerimientos" class="article-heading"><a href="#Requerimientos" class="headerlink" title="Requerimientos"></a>Requerimientos<a class="article-anchor" href="#Requerimientos" aria-hidden="true"></a></h2><ul>
+<li>Completar el <a href="lab03.html">Lab 3 - Streamers</a></li>
+</ul>
+<h2 id="Cuenta" class="article-heading"><a href="#Cuenta" class="headerlink" title="Cuenta"></a>Cuenta<a class="article-anchor" href="#Cuenta" aria-hidden="true"></a></h2><h3 id="Contando-eventos" class="article-heading"><a href="#Contando-eventos" class="headerlink" title="Contando eventos"></a>Contando eventos<a class="article-anchor" href="#Contando-eventos" aria-hidden="true"></a></h3><p>Esta sección explica como contar cada evento recibido.</p>
+<ol>
+<li><p>Cambia el directorio actual al del proyecto caudal-labs</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ cd caudal-labs/</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Crea una nueva configuración en el archivo <strong>config/stats.clj</strong> con el siguiente contenido:</p>
+<figure class="highlight clojure"><figcaption><span>config/stats.clj</span></figcaption><table><tr><td class="code"><pre><span class="line">(<span class="name">require</span> '[mx.interware.caudal.streams.common <span class="symbol">:refer</span> <span class="symbol">:all</span>])</span><br><span class="line">(<span class="name">require</span> '[mx.interware.caudal.streams.stateful <span class="symbol">:refer</span> <span class="symbol">:all</span>])</span><br><span class="line">(<span class="name">require</span> '[mx.interware.caudal.streams.stateless <span class="symbol">:refer</span> <span class="symbol">:all</span>])</span><br><span class="line"></span><br><span class="line">(<span class="name">defsink</span> stats-streamer <span class="number">10000</span></span><br><span class="line">  <span class="comment">;; Counts received events</span></span><br><span class="line">  <span class="comment">;; stores account into State with keyword :my-counter</span></span><br><span class="line">  <span class="comment">;; decorates received event with account with keyword :n</span></span><br><span class="line">  (<span class="name">counter</span> [<span class="symbol">:my-counter</span> <span class="symbol">:n</span>]</span><br><span class="line">    (<span class="name">printe</span> [<span class="string">"Received event: "</span>])))</span><br><span class="line"></span><br><span class="line"><span class="comment">;; Listeners</span></span><br><span class="line">(<span class="name">deflistener</span> my-listener [&#123;<span class="symbol">:type</span> 'mx.interware.caudal.io.tcp-server</span><br><span class="line">                           <span class="symbol">:parameters</span> &#123;<span class="symbol">:port</span> <span class="number">9900</span></span><br><span class="line">                                        <span class="symbol">:idle-period</span> <span class="number">60</span>&#125;&#125;])</span><br><span class="line"><span class="comment">;; Connect listeners and streamers</span></span><br><span class="line">(<span class="name">wire</span> [my-listener] [stats-streamer])</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Arranca tu configuración usando:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ bin/start-caudal.sh -c ./config/stats.clj</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Prueba tu configuración enviando algunos eventos con telnet:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ telnet localhost 9900</span><br><span class="line">Trying ::1...</span><br><span class="line">Connected to localhost.</span><br><span class="line">Escape character is &apos;^]&apos;.</span><br><span class="line">&#123;:tx &quot;foo&quot; :user &quot;bar&quot;&#125;</span><br><span class="line">&#123;:tx &quot;baz&quot; :user &quot;qux&quot;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Verifica la salida de Caudal. Observa que cada entrada de evento ha sido decorada con un atributo adicional <strong>:n</strong> con el actual conteo de eventos:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Caudal 0.7.4-SNAPSHOT</span><br><span class="line">log4j:WARN [stdout] should be System.out or System.err.</span><br><span class="line">log4j:WARN Using previously set target, System.out by default.</span><br><span class="line">2017-01-30 18:22:55.998 [main] INFO  starter-dsl:1 - &#123;:caudal start&#125;</span><br><span class="line">2017-01-30 18:22:56.009 [main] INFO  starter-dsl:1 - &#123;:loading-dsl &#123;:file config/stats.clj&#125;&#125;</span><br><span class="line">2017-01-30 18:22:58.085 [main] INFO  tcp-server:1 - Starting server on port :  9900  ...</span><br><span class="line">Received event: &#123;:tx &quot;foo&quot;, :user &quot;bar&quot;, :caudal/latency 686527, :n 1&#125;</span><br><span class="line">Received event: &#123;:tx &quot;baz&quot;, :user &quot;qux&quot;, :caudal/latency 1132024, :n 2&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Detén Caudal usando <strong>Ctrl-c</strong></p>
+</li>
+</ol>
+<h3 id="Guardar-cuenta" class="article-heading"><a href="#Guardar-cuenta" class="headerlink" title="Guardar cuenta"></a>Guardar cuenta<a class="article-anchor" href="#Guardar-cuenta" aria-hidden="true"></a></h3><p>Guarda la cuenta de tus eventos usando <strong>dump-every</strong>.</p>
+<ol>
+<li><p>Modifica tu <strong>config/stats.clj</strong>  y usa el streamer <strong>dump-every</strong> como sigue:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">(require &apos;[mx.interware.caudal.streams.common :refer :all])</span><br><span class="line">(require &apos;[mx.interware.caudal.streams.stateful :refer :all])</span><br><span class="line">(require &apos;[mx.interware.caudal.streams.stateless :refer :all])</span><br><span class="line"></span><br><span class="line">(defsink stats-streamer 10000</span><br><span class="line">  ;; Counts received events</span><br><span class="line">  ;; stores account into State with keyword :my-counter</span><br><span class="line">  ;; decorates received event with account with keyword :n</span><br><span class="line">  (counter [:my-counter :n]</span><br><span class="line">    (printe [&quot;Received event: &quot;]</span><br><span class="line">      ;; Dumps state :my-counter in ./data/stats/YYYMMdd-my-counter.edn</span><br><span class="line">      ;; updates the file each 1000 milliseconds</span><br><span class="line">      (dump-every [:my-counter &quot;my-counter&quot; &quot;YYYYMMdd&quot; 1000 &quot;data/stats/&quot;]))))</span><br><span class="line"></span><br><span class="line">;; Listeners</span><br><span class="line">(deflistener my-listener [&#123;:type &apos;mx.interware.caudal.io.tcp-server</span><br><span class="line">                           :parameters &#123;:port 9900</span><br><span class="line">                                        :idle-period 60&#125;&#125;])</span><br><span class="line">;; Connect listeners and streamers</span><br><span class="line">(wire [my-listener] [stats-streamer])</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Arranca tu configuración usando:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ bin/start-caudal.sh -c ./config/stats.clj</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Prueba tu configuración enviando algunos eventos con telnet:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ telnet localhost 9900</span><br><span class="line">Trying ::1...</span><br><span class="line">Connected to localhost.</span><br><span class="line">Escape character is &apos;^]&apos;.</span><br><span class="line">&#123;:tx &quot;foo&quot; :user &quot;bar&quot;&#125;</span><br><span class="line">&#123;:tx &quot;baz&quot; :user &quot;qux&quot;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Verifica la salida de Caudal:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Caudal 0.7.4-SNAPSHOT</span><br><span class="line">log4j:WARN [stdout] should be System.out or System.err.</span><br><span class="line">log4j:WARN Using previously set target, System.out by default.</span><br><span class="line">2017-01-30 18:37:55.608 [main] INFO  starter-dsl:1 - &#123;:caudal start&#125;</span><br><span class="line">2017-01-30 18:37:55.612 [main] INFO  starter-dsl:1 - &#123;:loading-dsl &#123;:file config/stats.clj&#125;&#125;</span><br><span class="line">2017-01-30 18:37:57.428 [main] INFO  tcp-server:1 - Starting server on port :  9900  ...</span><br><span class="line">Received event: &#123;:tx &quot;foo&quot;, :user &quot;bar&quot;, :caudal/latency 1052168, :n 1&#125;</span><br><span class="line">repeat-every from: :mx.interware.caudal.streams.stateful/dump-every  delta= 1000  count= 1</span><br><span class="line">executing from:  :mx.interware.caudal.streams.stateful/dump-every</span><br><span class="line">Received event: &#123;:tx &quot;baz&quot;, :user &quot;qux&quot;, :caudal/latency 902071, :n 2&#125;</span><br><span class="line">repeat-every from: :mx.interware.caudal.streams.stateful/dump-every  delta= 1000  count= 1</span><br><span class="line">executing from:  :mx.interware.caudal.streams.stateful/dump-every</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Y trata de leer el contenido del archivo <strong>data/stats/YYYMMdd-my-counter.edn</strong>:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ cat data/stats/$( date +&quot;%Y%m%d&quot; )-my-counter.edn</span><br><span class="line">&#123;:n 3&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Detén Caudal usando <strong>Ctrl-c</strong>.</p>
+</li>
+</ol>
+<h3 id="Recuperando-cuenta" class="article-heading"><a href="#Recuperando-cuenta" class="headerlink" title="Recuperando cuenta"></a>Recuperando cuenta<a class="article-anchor" href="#Recuperando-cuenta" aria-hidden="true"></a></h3><p>Para leer tu EDN con el estado de la cuenta es obligatorio cargar el archivo usando <strong>scheduler</strong>.</p>
+<ol>
+<li><p>Modifica tu <strong>config/stats.clj</strong> y usa el streamer <strong>deflistener</strong> como sigue:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">(require &apos;[mx.interware.caudal.streams.common :refer :all])</span><br><span class="line">(require &apos;[mx.interware.caudal.streams.stateful :refer :all])</span><br><span class="line">(require &apos;[mx.interware.caudal.streams.stateless :refer :all])</span><br><span class="line"></span><br><span class="line">(defsink stats-streamer 10000</span><br><span class="line">  ;; Decorates each event using key/value</span><br><span class="line">  ;; stored in State with keyword :my-counter</span><br><span class="line">  (decorate [:my-counter]</span><br><span class="line">    ;; Counts received events</span><br><span class="line">    ;; stores account into State with keyword :my-counter</span><br><span class="line">    ;; decorates received event with account with keyword :n</span><br><span class="line">    (counter [:my-counter :n]</span><br><span class="line">      (printe [&quot;Received event: &quot;]</span><br><span class="line">        ;; Dumps state :my-counter in ./data/stats/yyyyMMdd-my-counter.edn</span><br><span class="line">        ;; updates the file each 1000 milliseconds</span><br><span class="line">        (dump-every [:my-counter &quot;my-counter&quot; &quot;yyyyMMdd&quot; 1000 &quot;data/stats&quot;])))))</span><br><span class="line"></span><br><span class="line">;; Listeners</span><br><span class="line">(deflistener my-listener [&#123;:type &apos;mx.interware.caudal.io.tcp-server</span><br><span class="line">                               :parameters &#123;:port 9900</span><br><span class="line">                                            :idle-period 60&#125;&#125;])</span><br><span class="line"></span><br><span class="line">(deflistener my-scheduler [&#123;:type &apos;mx.interware.caudal.core.scheduler-server</span><br><span class="line">                            :jobs [&#123;:runit? true            </span><br><span class="line">                                    :schedule-def &#123;:in [0 :seconds]&#125;       ;; Run immediately</span><br><span class="line">                                    :event-factory &apos;mx.interware.caudal.core.scheduler-server/state-admin-event-factory</span><br><span class="line">                                    :parameters &#123;:cmd :load-history        ;; Caudal command to populate State</span><br><span class="line">                                                 :path &quot;data/stats&quot;        ;; Directory of your dump file</span><br><span class="line">                                                 :go-back-millis 0         ;; Milliseconds back to now</span><br><span class="line">                                                 :date-fmt &quot;yyyyMMdd&quot;      ;; Date format</span><br><span class="line">                                                 :key-name &quot;my-counter&quot;&#125;&#125;] ;; Key name to retrieve your file and put in State</span><br><span class="line">                         &#125;])</span><br><span class="line"></span><br><span class="line">;; Connect listeners and streamers</span><br><span class="line">(wire [my-listener my-scheduler] [stats-streamer])</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Arranca tu configuración:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ bin/start-caudal.sh -c ./config/stats.clj</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Prueba tu configuración enviando algunos eventos con telnet:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ telnet localhost 9900</span><br><span class="line">Trying ::1...</span><br><span class="line">Connected to localhost.</span><br><span class="line">Escape character is &apos;^]&apos;.</span><br><span class="line">&#123;:tx &quot;foo&quot; :user &quot;bar&quot;&#125;</span><br><span class="line">&#123;:tx &quot;baz&quot; :user &quot;qux&quot;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Verifica la salida de Caudal, el contador de tu evento inicia su valor usando el archivo guardado:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Caudal 0.7.4-SNAPSHOT</span><br><span class="line">log4j:WARN [stdout] should be System.out or System.err.</span><br><span class="line">log4j:WARN Using previously set target, System.out by default.</span><br><span class="line">2017-01-30 18:37:55.608 [main] INFO  starter-dsl:1 - &#123;:caudal start&#125;</span><br><span class="line">2017-01-30 18:37:55.612 [main] INFO  starter-dsl:1 - &#123;:loading-dsl &#123;:file config/stats.clj&#125;&#125;</span><br><span class="line">2017-01-30 18:37:57.428 [main] INFO  tcp-server:1 - Starting server on port :  9900  ...</span><br><span class="line">loading history: 20170130-my-counter</span><br><span class="line">loading history file-re: #&quot;(20170130-my-counter)\-(.*)[\.]edn|(20170130-my-counter)\.edn&quot;</span><br><span class="line">se añade al state: [:my-counter] &#123;:n 3&#125;</span><br><span class="line">Received event: &#123;:tx &quot;foo&quot;, :user &quot;bar&quot;, :caudal/latency 621616, :n 4&#125;</span><br><span class="line">repeat-every from: :mx.interware.caudal.streams.stateful/dump-every  delta= 1000  count= 1</span><br><span class="line">executing from:  :mx.interware.caudal.streams.stateful/dump-every</span><br><span class="line">Received event: &#123;:tx &quot;baz&quot;, :user &quot;qux&quot;, :caudal/latency 633123, :n 5&#125;</span><br><span class="line">repeat-every from: :mx.interware.caudal.streams.stateful/dump-every  delta= 1000  count= 1</span><br><span class="line">executing from:  :mx.interware.caudal.streams.stateful/dump-every</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Detén Caudal usando <strong>Ctrl-c</strong>.</p>
+</li>
+</ol>
+<h2 id="Desviacion-Estandar" class="article-heading"><a href="#Desviacion-Estandar" class="headerlink" title="Desviación Estándar"></a>Desviación Estándar<a class="article-anchor" href="#Desviacion-Estandar" aria-hidden="true"></a></h2><h3 id="Estadisticas-de-eventos" class="article-heading"><a href="#Estadisticas-de-eventos" class="headerlink" title="Estadísticas de eventos"></a>Estadísticas de eventos<a class="article-anchor" href="#Estadisticas-de-eventos" aria-hidden="true"></a></h3><p>Esta sección explica como obtener media, varianza y desviación estándar desde los eventos.</p>
+<ol>
+<li><p>Cambia el directorio actual al del proyecto caudal-labs</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ cd caudal-labs/</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Crea un nuevo archivo de configuración <strong>config/stdev.clj</strong> con el contenido que sigue:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">(require &apos;[mx.interware.caudal.streams.common :refer :all])</span><br><span class="line">(require &apos;[mx.interware.caudal.streams.stateful :refer :all])</span><br><span class="line">(require &apos;[mx.interware.caudal.streams.stateless :refer :all])</span><br><span class="line"></span><br><span class="line">(defsink stats-streamer 10000</span><br><span class="line">  ;; Welford received events</span><br><span class="line">  ;; stores stats of events into State with keyword :my-stdev</span><br><span class="line">  ;; decorates received event with its :mean :variance :stdev :sqrs(sum of squares) and :n (count)</span><br><span class="line">  (welford [:my-stdev :metric :mean :variance :stdev :sqrs :n]</span><br><span class="line">    (printe [&quot;Received event: &quot;])))</span><br><span class="line"></span><br><span class="line">;; Listeners</span><br><span class="line">(deflistener my-listener [&#123;:type &apos;mx.interware.caudal.io.tcp-server</span><br><span class="line">                           :parameters &#123;:port 9900</span><br><span class="line">                                        :idle-period 60&#125;&#125;])</span><br><span class="line">;; Connect listeners and streamers</span><br><span class="line">(wire [my-listener] [stats-streamer])</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Arranca tu configuración usando:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ bin/start-caudal.sh -c ./config/stdev.clj</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Prueba tu configuración enviando algunos eventos con telnet:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ telnet localhost 9900</span><br><span class="line">Trying ::1...</span><br><span class="line">Connected to localhost.</span><br><span class="line">Escape character is &apos;^]&apos;.</span><br><span class="line">&#123;:tx &quot;foo&quot; :metric 13&#125;</span><br><span class="line">&#123;:tx &quot;bar&quot; :metric 23&#125;</span><br><span class="line">&#123;:tx &quot;baz&quot; :metric 12&#125;</span><br><span class="line">&#123;:tx &quot;qux&quot; :metric 44&#125;</span><br><span class="line">&#123;:tx &quot;foo&quot; :metric 55&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Verifica la salida de Caudal. Observa que cada entrada de evento ha sido decorada con algunos atributos adicionales:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Caudal 0.7.4-SNAPSHOT</span><br><span class="line">log4j:WARN [stdout] should be System.out or System.err.</span><br><span class="line">log4j:WARN Using previously set target, System.out by default.</span><br><span class="line">2017-01-31 09:24:04.427 [main] INFO  starter-dsl:1 - &#123;:caudal start&#125;</span><br><span class="line">2017-01-31 09:24:04.432 [main] INFO  starter-dsl:1 - &#123;:loading-dsl &#123;:file config/stdev.clj&#125;&#125;</span><br><span class="line">2017-01-31 09:24:06.589 [main] INFO  tcp-server:1 - Starting server on port :  9900  ...</span><br><span class="line">Received event: &#123;:tx &quot;foo&quot;, :metric 13, :caudal/latency 606551, :mean 13, :sqrs 0.0, :variance 0.0, :stdev 0.0, :n 1&#125;</span><br><span class="line">Received event: &#123;:tx &quot;bar&quot;, :metric 23, :caudal/latency 632011, :mean 18.0, :sqrs 50.0, :variance 25.0, :stdev 5.0, :n 2&#125;</span><br><span class="line">Received event: &#123;:tx &quot;baz&quot;, :metric 12, :caudal/latency 1141706, :mean 16.0, :sqrs 74.0, :variance 24.666666666666668, :stdev 4.96655480858378, :n 3&#125;</span><br><span class="line">Received event: &#123;:tx &quot;qux&quot;, :metric 44, :caudal/latency 662683, :mean 23.0, :sqrs 662.0, :variance 165.5, :stdev 12.864680330268607, :n 4&#125;</span><br><span class="line">Received event: &#123;:tx &quot;foo&quot;, :metric 55, :caudal/latency 628280, :mean 29.4, :sqrs 1481.2, :variance 296.24, :stdev 17.21162397916013, :n 5&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Detén Caudal usando <strong>Ctrl-c</strong>.</p>
+</li>
+</ol>
+<h3 id="Guardar-estadisticas" class="article-heading"><a href="#Guardar-estadisticas" class="headerlink" title="Guardar estadísticas"></a>Guardar estadísticas<a class="article-anchor" href="#Guardar-estadisticas" aria-hidden="true"></a></h3><p>Guarda las estadísticas de tus eventos usando <strong>dump-every</strong>.</p>
+<ol>
+<li><p>Modifica tu <strong>config/stdev.clj</strong> y usa el streamer <strong>dump-every</strong> como sigue:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">(require &apos;[mx.interware.caudal.streams.common :refer :all])</span><br><span class="line">(require &apos;[mx.interware.caudal.streams.stateful :refer :all])</span><br><span class="line">(require &apos;[mx.interware.caudal.streams.stateless :refer :all])</span><br><span class="line"></span><br><span class="line">(defsink stats-streamer 10000</span><br><span class="line">  ;; Welford received events</span><br><span class="line">  ;; stores stats of events into State with keyword :my-stdev</span><br><span class="line">  ;; decorates received event with its :mean :variance :stdev :sqrs(sum of squares) and :n (count)</span><br><span class="line">  (welford [:my-stdev :metric :mean :variance :stdev :sqrs :n]</span><br><span class="line">    (printe [&quot;Received event: &quot;]</span><br><span class="line">      ;; Dumps state :my-stdev in ./data/stats/YYYMMdd-my-stdev.edn</span><br><span class="line">      ;; updates the file each 1000 milliseconds</span><br><span class="line">      (dump-every [:my-stdev &quot;my-stdev&quot; &quot;YYYYMMdd&quot; 1000 &quot;data/stats/&quot;]))))</span><br><span class="line"></span><br><span class="line">;; Listeners</span><br><span class="line">(deflistener my-listener [&#123;:type &apos;mx.interware.caudal.io.tcp-server</span><br><span class="line">                           :parameters &#123;:port 9900</span><br><span class="line">                                        :idle-period 60&#125;&#125;])</span><br><span class="line">;; Connect listeners and streamers</span><br><span class="line">(wire [my-listener] [stats-streamer])</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Arranca tu configuración usando:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ bin/start-caudal.sh -c ./config/stdev.clj</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Prueba tu configuración enviando algunos eventos con telnet:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ telnet localhost 9900</span><br><span class="line">Trying ::1...</span><br><span class="line">Connected to localhost.</span><br><span class="line">Escape character is &apos;^]&apos;.</span><br><span class="line">&#123;:tx &quot;foo&quot; :metric 13&#125;</span><br><span class="line">&#123;:tx &quot;bar&quot; :metric 23&#125;</span><br><span class="line">&#123;:tx &quot;baz&quot; :metric 12&#125;</span><br><span class="line">&#123;:tx &quot;qux&quot; :metric 44&#125;</span><br><span class="line">&#123;:tx &quot;foo&quot; :metric 55&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Verifica la salida de Caudal:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Caudal 0.7.4-SNAPSHOT</span><br><span class="line">2017-01-31 09:37:13.367 [main] INFO  starter-dsl:1 - &#123;:caudal start&#125;</span><br><span class="line">2017-01-31 09:37:13.376 [main] INFO  starter-dsl:1 - &#123;:loading-dsl &#123;:file config/stdev.clj&#125;&#125;</span><br><span class="line">2017-01-31 09:37:15.141 [main] INFO  tcp-server:1 - Starting server on port :  9900  ...</span><br><span class="line">Received event: &#123;:tx &quot;foo&quot;, :metric 13, :caudal/latency 711846, :mean 13, :sqrs 0.0, :variance 0.0, :stdev 0.0, :n 1&#125;</span><br><span class="line">repeat-every from: :mx.interware.caudal.streams.stateful/dump-every  delta= 1000  count= 1</span><br><span class="line">executing from:  :mx.interware.caudal.streams.stateful/dump-every</span><br><span class="line">Received event: &#123;:tx &quot;bar&quot;, :metric 23, :caudal/latency 665459, :mean 18.0, :sqrs 50.0, :variance 25.0, :stdev 5.0, :n 2&#125;</span><br><span class="line">repeat-every from: :mx.interware.caudal.streams.stateful/dump-every  delta= 1000  count= 1</span><br><span class="line">executing from:  :mx.interware.caudal.streams.stateful/dump-every</span><br><span class="line">Received event: &#123;:tx &quot;baz&quot;, :metric 12, :caudal/latency 703682, :mean 16.0, :sqrs 74.0, :variance 24.666666666666668, :stdev 4.96655480858378, :n 3&#125;</span><br><span class="line">repeat-every from: :mx.interware.caudal.streams.stateful/dump-every  delta= 1000  count= 1</span><br><span class="line">executing from:  :mx.interware.caudal.streams.stateful/dump-every</span><br><span class="line">Received event: &#123;:tx &quot;qux&quot;, :metric 44, :caudal/latency 181307, :mean 23.0, :sqrs 662.0, :variance 165.5, :stdev 12.864680330268607, :n 4&#125;</span><br><span class="line">repeat-every from: :mx.interware.caudal.streams.stateful/dump-every  delta= 1000  count= 1</span><br><span class="line">executing from:  :mx.interware.caudal.streams.stateful/dump-every</span><br><span class="line">Received event: &#123;:tx &quot;foo&quot;, :metric 55, :caudal/latency 204247, :mean 29.4, :sqrs 1481.2, :variance 296.24, :stdev 17.21162397916013, :n 5&#125;</span><br><span class="line">repeat-every from: :mx.interware.caudal.streams.stateful/dump-every  delta= 1000  count= 1</span><br><span class="line">executing from:  :mx.interware.caudal.streams.stateful/dump-every</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Y trata de leer el contenido del archivo <strong>/data/stats/YYYMMdd-my-stdev.edn</strong>:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ cat data/stats/$( date +&quot;%Y%m%d&quot; )-my-stdev.edn</span><br><span class="line">&#123;:mean 29.4,</span><br><span class="line"> :sqrs 1481.2,</span><br><span class="line"> :variance 296.24,</span><br><span class="line"> :stdev 17.21162397916013,</span><br><span class="line"> :n 5&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Detén Caudal usando <strong>Ctrl-c</strong>.</p>
+</li>
+</ol>
+<h3 id="Recuperando-estadisticas" class="article-heading"><a href="#Recuperando-estadisticas" class="headerlink" title="Recuperando estadísticas"></a>Recuperando estadísticas<a class="article-anchor" href="#Recuperando-estadisticas" aria-hidden="true"></a></h3><p>Para leer tu EDN con el estado de las estadísticas es obligatorio cargar el archivo usando <strong>scheduler</strong>.</p>
+<ol>
+<li><p>Modifica tu <strong>onfig/stats.clj</strong> y usa el streamer deflistener como sigue:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">(require &apos;[mx.interware.caudal.streams.common :refer :all])</span><br><span class="line">(require &apos;[mx.interware.caudal.streams.stateful :refer :all])</span><br><span class="line">(require &apos;[mx.interware.caudal.streams.stateless :refer :all])</span><br><span class="line"></span><br><span class="line">(defsink stats-streamer 10000</span><br><span class="line">  ;; Decorates each event using key/value</span><br><span class="line">  ;; stored in State with keyword :my-stdev</span><br><span class="line">  (decorate [:my-stdev]</span><br><span class="line">    ;; Welford received events</span><br><span class="line">    ;; stores stats of events into State with keyword :my-stdev</span><br><span class="line">    ;; decorates received event with its :mean :variance :stdev :sqrs(sum of squares) and :n (count)</span><br><span class="line">    (welford [:my-stdev :metric :mean :variance :stdev :sqrs :n]</span><br><span class="line">      (printe [&quot;Received event: &quot;]</span><br><span class="line">        ;; Dumps state :my-stdev in ./data/stats/YYYMMdd-my-stdev.edn</span><br><span class="line">        ;; updates the file each 1000 milliseconds</span><br><span class="line">        (dump-every [:my-stdev &quot;my-stdev&quot; &quot;YYYYMMdd&quot; 1000 &quot;data/stats/&quot;])))))</span><br><span class="line"></span><br><span class="line">;; Listeners</span><br><span class="line">(deflistener my-listener [&#123;:type &apos;mx.interware.caudal.io.tcp-server</span><br><span class="line">                           :parameters &#123;:port 9900</span><br><span class="line">                                        :idle-period 60&#125;&#125;])</span><br><span class="line"></span><br><span class="line">(deflistener my-scheduler [&#123;:type &apos;mx.interware.caudal.core.scheduler-server</span><br><span class="line">                            :jobs [&#123;:runit? true            </span><br><span class="line">                                    :schedule-def &#123;:in [0 :seconds]&#125;       ;; Run immediately</span><br><span class="line">                                    :event-factory &apos;mx.interware.caudal.core.scheduler-server/state-admin-event-factory</span><br><span class="line">                                    :parameters &#123;:cmd :load-history        ;; Caudal command to populate State</span><br><span class="line">                                                 :path &quot;data/stats&quot;        ;; Directory of your dump file</span><br><span class="line">                                                 :go-back-millis 0         ;; Milliseconds back to now</span><br><span class="line">                                                 :date-fmt &quot;yyyyMMdd&quot;      ;; Date format</span><br><span class="line">                                                 :key-name &quot;my-stdev&quot;&#125;&#125;]   ;; Key name to retrieve your file and put in State</span><br><span class="line">                         &#125;])</span><br><span class="line"></span><br><span class="line">;; Connect listeners and streamers</span><br><span class="line">(wire [my-listener my-scheduler] [stats-streamer])</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Arranca tu configuración usando:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ bin/start-caudal.sh -c ./config/stdev.clj</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Prueba tu configuración enviando algunos eventos con telnet:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ telnet localhost 9900</span><br><span class="line">Trying ::1...</span><br><span class="line">Connected to localhost.</span><br><span class="line">Escape character is &apos;^]&apos;.</span><br><span class="line">&#123;:tx &quot;foo&quot; :metric 11&#125;    </span><br><span class="line">&#123;:tx &quot;foo&quot; :metric 15&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Verifica la salida de Caudal, las estadísticas de tu evento inicia su valor usando el archivo guardado:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Caudal 0.7.4-SNAPSHOT</span><br><span class="line">log4j:WARN [stdout] should be System.out or System.err.</span><br><span class="line">log4j:WARN Using previously set target, System.out by default.</span><br><span class="line">2017-01-31 09:45:16.710 [main] INFO  starter-dsl:1 - &#123;:caudal start&#125;</span><br><span class="line">2017-01-31 09:45:16.713 [main] INFO  starter-dsl:1 - &#123;:loading-dsl &#123;:file config/stdev.clj&#125;&#125;</span><br><span class="line">2017-01-31 09:45:18.388 [main] INFO  tcp-server:1 - Starting server on port :  9900  ...</span><br><span class="line">loading history: 20170131-my-stdev</span><br><span class="line">loading history file-re: #&quot;(20170131-my-stdev)\-(.*)[\.]edn|(20170131-my-stdev)\.edn&quot;</span><br><span class="line">se añade al state: [:my-stdev] &#123;:mean 29.4, :sqrs 1481.2, :variance 296.24, :stdev 17.21162397916013, :n 5&#125;</span><br><span class="line">Received event: &#123;:tx &quot;foo&quot;, :metric 11, :caudal/latency 552805, :mean 26.333333333333332, :sqrs 1763.3333333333333, :variance 293.88888888888886, :stdev 17.143187827498387, :n 6&#125;</span><br><span class="line">repeat-every from: :mx.interware.caudal.streams.stateful/dump-every  delta= 1000  count= 1</span><br><span class="line">executing from:  :mx.interware.caudal.streams.stateful/dump-every</span><br><span class="line">Received event: &#123;:tx &quot;foo&quot;, :metric 15, :caudal/latency 571749, :mean 24.71428571428571, :sqrs 1873.4285714285713, :variance 267.63265306122446, :stdev 16.35948205357445, :n 7&#125;</span><br><span class="line">repeat-every from: :mx.interware.caudal.streams.stateful/dump-every  delta= 1000  count= 1</span><br><span class="line">executing from:  :mx.interware.caudal.streams.stateful/dump-every</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2018-01-31T21:59:47.480Z" itemprop="dateModified">Última actualización: 2018-01-31</time>
+                <a href="lab3.html" class="article-footer-prev" title="Streamers"><i class="fa fa-chevron-left"></i><span>Previo</span></a><a href="lab5.html" class="article-footer-next" title="Integración"><span>Siguiente</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">              
+              <strong class="sidebar-title">Contenido</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Requerimientos"><span class="toc-text">Requerimientos</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cuenta"><span class="toc-text">Cuenta</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Contando-eventos"><span class="toc-text">Contando eventos</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Guardar-cuenta"><span class="toc-text">Guardar cuenta</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Recuperando-cuenta"><span class="toc-text">Recuperando cuenta</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Desviacion-Estandar"><span class="toc-text">Desviación Estándar</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Estadisticas-de-eventos"><span class="toc-text">Estadísticas de eventos</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Guardar-estadisticas"><span class="toc-text">Guardar estadísticas</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Recuperando-estadisticas"><span class="toc-text">Recuperando estadísticas</span></a></li></ol></li></ol>
+              <a href="#" id="article-toc-top">Volver arriba</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">Comenzando</strong><a href="index.html" class="sidebar-link">Resumen</a><a href="setup.html" class="sidebar-link">Instalación</a><a href="configuration.html" class="sidebar-link">Configuración</a><strong class="sidebar-title">Guías</strong><a href="lab1.html" class="sidebar-link">Instalación</a><a href="lab2.html" class="sidebar-link">Escuchas y Parseo</a><a href="lab3.html" class="sidebar-link">Streamers</a><a href="lab4.html" class="sidebar-link current">Estadísticas</a><a href="lab5.html" class="sidebar-link">Integración</a><a href="lab6.html" class="sidebar-link">Clustering</a><strong class="sidebar-title">Miscellaneous</strong><a href="java.html" class="sidebar-link">Java</a><a href="leiningen.html" class="sidebar-link">Leiningen</a><a href="troubleshooting.html" class="sidebar-link">Solución de Problemas</a><a href="contributing.html" class="sidebar-link">Contribuir</a>
+  </div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2018 <a href="http://www.interware.com.mx" target="_blank">interwaremx</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      <a href="https://twitter.com/caudal_iw" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://github.com/interwaremx/caudal" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/" class="mobile-nav-link">Caudal</a><a href="/es/docs/" class="mobile-nav-link">Documentación</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/interwaremx/caudal" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">Comenzando</strong><a href="index.html" class="mobile-nav-link">Resumen</a><a href="setup.html" class="mobile-nav-link">Instalación</a><a href="configuration.html" class="mobile-nav-link">Configuración</a><strong class="mobile-nav-title">Guías</strong><a href="lab1.html" class="mobile-nav-link">Instalación</a><a href="lab2.html" class="mobile-nav-link">Escuchas y Parseo</a><a href="lab3.html" class="mobile-nav-link">Streamers</a><a href="lab4.html" class="mobile-nav-link current">Estadísticas</a><a href="lab5.html" class="mobile-nav-link">Integración</a><a href="lab6.html" class="mobile-nav-link">Clustering</a><strong class="mobile-nav-title">Miscellaneous</strong><a href="java.html" class="mobile-nav-link">Java</a><a href="leiningen.html" class="mobile-nav-link">Leiningen</a><a href="troubleshooting.html" class="mobile-nav-link">Solución de Problemas</a><a href="contributing.html" class="mobile-nav-link">Contribuir</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>Español</span></span>
+    <select id="mobile-lang-select" data-canonical="docs/lab4.html">
+      
+        <option value="en">English</option>
+      
+        <option value="es" selected>Español</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+<!-- endbuild -->
+
+<!-- Algolia -->
+
+
+</body>
+</html>

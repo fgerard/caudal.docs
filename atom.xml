@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Caudal</title>
+  
+  <subtitle>A fast &amp; powerful event analysis platform</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://hexo.io/"/>
+  <updated>2018-01-31T21:59:47.420Z</updated>
+  <id>https://hexo.io/</id>
+  
+  <author>
+    <name>interwaremx</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hello-world</title>
+    <link href="https://hexo.io/news/2018/01/27/hello-world/"/>
+    <id>https://hexo.io/news/2018/01/27/hello-world/</id>
+    <published>2018-01-27T00:00:00.000Z</published>
+    <updated>2018-01-31T21:59:47.420Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>

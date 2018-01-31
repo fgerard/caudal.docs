@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>Lab 5 - Caudal Integration | Caudal</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://hexo.io/docs/lab5.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://hexo.io/docs/lab5.html">
+    
+      <link rel="alternative" hreflang="es" href="https://hexo.io/es/docs/lab5.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Caudal">
+  <!-- Open Graph -->
+  <meta name="description" content="A lab exercises intended to show how to integrate Caudal with Elasticsearch database and another Caudal nodes  Requirements Have successfully completed Lab 4: Correlation Streamers  Setting up an even">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Lab 5 - Caudal Integration">
+<meta property="og:url" content="https://hexo.io/docs/lab5.html">
+<meta property="og:site_name" content="Caudal">
+<meta property="og:description" content="A lab exercises intended to show how to integrate Caudal with Elasticsearch database and another Caudal nodes  Requirements Have successfully completed Lab 4: Correlation Streamers  Setting up an even">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://hexo.io/docs/lab5-01.png">
+<meta property="og:image" content="https://hexo.io/docs/lab5-02.png">
+<meta property="og:image" content="https://hexo.io/docs/lab5-03.png">
+<meta property="og:image" content="https://hexo.io/docs/lab5-04.png">
+<meta property="og:image" content="https://hexo.io/docs/lab5-05.png">
+<meta property="og:image" content="https://hexo.io/docs/lab5-06.png">
+<meta property="og:image" content="https://hexo.io/docs/lab5-07.png">
+<meta property="og:image" content="https://hexo.io/docs/lab5-08.png">
+<meta property="og:image" content="https://hexo.io/docs/lab5-09.png">
+<meta property="og:image" content="https://hexo.io/docs/lab5-10.png">
+<meta property="og:image" content="https://hexo.io/docs/lab5-11.png">
+<meta property="og:image" content="https://hexo.io/docs/lab5-12.png">
+<meta property="og:image" content="https://hexo.io/docs/lab5-13.png">
+<meta property="og:image" content="https://hexo.io/docs/lab5-14.png">
+<meta property="og:image" content="https://hexo.io/docs/lab5-15.png">
+<meta property="og:image" content="https://hexo.io/docs/lab5-16.png">
+<meta property="og:image" content="https://hexo.io/docs/lab5-17.png">
+<meta property="og:image" content="https://hexo.io/docs/lab5-18.png">
+<meta property="og:image" content="https://hexo.io/docs/lab5-19.png">
+<meta property="og:updated_time" content="2018-01-31T21:59:47.476Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Lab 5 - Caudal Integration">
+<meta name="twitter:description" content="A lab exercises intended to show how to integrate Caudal with Elasticsearch database and another Caudal nodes  Requirements Have successfully completed Lab 4: Correlation Streamers  Setting up an even">
+<meta name="twitter:image" content="https://hexo.io/docs/lab5-01.png">
+<meta name="twitter:site" content="caudal_iw">
+  <!-- Google Analytics -->
+  
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/" class="main-nav-link">Caudal</a><a href="/docs/" class="main-nav-link">Docs</a>
+      <a href="https://github.com/interwaremx/caudal" class="main-nav-link"><i class="fa fa-github-alt"></i></a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <input type="search" id="search-input" placeholder="Search...">
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>English</span></label>
+      <select id="lang-select" data-canonical="docs/lab5.html">
+        
+          <option value="en" selected>English</option>
+        
+          <option value="es">Español</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">Lab 5 - Caudal Integration</h1>
+                <a href="https://github.com/interwaremx/caudal-wiki/edit/master/source/docs/lab5.md" class="article-edit-link" title="Improve this doc"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <p>A lab exercises intended to show how to integrate Caudal with Elasticsearch database and another Caudal nodes </p>
+<h2 id="Requirements" class="article-heading"><a href="#Requirements" class="headerlink" title="Requirements"></a>Requirements<a class="article-anchor" href="#Requirements" aria-hidden="true"></a></h2><ul>
+<li>Have successfully completed <strong>Lab 4</strong>: <a href="lab4.html">Correlation Streamers</a></li>
+</ul>
+<h2 id="Setting-up-an-event-enricher-streamer" class="article-heading"><a href="#Setting-up-an-event-enricher-streamer" class="headerlink" title="Setting up an event enricher streamer"></a>Setting up an event enricher streamer<a class="article-anchor" href="#Setting-up-an-event-enricher-streamer" aria-hidden="true"></a></h2><ol>
+<li>Change current directory to the <strong>caudal-labs</strong> project</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ cd caudal-labs/</span><br></pre></td></tr></table></figure>
+<ol>
+<li>Edit <strong>config/caudal-config.clj</strong> file to configure a <strong>dafault</strong> streamer that transform incomming messages and send them to the Elasticsearch database.<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">(ns caudal-labs)</span><br><span class="line"></span><br><span class="line">(require &apos;[mx.interware.caudal.io.elastic :as elastic])</span><br><span class="line">(require &apos;[mx.interware.caudal.streams.common :refer :all])</span><br><span class="line">(require &apos;[mx.interware.caudal.streams.stateful :refer :all])</span><br><span class="line">(require &apos;[mx.interware.caudal.streams.stateless :refer :all])</span><br><span class="line"></span><br><span class="line">(defn calculate-iva [event]</span><br><span class="line">  (let [price     (:price event)</span><br><span class="line">        ammount   (:ammount event)</span><br><span class="line">        sub-total (* ammount price)</span><br><span class="line">        iva       (* 0.16 sub-total)</span><br><span class="line">        total     (+ sub-total iva)]</span><br><span class="line">    (assoc event :sub-total sub-total :iva iva :total total)))</span><br><span class="line"></span><br><span class="line">(defsink streamer-1 10000</span><br><span class="line">  (smap [calculate-iva]</span><br><span class="line">        (printe [&quot;Transformed event : &quot;])</span><br><span class="line">        (elastic/elastic-store! [&quot;http://localhost:9200/&quot; &quot;labs&quot; &quot;sales&quot;])))</span><br><span class="line"></span><br><span class="line">(deflistener tcp-listener [&#123;:type &apos;mx.interware.caudal.io.tcp-server </span><br><span class="line">                            :parameters &#123;:port 9900</span><br><span class="line">                                         :idle-period 60&#125;&#125;])</span><br><span class="line"></span><br><span class="line">(wire [tcp-listener] [streamer-1])</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="Starting-Elasticsearch" class="article-heading"><a href="#Starting-Elasticsearch" class="headerlink" title="Starting Elasticsearch"></a>Starting Elasticsearch<a class="article-anchor" href="#Starting-Elasticsearch" aria-hidden="true"></a></h2><ol>
+<li>Open a new terminal an change current directory to the one containing <strong>elasticsearch</strong> installation.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ cd /opt/elasticsearch-2.4.0</span><br></pre></td></tr></table></figure>
+<ol>
+<li>Start Elasticsearch database</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ bin/elasticsearch</span><br><span class="line">[2017-01-23 17:20:06,303][INFO ][node                     ] [Snowbird] version[2.4.0], pid[65564], build[ce9f0c7/2016-08-29T09:14:17Z]</span><br><span class="line">[2017-01-23 17:20:06,304][INFO ][node                     ] [Snowbird] initializing ...</span><br><span class="line">[2017-01-23 17:20:06,985][INFO ][plugins                  ] [Snowbird] modules [reindex, lang-expression, lang-groovy], plugins [], sites []</span><br><span class="line">[2017-01-23 17:20:07,016][INFO ][env                      ] [Snowbird] using [1] data paths, mounts [[/ (/dev/disk1)]], net usable_space [13.9gb], net total_space [232.6gb], spins? [unknown], types [hfs]</span><br><span class="line">[2017-01-23 17:20:07,016][INFO ][env                      ] [Snowbird] heap size [989.8mb], compressed ordinary object pointers [true]</span><br><span class="line">[2017-01-23 17:20:07,017][WARN ][env                      ] [Snowbird] max file descriptors [10240] for elasticsearch process likely too low, consider increasing to at least [65536]</span><br><span class="line">[2017-01-23 17:20:09,142][INFO ][node                     ] [Snowbird] initialized</span><br><span class="line">[2017-01-23 17:20:09,142][INFO ][node                     ] [Snowbird] starting ...</span><br><span class="line">[2017-01-23 17:20:09,225][INFO ][transport                ] [Snowbird] publish_address &#123;127.0.0.1:9300&#125;, bound_addresses &#123;[fe80::1]:9300&#125;, &#123;[::1]:9300&#125;, &#123;127.0.0.1:9300&#125;</span><br><span class="line">[2017-01-23 17:20:09,229][INFO ][discovery                ] [Snowbird] elasticsearch/owhh9lBMT5mpFtEG43_XoA</span><br><span class="line">[2017-01-23 17:20:12,269][INFO ][cluster.service          ] [Snowbird] new_master &#123;Snowbird&#125;&#123;owhh9lBMT5mpFtEG43_XoA&#125;&#123;127.0.0.1&#125;&#123;127.0.0.1:9300&#125;, reason: zen-disco-join(elected_as_master, [0] joins received)</span><br><span class="line">[2017-01-23 17:20:12,283][INFO ][http                     ] [Snowbird] publish_address &#123;127.0.0.1:9200&#125;, bound_addresses &#123;[fe80::1]:9200&#125;, &#123;[::1]:9200&#125;, &#123;127.0.0.1:9200&#125;</span><br><span class="line">[2017-01-23 17:20:12,283][INFO ][node                     ] [Snowbird] started</span><br><span class="line">[2017-01-23 17:20:12,366][INFO ][gateway                  ] [Snowbird] recovered [5] indices into cluster_state</span><br><span class="line">[2017-01-23 17:20:13,924][INFO ][cluster.routing.allocation] [Snowbird] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[.kibana][0]] ...]).</span><br></pre></td></tr></table></figure>
+<ol>
+<li>Clean Elasticsearch <strong>labs</strong> index</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ curl -XDELETE &apos;http://localhost:9200/labs*/&apos;</span><br><span class="line">&#123;&quot;acknowledged&quot;:true&#125;$</span><br></pre></td></tr></table></figure>
+<h2 id="Feeding-event-streamer" class="article-heading"><a href="#Feeding-event-streamer" class="headerlink" title="Feeding event streamer"></a>Feeding event streamer<a class="article-anchor" href="#Feeding-event-streamer" aria-hidden="true"></a></h2><ol>
+<li>Restart Caudal for applying changes in configuration.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ ./bin/start-caudal.sh -c ./config/caudal-config.clj</span><br><span class="line">Verifying JAVA instalation ...</span><br><span class="line">...</span><br><span class="line">17:24:45.772 [main] INFO  mx.interware.caudal.core.starter-dsl - &#123;:loading-dsl &#123;:file ./config/caudal-config.clj&#125;&#125;</span><br><span class="line">17:24:47.893 [main] INFO  mx.interware.caudal.io.tcp-server - Starting server on port :  9900  ...</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>Open another terminal and send through the <strong>tcp channel</strong> the events shown below.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ telnet localhost 9900</span><br><span class="line">Trying ::1...</span><br><span class="line">Connected to localhost.</span><br><span class="line">Escape character is &apos;^]&apos;.</span><br><span class="line">&#123;:tx &quot;sale&quot;, :product &quot;pear&quot;, :price 37.3, :time #inst&quot;2017-01-16T19:14:50.522-00:00&quot;, :ammount 1&#125;</span><br><span class="line">&#123;:tx &quot;sale&quot;, :product &quot;pear&quot;, :price 37.3, :time #inst&quot;2017-01-16T19:14:50.596-00:00&quot;, :ammount 2&#125;</span><br><span class="line">&#123;:tx &quot;sale&quot;, :product &quot;papaya&quot;, :price 20.5, :time #inst&quot;2017-01-16T19:14:50.622-00:00&quot;, :ammount 4&#125;</span><br><span class="line">&#123;:tx &quot;sale&quot;, :product &quot;mango&quot;, :price 23.0, :time #inst&quot;2017-01-16T19:14:50.659-00:00&quot;, :ammount 5&#125;</span><br><span class="line">&#123;:tx &quot;sale&quot;, :product &quot;avocado&quot;, :price 52.1, :time #inst&quot;2017-01-16T19:14:50.739-00:00&quot;, :ammount 2&#125;</span><br><span class="line">&#123;:tx &quot;sale&quot;, :product &quot;pear&quot;, :price 37.3, :time #inst&quot;2017-01-16T19:14:50.824-00:00&quot;, :ammount 7&#125;</span><br><span class="line">&#123;:tx &quot;sale&quot;, :product &quot;avocado&quot;, :price 52.1, :time #inst&quot;2017-01-16T19:14:50.864-00:00&quot;, :ammount 4&#125;</span><br><span class="line">&#123;:tx &quot;sale&quot;, :product &quot;apple&quot;, :price 42.5, :time #inst&quot;2017-01-16T19:14:50.901-00:00&quot;, :ammount 4&#125;</span><br><span class="line">&#123;:tx &quot;sale&quot;, :product &quot;apple&quot;, :price 42.5, :time #inst&quot;2017-01-16T19:14:50.935-00:00&quot;, :ammount 9&#125;</span><br><span class="line">&#123;:tx &quot;sale&quot;, :product &quot;blueberry&quot;, :price 65.2, :time #inst&quot;2017-01-16T19:14:51.030-00:00&quot;, :ammount 1&#125;</span><br><span class="line">&#123;:tx &quot;sale&quot;, :product &quot;papaya&quot;, :price 20.5, :time #inst&quot;2017-01-16T19:14:51.074-00:00&quot;, :ammount 2&#125;</span><br><span class="line">&#123;:tx &quot;sale&quot;, :product &quot;apple&quot;, :price 42.5, :time #inst&quot;2017-01-16T19:14:51.148-00:00&quot;, :ammount 6&#125;</span><br><span class="line">&#123;:tx &quot;sale&quot;, :product &quot;pear&quot;, :price 37.3, :time #inst&quot;2017-01-16T19:14:51.245-00:00&quot;, :ammount 5&#125;</span><br><span class="line">&#123;:tx &quot;sale&quot;, :product &quot;apple&quot;, :price 42.5, :time #inst&quot;2017-01-16T19:14:51.341-00:00&quot;, :ammount 5&#125;</span><br><span class="line">&#123;:tx &quot;sale&quot;, :product &quot;blueberry&quot;, :price 65.2, :time #inst&quot;2017-01-16T19:14:51.399-00:00&quot;, :ammount 9&#125;</span><br><span class="line">&#123;:tx &quot;sale&quot;, :product &quot;avocado&quot;, :price 52.1, :time #inst&quot;2017-01-16T19:14:51.456-00:00&quot;, :ammount 10&#125;</span><br><span class="line">&#123;:tx &quot;sale&quot;, :product &quot;papaya&quot;, :price 20.5, :time #inst&quot;2017-01-16T19:14:51.491-00:00&quot;, :ammount 4&#125;</span><br><span class="line">&#123;:tx &quot;sale&quot;, :product &quot;avocado&quot;, :price 52.1, :time #inst&quot;2017-01-16T19:14:51.583-00:00&quot;, :ammount 9&#125;</span><br><span class="line">&#123;:tx &quot;sale&quot;, :product &quot;blueberry&quot;, :price 65.2, :time #inst&quot;2017-01-16T19:14:51.665-00:00&quot;, :ammount 8&#125;</span><br><span class="line">&#123;:tx &quot;sale&quot;, :product &quot;apple&quot;, :price 42.5, :time #inst&quot;2017-01-16T19:14:51.676-00:00&quot;, :ammount 4&#125;</span><br><span class="line">&#123;:tx &quot;sale&quot;, :product &quot;papaya&quot;, :price 20.5, :time #inst&quot;2017-01-16T19:14:51.699-00:00&quot;, :ammount 7&#125;</span><br><span class="line">&#123;:tx &quot;sale&quot;, :product &quot;pear&quot;, :price 37.3, :time #inst&quot;2017-01-16T19:14:51.799-00:00&quot;, :ammount 6&#125;</span><br><span class="line">&#123;:tx &quot;sale&quot;, :product &quot;pear&quot;, :price 37.3, :time #inst&quot;2017-01-16T19:14:51.805-00:00&quot;, :ammount 7&#125;</span><br><span class="line">&#123;:tx &quot;sale&quot;, :product &quot;blueberry&quot;, :price 65.2, :time #inst&quot;2017-01-16T19:14:51.832-00:00&quot;, :ammount 3&#125;</span><br><span class="line">&#123;:tx &quot;sale&quot;, :product &quot;papaya&quot;, :price 20.5, :time #inst&quot;2017-01-16T19:14:51.934-00:00&quot;, :ammount 6&#125;</span><br><span class="line">&#123;:tx &quot;sale&quot;, :product &quot;pear&quot;, :price 37.3, :time #inst&quot;2017-01-16T19:14:51.983-00:00&quot;, :ammount 7&#125;</span><br><span class="line">&#123;:tx &quot;sale&quot;, :product &quot;mango&quot;, :price 23.0, :time #inst&quot;2017-01-16T19:14:51.995-00:00&quot;, :ammount 3&#125;</span><br><span class="line">&#123;:tx &quot;sale&quot;, :product &quot;avocado&quot;, :price 52.1, :time #inst&quot;2017-01-16T19:14:52.095-00:00&quot;, :ammount 7&#125;</span><br><span class="line">&#123;:tx &quot;sale&quot;, :product &quot;apple&quot;, :price 42.5, :time #inst&quot;2017-01-16T19:14:52.186-00:00&quot;, :ammount 3&#125;</span><br><span class="line">&#123;:tx &quot;sale&quot;, :product &quot;papaya&quot;, :price 20.5, :time #inst&quot;2017-01-16T19:14:52.229-00:00&quot;, :ammount 9&#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Verify the generated log for the received events</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">...</span><br><span class="line">17:25:34.674 [NioProcessor-2] INFO  o.a.m.filter.logging.LoggingFilter - RECEIVED: HeapBuffer[pos=0 lim=1016 cap=4096: 7B 3A 74 78 20 22 73 61 6C 65 22 2C 20 3A 70 72...]</span><br><span class="line">17:25:34.682 [NioProcessor-2] DEBUG o.a.m.f.codec.ProtocolCodecFilter - Processing a MESSAGE_RECEIVED for session 1</span><br><span class="line">17:25:34.690 [NioProcessor-2] INFO  o.a.m.filter.logging.LoggingFilter - RECEIVED: HeapBuffer[pos=0 lim=1024 cap=4096: 7B 3A 74 78 20 22 73 61 6C 65 22 2C 20 3A 70 72...]</span><br><span class="line">17:25:34.690 [NioProcessor-2] DEBUG o.a.m.f.codec.ProtocolCodecFilter - Processing a MESSAGE_RECEIVED for session 1</span><br><span class="line">17:25:34.695 [NioProcessor-2] INFO  o.a.m.filter.logging.LoggingFilter - RECEIVED: HeapBuffer[pos=0 lim=1016 cap=2048: 7B 3A 74 78 20 22 73 61 6C 65 22 2C 20 3A 70 72...]</span><br><span class="line">17:25:34.695 [NioProcessor-2] DEBUG o.a.m.f.codec.ProtocolCodecFilter - Processing a MESSAGE_RECEIVED for session 1</span><br><span class="line">Transformed event : &#123;:tx &quot;sale&quot;, :product &quot;pear&quot;, :price 37.3, :time #inst &quot;2017-01-16T19:14:50.522-00:00&quot;, :ammount 1, :caudal/latency 610069, :sub-total 37.3, :iva 5.968, :total 43.268&#125;</span><br><span class="line">17:25:34.699 [clojure-agent-send-pool-1] DEBUG mx.interware.caudal.io.elastic - Storing event(s) into ELS : &#123;:tx &quot;sale&quot;, :product &quot;pear&quot;, :price 37.3, :time #inst &quot;2017-01-16T19:14:50.522-00:00&quot;, :ammount 1, :caudal/latency 610069, :sub-total 37.3, :iva 5.968, :total 43.268&#125;</span><br><span class="line">Transformed event : &#123;:tx &quot;sale&quot;, :product &quot;pear&quot;, :price 37.3, :time #inst &quot;2017-01-16T19:14:50.596-00:00&quot;, :ammount 2, :caudal/latency 628490789, :sub-total 74.6, :iva 11.936, :total 86.536&#125;</span><br><span class="line">17:25:35.315 [clojure-agent-send-pool-2] DEBUG mx.interware.caudal.io.elastic - Storing event(s) into ELS : &#123;:tx &quot;sale&quot;, :product &quot;pear&quot;, :price 37.3, :time #inst &quot;2017-01-16T19:14:50.596-00:00&quot;, :ammount 2, :caudal/latency 628490789, :sub-total 74.6, :iva 11.936, :total 86.536&#125;</span><br><span class="line">Transformed event : &#123;:tx &quot;sale&quot;, :product &quot;papaya&quot;, :price 20.5, :time #inst &quot;2017-01-16T19:14:50.622-00:00&quot;, :ammount 4, :caudal/latency 666548765, :sub-total 82.0, :iva 13.120000000000001, :total 95.12&#125;</span><br><span class="line">...</span><br><span class="line">Transformed event : &#123;:tx &quot;sale&quot;, :product &quot;apple&quot;, :price 42.5, :time #inst &quot;2017-01-16T19:14:52.186-00:00&quot;, :ammount 3, :caudal/latency 1353921330, :sub-total 127.5, :iva 20.400000000000002, :total 147.9&#125;</span><br><span class="line">17:25:36.053 [clojure-agent-send-pool-9] DEBUG mx.interware.caudal.io.elastic - Storing event(s) into ELS : &#123;:tx &quot;sale&quot;, :product &quot;apple&quot;, :price 42.5, :time #inst &quot;2017-01-16T19:14:52.186-00:00&quot;, :ammount 3, :caudal/latency 1353921330, :sub-total 127.5, :iva 20.400000000000002, :total 147.9&#125;</span><br><span class="line">Transformed event : &#123;:tx &quot;sale&quot;, :product &quot;papaya&quot;, :price 20.5, :time #inst &quot;2017-01-16T19:14:52.229-00:00&quot;, :ammount 9, :caudal/latency 1393990461, :sub-total 184.5, :iva 29.52, :total 214.02&#125;</span><br><span class="line">17:25:36.093 [clojure-agent-send-pool-9] DEBUG mx.interware.caudal.io.elastic - Storing event(s) into ELS : &#123;:tx &quot;sale&quot;, :product &quot;papaya&quot;, :price 20.5, :time #inst &quot;2017-01-16T19:14:52.229-00:00&quot;, :ammount 9, :caudal/latency 1393990461, :sub-total 184.5, :iva 29.52, :total 214.02&#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="Verifying-database-contents" class="article-heading"><a href="#Verifying-database-contents" class="headerlink" title="Verifying database contents"></a>Verifying database contents<a class="article-anchor" href="#Verifying-database-contents" aria-hidden="true"></a></h2><ol>
+<li>Open a new terminal and execute the query command shown for checking the events previously processed.<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ curl -XPOST &apos;localhost:9200/labs*/_search?pretty&apos; -d &apos;&#123;&quot;query&quot;: &#123; &quot;match_all&quot;: &#123;&#125; &#125;&#125;&apos;</span><br><span class="line">&#123;</span><br><span class="line">  &quot;took&quot; : 54,</span><br><span class="line">  &quot;timed_out&quot; : false,</span><br><span class="line">  &quot;_shards&quot; : &#123;</span><br><span class="line">    &quot;total&quot; : 5,</span><br><span class="line">    &quot;successful&quot; : 5,</span><br><span class="line">    &quot;failed&quot; : 0</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;hits&quot; : &#123;</span><br><span class="line">    &quot;total&quot; : 30,</span><br><span class="line">    &quot;max_score&quot; : 1.0,</span><br><span class="line">    &quot;hits&quot; : [ &#123;</span><br><span class="line">      &quot;_index&quot; : &quot;labs&quot;,</span><br><span class="line">      &quot;_type&quot; : &quot;sales&quot;,</span><br><span class="line">      &quot;_id&quot; : &quot;AVnNpiWjzTntsm6U0JOB&quot;,</span><br><span class="line">      &quot;_score&quot; : 1.0,</span><br><span class="line">      &quot;_source&quot; : &#123;</span><br><span class="line">        &quot;ammount&quot; : 1,</span><br><span class="line">        &quot;sub-total&quot; : 37.3,</span><br><span class="line">        &quot;created-on&quot; : 1485213934701,</span><br><span class="line">        &quot;time&quot; : &quot;2017-01-16T19:14:50Z&quot;,</span><br><span class="line">        &quot;product&quot; : &quot;pear&quot;,</span><br><span class="line">        &quot;total&quot; : 43.268,</span><br><span class="line">        &quot;tx&quot; : &quot;sale&quot;,</span><br><span class="line">        &quot;price&quot; : 37.3,</span><br><span class="line">        &quot;caudal/latency&quot; : 610069,</span><br><span class="line">        &quot;iva&quot; : 5.968</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;, &#123;</span><br><span class="line">      &quot;_index&quot; : &quot;labs&quot;,</span><br><span class="line">      &quot;_type&quot; : &quot;sales&quot;,</span><br><span class="line">      &quot;_id&quot; : &quot;AVnNpib_zTntsm6U0JOD&quot;,</span><br><span class="line">      &quot;_score&quot; : 1.0,</span><br><span class="line">      &quot;_source&quot; : &#123;</span><br><span class="line">        &quot;ammount&quot; : 4,</span><br><span class="line">        &quot;sub-total&quot; : 82.0,</span><br><span class="line">        &quot;created-on&quot; : 1485213935354,</span><br><span class="line">        &quot;time&quot; : &quot;2017-01-16T19:14:50Z&quot;,</span><br><span class="line">        &quot;product&quot; : &quot;papaya&quot;,</span><br><span class="line">        &quot;total&quot; : 95.12,</span><br><span class="line">        &quot;tx&quot; : &quot;sale&quot;,</span><br><span class="line">        &quot;price&quot; : 20.5,</span><br><span class="line">        &quot;caudal/latency&quot; : 666548765,</span><br><span class="line">        &quot;iva&quot; : 13.120000000000001</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">...</span><br><span class="line">        &#123;</span><br><span class="line">       &quot;_index&quot; : &quot;labs&quot;,</span><br><span class="line">       &quot;_type&quot; : &quot;sales&quot;,</span><br><span class="line">       &quot;_id&quot; : &quot;AVnNpilazTntsm6U0JOZ&quot;,</span><br><span class="line">       &quot;_score&quot; : 1.0,</span><br><span class="line">       &quot;_source&quot; : &#123;</span><br><span class="line">         &quot;ammount&quot; : 6,</span><br><span class="line">         &quot;sub-total&quot; : 123.0,</span><br><span class="line">         &quot;created-on&quot; : 1485213935959,</span><br><span class="line">         &quot;time&quot; : &quot;2017-01-16T19:14:51Z&quot;,</span><br><span class="line">         &quot;product&quot; : &quot;papaya&quot;,</span><br><span class="line">         &quot;total&quot; : 142.68,</span><br><span class="line">         &quot;tx&quot; : &quot;sale&quot;,</span><br><span class="line">         &quot;price&quot; : 20.5,</span><br><span class="line">         &quot;caudal/latency&quot; : 1261751929,</span><br><span class="line">         &quot;iva&quot; : 19.68</span><br><span class="line">       &#125;</span><br><span class="line">     &#125;, &#123;</span><br><span class="line">       &quot;_index&quot; : &quot;labs&quot;,</span><br><span class="line">       &quot;_type&quot; : &quot;sales&quot;,</span><br><span class="line">       &quot;_id&quot; : &quot;AVnNpibZzTntsm6U0JOC&quot;,</span><br><span class="line">       &quot;_score&quot; : 1.0,</span><br><span class="line">       &quot;_source&quot; : &#123;</span><br><span class="line">         &quot;ammount&quot; : 2,</span><br><span class="line">         &quot;sub-total&quot; : 74.6,</span><br><span class="line">         &quot;created-on&quot; : 1485213935316,</span><br><span class="line">         &quot;time&quot; : &quot;2017-01-16T19:14:50Z&quot;,</span><br><span class="line">         &quot;product&quot; : &quot;pear&quot;,</span><br><span class="line">         &quot;total&quot; : 86.536,</span><br><span class="line">         &quot;tx&quot; : &quot;sale&quot;,</span><br><span class="line">         &quot;price&quot; : 37.3,</span><br><span class="line">         &quot;caudal/latency&quot; : 628490789,</span><br><span class="line">         &quot;iva&quot; : 11.936</span><br><span class="line">       &#125;</span><br><span class="line">     &#125; ]</span><br><span class="line">   &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="Starting-Kibana-visualizer" class="article-heading"><a href="#Starting-Kibana-visualizer" class="headerlink" title="Starting Kibana visualizer"></a>Starting Kibana visualizer<a class="article-anchor" href="#Starting-Kibana-visualizer" aria-hidden="true"></a></h2><ol>
+<li>Open a new terminal an change current directory to the one containing <strong>kibana</strong> installation.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ cd /opt/kibana-4.6.0</span><br></pre></td></tr></table></figure>
+<ol>
+<li>Start Elasticsearch database</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ bin/kibana</span><br><span class="line">  log   [13:32:24.931] [info][status][plugin:heatmap@0.1.0] Status changed from uninitialized to green - Ready</span><br><span class="line">  log   [13:32:24.938] [info][status][plugin:line_sg@0.0.1] Status changed from uninitialized to green - Ready</span><br><span class="line">...</span><br><span class="line">  log   [13:32:26.665] [info][listening] Server running at http://0.0.0.0:5601</span><br><span class="line">  log   [13:32:26.719] [info][status][plugin:elasticsearch@1.0.0] Status changed from yellow to green - Kibana index ready</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>Open url <a href="http://localhost:5601" target="_blank" rel="noopener">http://localhost:5601</a> in a browser and click on <strong>Settings</strong>.</p>
+</li>
+<li><p>Set the value <strong>labs*</strong> in the field <strong>Index name or pattern</strong> and select the value <strong>time</strong> in <strong>Time-field name</strong> field.</p>
+</li>
+</ol>
+<p><img src="lab5-01.png" alt="Adding the labs index"></p>
+<ol>
+<li>Click on button <strong>Create</strong>.</li>
+</ol>
+<p><img src="lab5-02.png" alt="labs index"></p>
+<h2 id="Creating-Pie-visualization-for-event-data-generated" class="article-heading"><a href="#Creating-Pie-visualization-for-event-data-generated" class="headerlink" title="Creating Pie visualization for event data generated"></a>Creating <em>Pie</em> visualization for event data generated<a class="article-anchor" href="#Creating-Pie-visualization-for-event-data-generated" aria-hidden="true"></a></h2><ol>
+<li><p>Verify that visualizations date range is correct.</p>
+</li>
+<li><p>Click on <strong>Visualize</strong> option and then in <strong>Pie chart</strong>.</p>
+</li>
+</ol>
+<p><img src="lab5-03.png" alt="Visualizations pie"></p>
+<ol>
+<li>Select <strong>From new search</strong> option.</li>
+</ol>
+<p><img src="lab5-04.png" alt="New search pie"></p>
+<ol>
+<li>Click on <strong>Split Slices</strong> buckets type.</li>
+</ol>
+<p><img src="lab5-05.png" alt="Split Slices"></p>
+<ol>
+<li>Select <strong>Range</strong> in <strong>Aggregation section</strong> and <strong>ammount</strong> in <strong>Field</strong>. Add the four ranges shown in image below then <strong>Apply changes</strong>. </li>
+</ol>
+<p><img src="lab5-06.png" alt="Range"></p>
+<ol>
+<li>Once you entered ranges, must save the visualization. For that click on <strong>Save Visualization</strong>, set <strong>By ammount</strong> value into <strong>Title</strong> field, then click button <strong>Save</strong>.</li>
+</ol>
+<p><img src="lab5-07.png" alt="Saving pie"></p>
+<h2 id="Creating-Vertical-bar-chart-visualization-for-event-data-generated" class="article-heading"><a href="#Creating-Vertical-bar-chart-visualization-for-event-data-generated" class="headerlink" title="Creating Vertical bar chart visualization for event data generated"></a>Creating <em>Vertical bar chart</em> visualization for event data generated<a class="article-anchor" href="#Creating-Vertical-bar-chart-visualization-for-event-data-generated" aria-hidden="true"></a></h2><ol>
+<li>Click on <strong>Visualize</strong> option and then in <strong>Vertical bar chart</strong>.</li>
+</ol>
+<p><img src="lab5-08.png" alt="Visualizations chart"></p>
+<ol>
+<li>Select <strong>From new search</strong> option.</li>
+</ol>
+<p><img src="lab5-09.png" alt="New search chart"></p>
+<ol>
+<li>Expand <strong>Y-Axis</strong> in <strong>metrics</strong> section and fill the fields as shown.</li>
+</ol>
+<p><img src="lab5-10.png" alt="Y-Axis"></p>
+<ol>
+<li>Click <strong>X-Axis</strong> in <strong>buckets</strong> section, fill the fields as shown.</li>
+</ol>
+<p><img src="lab5-11.png" alt="X-Axis"></p>
+<ol>
+<li>Press the <strong>Apply changes</strong> button.</li>
+</ol>
+<p><img src="lab5-12.png" alt="Apply changes chart"></p>
+<ol>
+<li>Once you entered ranges, must save the visualization. For that click on <strong>Save Visualization</strong>, set <strong>Totals by product</strong> value into <strong>Title</strong> field, then click button <strong>Save</strong>.</li>
+</ol>
+<p><img src="lab5-13.png" alt="Saving chart"></p>
+<h2 id="Creating-a-dashboard" class="article-heading"><a href="#Creating-a-dashboard" class="headerlink" title="Creating a dashboard"></a>Creating a dashboard<a class="article-anchor" href="#Creating-a-dashboard" aria-hidden="true"></a></h2><ol>
+<li>Click on <strong>Dashboard</strong> option.</li>
+</ol>
+<p><img src="lab5-14.png" alt="dasboard"></p>
+<ol>
+<li>Click on <strong>+</strong> button to add a new dashboard.</li>
+</ol>
+<p><img src="lab5-15.png" alt="add dasboard"></p>
+<ol>
+<li>Select visualizations previously created and resize them as shown.</li>
+</ol>
+<p><img src="lab5-16.png" alt="visualizations dasboard"></p>
+<ol>
+<li>Click on <strong>Save dashboard</strong> button.</li>
+</ol>
+<p><img src="lab5-17.png" alt="save dasboard"></p>
+<ol>
+<li>Set <strong>Sample Dashboard</strong> as the name for the one just created.</li>
+</ol>
+<p><img src="lab5-18.png" alt="name dasboard"></p>
+<ol>
+<li>Created dashboard should appear as shown below.</li>
+</ol>
+<p><img src="lab5-19.png" alt="show dasboard"></p>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2018-01-31T21:59:47.476Z" itemprop="dateModified">Last updated: 2018-01-31</time>
+                <a href="lab4.html" class="article-footer-prev" title="Statistics"><i class="fa fa-chevron-left"></i><span>Prev</span></a><a href="lab6.html" class="article-footer-next" title="Clustering"><span>Next</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">              
+              <strong class="sidebar-title">Contents</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Requirements"><span class="toc-text">Requirements</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Setting-up-an-event-enricher-streamer"><span class="toc-text">Setting up an event enricher streamer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Starting-Elasticsearch"><span class="toc-text">Starting Elasticsearch</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Feeding-event-streamer"><span class="toc-text">Feeding event streamer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Verifying-database-contents"><span class="toc-text">Verifying database contents</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Starting-Kibana-visualizer"><span class="toc-text">Starting Kibana visualizer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Creating-Pie-visualization-for-event-data-generated"><span class="toc-text">Creating Pie visualization for event data generated</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Creating-Vertical-bar-chart-visualization-for-event-data-generated"><span class="toc-text">Creating Vertical bar chart visualization for event data generated</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Creating-a-dashboard"><span class="toc-text">Creating a dashboard</span></a></li></ol>
+              <a href="#" id="article-toc-top">Back to Top</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">Getting Started</strong><a href="index.html" class="sidebar-link">Overview</a><a href="setup.html" class="sidebar-link">Setup</a><a href="configuration.html" class="sidebar-link">Configuration</a><strong class="sidebar-title">Labs</strong><a href="lab1.html" class="sidebar-link">Getting Started and Setup</a><a href="lab2.html" class="sidebar-link">Listeners and Parsing</a><a href="lab3.html" class="sidebar-link">Streamers</a><a href="lab4.html" class="sidebar-link">Statistics</a><a href="lab5.html" class="sidebar-link current">Integration</a><a href="lab6.html" class="sidebar-link">Clustering</a><strong class="sidebar-title">Miscellaneous</strong><a href="java.html" class="sidebar-link">Java</a><a href="leiningen.html" class="sidebar-link">Leiningen</a><a href="troubleshooting.html" class="sidebar-link">Troubleshooting</a><a href="contributing.html" class="sidebar-link">Contributing</a>
+  </div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2018 <a href="http://www.interware.com.mx" target="_blank">interwaremx</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      <a href="https://twitter.com/caudal_iw" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://github.com/interwaremx/caudal" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/" class="mobile-nav-link">Caudal</a><a href="/docs/" class="mobile-nav-link">Docs</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/interwaremx/caudal" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">Getting Started</strong><a href="index.html" class="mobile-nav-link">Overview</a><a href="setup.html" class="mobile-nav-link">Setup</a><a href="configuration.html" class="mobile-nav-link">Configuration</a><strong class="mobile-nav-title">Labs</strong><a href="lab1.html" class="mobile-nav-link">Getting Started and Setup</a><a href="lab2.html" class="mobile-nav-link">Listeners and Parsing</a><a href="lab3.html" class="mobile-nav-link">Streamers</a><a href="lab4.html" class="mobile-nav-link">Statistics</a><a href="lab5.html" class="mobile-nav-link current">Integration</a><a href="lab6.html" class="mobile-nav-link">Clustering</a><strong class="mobile-nav-title">Miscellaneous</strong><a href="java.html" class="mobile-nav-link">Java</a><a href="leiningen.html" class="mobile-nav-link">Leiningen</a><a href="troubleshooting.html" class="mobile-nav-link">Troubleshooting</a><a href="contributing.html" class="mobile-nav-link">Contributing</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>English</span></span>
+    <select id="mobile-lang-select" data-canonical="docs/lab5.html">
+      
+        <option value="en" selected>English</option>
+      
+        <option value="es">Español</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+<!-- endbuild -->
+
+<!-- Algolia -->
+
+
+</body>
+</html>

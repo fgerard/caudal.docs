@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>Lab 3 - Streamers | Caudal</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://hexo.io/docs/lab3.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://hexo.io/docs/lab3.html">
+    
+      <link rel="alternative" hreflang="es" href="https://hexo.io/es/docs/lab3.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Caudal">
+  <!-- Open Graph -->
+  <meta name="description" content="A lab exercise that shows examples for main streamers existing in Caudal  Requirements Have successfully completed Lab 2: Listeners and Parsing  Setting up an event enricher streamer Change current di">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Lab 3 - Streamers">
+<meta property="og:url" content="https://hexo.io/docs/lab3.html">
+<meta property="og:site_name" content="Caudal">
+<meta property="og:description" content="A lab exercise that shows examples for main streamers existing in Caudal  Requirements Have successfully completed Lab 2: Listeners and Parsing  Setting up an event enricher streamer Change current di">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-01-31T21:59:47.420Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Lab 3 - Streamers">
+<meta name="twitter:description" content="A lab exercise that shows examples for main streamers existing in Caudal  Requirements Have successfully completed Lab 2: Listeners and Parsing  Setting up an event enricher streamer Change current di">
+<meta name="twitter:site" content="caudal_iw">
+  <!-- Google Analytics -->
+  
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/" class="main-nav-link">Caudal</a><a href="/docs/" class="main-nav-link">Docs</a>
+      <a href="https://github.com/interwaremx/caudal" class="main-nav-link"><i class="fa fa-github-alt"></i></a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <input type="search" id="search-input" placeholder="Search...">
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>English</span></label>
+      <select id="lang-select" data-canonical="docs/lab3.html">
+        
+          <option value="en" selected>English</option>
+        
+          <option value="es">Español</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">Lab 3 - Streamers</h1>
+                <a href="https://github.com/interwaremx/caudal-wiki/edit/master/source/docs/lab3.md" class="article-edit-link" title="Improve this doc"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <p>A lab exercise that shows examples for main streamers existing in Caudal </p>
+<h2 id="Requirements" class="article-heading"><a href="#Requirements" class="headerlink" title="Requirements"></a>Requirements<a class="article-anchor" href="#Requirements" aria-hidden="true"></a></h2><ul>
+<li>Have successfully completed <strong>Lab 2</strong>: <a href="lab2.html">Listeners and Parsing</a></li>
+</ul>
+<h2 id="Setting-up-an-event-enricher-streamer" class="article-heading"><a href="#Setting-up-an-event-enricher-streamer" class="headerlink" title="Setting up an event enricher streamer"></a>Setting up an event enricher streamer<a class="article-anchor" href="#Setting-up-an-event-enricher-streamer" aria-hidden="true"></a></h2><ol>
+<li>Change current directory to the <strong>caudal-labs</strong> project</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ cd caudal-labs/</span><br></pre></td></tr></table></figure>
+<ol>
+<li>Edit <strong>config/caudal-config.clj</strong> file to configure a <strong>dafault</strong> streamer that adds attibutes to received event message.<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">(require &apos;[mx.interware.caudal.streams.common :refer :all])</span><br><span class="line">(require &apos;[mx.interware.caudal.streams.stateful :refer :all])</span><br><span class="line">(require &apos;[mx.interware.caudal.streams.stateless :refer :all])</span><br><span class="line"></span><br><span class="line">(defsink streamer-1 10000</span><br><span class="line">  (default [:reception-time (new java.util.Date)]</span><br><span class="line">           (printe [&quot;Received event : &quot;])))</span><br><span class="line"></span><br><span class="line">(deflistener [&#123;:type &apos;mx.interware.caudal.io.tcp-server </span><br><span class="line">               :parameters &#123;:port 9900</span><br><span class="line">                            :idle-period 60&#125;&#125;]</span><br><span class="line">  streamer-1)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="Testing-event-enricher-streamer" class="article-heading"><a href="#Testing-event-enricher-streamer" class="headerlink" title="Testing event enricher streamer"></a>Testing event enricher streamer<a class="article-anchor" href="#Testing-event-enricher-streamer" aria-hidden="true"></a></h2><ol>
+<li>Restart Caudal for applying changes in configuration.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ ./bin/start-caudal.sh -c ./config/caudal-config.clj</span><br><span class="line">Verifying JAVA instalation ...</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>Open another terminal and send through the <strong>tcp channel</strong> the events shown below.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ telnet localhost 9900</span><br><span class="line">Trying ::1...</span><br><span class="line">Connected to localhost.</span><br><span class="line">Escape character is &apos;^]&apos;.</span><br><span class="line">&#123;:tx &quot;login&quot; :user &quot;ClojurianX&quot;&#125;</span><br><span class="line">&#123;:tx &quot;set-status&quot; :value &quot;waiting&quot;&#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Verify the generated log for the received events</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">...</span><br><span class="line">18:45:47.636 [NioProcessor-2] INFO  o.a.m.filter.logging.LoggingFilter - RECEIVED: HeapBuffer[pos=0 lim=34 cap=4096: 7B 3A 74 78 20 22 6C 6F 67 69 6E 22 20 3A 75 73...]</span><br><span class="line">18:45:47.641 [NioProcessor-2] DEBUG o.a.m.f.codec.ProtocolCodecFilter - Processing a MESSAGE_RECEIVED for session 1</span><br><span class="line">Received event : &#123;:tx &quot;login&quot;, :user &quot;ClojurianX&quot;, :caudal/latency 744956, :reception-time #inst &quot;2017-01-13T00:45:10.850-00:00&quot;&#125;</span><br><span class="line">18:46:47.853 [NioProcessor-2] INFO  o.a.m.filter.logging.LoggingFilter - IDLE</span><br><span class="line">IDLE  1</span><br><span class="line">18:47:16.997 [NioProcessor-2] INFO  o.a.m.filter.logging.LoggingFilter - RECEIVED: HeapBuffer[pos=0 lim=37 cap=4096: 7B 3A 74 78 20 22 73 65 74 2D 73 74 61 74 75 73...]</span><br><span class="line">18:47:16.998 [NioProcessor-2] DEBUG o.a.m.f.codec.ProtocolCodecFilter - Processing a MESSAGE_RECEIVED for session 1</span><br><span class="line">Received event : &#123;:tx &quot;set-status&quot;, :value &quot;waiting&quot;, :caudal/latency 397546, :reception-time #inst &quot;2017-01-13T00:45:10.850-00:00&quot;&#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>As you can see, the <strong>default</strong> streamer is adding <strong>reception-time</strong> attribute to every received event</p>
+<h2 id="Setting-up-a-counter-streamer" class="article-heading"><a href="#Setting-up-a-counter-streamer" class="headerlink" title="Setting up a counter streamer"></a>Setting up a counter streamer<a class="article-anchor" href="#Setting-up-a-counter-streamer" aria-hidden="true"></a></h2><ol>
+<li>Edit <strong>config/caudal-config.clj</strong> file to configure a <strong>counter</strong> streamer that count every received event message having :tx attribute. File content must be the following:<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">(ns caudal-labs)</span><br><span class="line"></span><br><span class="line">(require &apos;[mx.interware.caudal.streams.common :refer :all])</span><br><span class="line">(require &apos;[mx.interware.caudal.streams.stateful :refer :all])</span><br><span class="line">(require &apos;[mx.interware.caudal.streams.stateless :refer :all])</span><br><span class="line"></span><br><span class="line">(defsink streamer-1 10000</span><br><span class="line">  (counter [:event-counter :count]</span><br><span class="line">           (printe [&quot;Received event : &quot;])))</span><br><span class="line"></span><br><span class="line">(deflistener tcp-listener [&#123;:type &apos;mx.interware.caudal.io.tcp-server </span><br><span class="line">                            :parameters &#123;:port 9900</span><br><span class="line">                                         :idle-period 60&#125;&#125;])</span><br><span class="line"></span><br><span class="line">(wire [tcp-listener] [streamer-1])</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="Testing-the-counter-streamer" class="article-heading"><a href="#Testing-the-counter-streamer" class="headerlink" title="Testing the counter streamer"></a>Testing the counter streamer<a class="article-anchor" href="#Testing-the-counter-streamer" aria-hidden="true"></a></h2><ol>
+<li>Restart Caudal for applying changes in configuration</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ ./bin/start-caudal.sh -c ./config/caudal-config.clj</span><br><span class="line">Verifying JAVA instalation ...</span><br><span class="line">...</span><br><span class="line">16:53:39.442 [main] INFO  mx.interware.caudal.core.starter-dsl - &#123;:loading-dsl &#123;:file ./config/caudal-config.clj&#125;&#125;</span><br><span class="line">16:53:40.639 [main] INFO  mx.interware.caudal.io.tcp-server - Starting server on port :  9900  ...</span><br></pre></td></tr></table></figure>
+<ol>
+<li>Open another terminal and send some event message through the Caudal <strong>tcp</strong> channel running on port <strong>9900</strong></li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ telnet localhost 9900</span><br><span class="line">Trying ::1...</span><br><span class="line">Connected to localhost.</span><br><span class="line">Escape character is &apos;^]&apos;.</span><br><span class="line">&#123;:tx &quot;login&quot; :time #inst&quot;2017-01-11T17:29:34.712-00:00&quot; :user &quot;schatsi&quot; :host &quot;tirio&quot;&#125;</span><br><span class="line">&#123;:tx &quot;login&quot; :time #inst&quot;2017-01-11T17:29:35.145-00:00&quot; :user &quot;imushroom&quot; :host &quot;andromeda&quot;&#125;</span><br><span class="line">&#123;:tweet-id &quot;114729583239036718&quot; :user &quot;ClojurianX&quot; :text &quot;How to use a charting library in Reagent http://buff.ly/2i0q23R  #clojure #chart #reagent&quot; :retweeted false :coordinates [19.3660316 -99.1843784] :created_at &quot;Wed Jan 11 10:07:23 +0000 2017&quot;&#125;</span><br><span class="line">&#123;:tweet-id &quot;114729583239036819&quot; :user &quot;ClojurianX&quot; :text &quot;Why #Clojure is better than C, Python,Ruby and Java and why should you care&quot; :retweeted true :coordinates [19.3660316 -99.1843784] :created_at &quot;Wed Jan 11 10:17:28 +0000 2017&quot;&#125;</span><br><span class="line">&#123;:tweet-id &quot;114729583239050123&quot; :user &quot;ClojurianY&quot; :text &quot;Official #Neo4j Driver for Python 1.1.0 beta 4 has just been released&quot; :retweeted false :coordinates [27.2550316 -80.1666784] :created_at &quot;Wed Jan 11 12:21:11 +0000 2017&quot;&#125;</span><br><span class="line">&#123;:tweet-id &quot;114729583239050542&quot; :user &quot;ClojurianY&quot; :text &quot;Learn live! \&quot;getless - better every day\&quot; https://www.livecoding.oftware #agile #Clojure&quot; :retweeted false :coordinates [27.2550316 -80.1666784] :created_at &quot;Wed Jan 11 12:30:25 +0000 2017&quot;&#125;</span><br><span class="line">EOT</span><br><span class="line">Connection closed by foreign host.</span><br><span class="line">$</span><br></pre></td></tr></table></figure>
+<ol>
+<li>Verify the generated log for the received events</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">16:54:42.081 [NioProcessor-2] INFO  o.a.m.filter.logging.LoggingFilter - CREATED</span><br><span class="line">16:54:42.083 [NioProcessor-2] INFO  o.a.m.filter.logging.LoggingFilter - OPENED</span><br><span class="line">16:54:52.796 [NioProcessor-2] INFO  o.a.m.filter.logging.LoggingFilter - RECEIVED: HeapBuffer[pos=0 lim=900 cap=4096: 7B 3A 74 78 20 22 6C 6F 67 69 6E 22 20 3A 74 69...]</span><br><span class="line">16:54:52.801 [NioProcessor-2] DEBUG o.a.m.f.codec.ProtocolCodecFilter - Processing a MESSAGE_RECEIVED for session 1</span><br><span class="line">16:54:52.816 [NioProcessor-2] INFO  o.a.m.filter.logging.LoggingFilter - RECEIVED: HeapBuffer[pos=0 lim=254 cap=4096: 7B 3A 74 77 65 65 74 2D 69 64 20 22 31 31 34 37...]</span><br><span class="line">16:54:52.816 [NioProcessor-2] DEBUG o.a.m.f.codec.ProtocolCodecFilter - Processing a MESSAGE_RECEIVED for session 1</span><br><span class="line">Received event : &#123;:tx &quot;login&quot;, :time #inst &quot;2017-01-11T17:29:34.712-00:00&quot;, :user &quot;schatsi&quot;, :host &quot;tirio&quot;, :caudal/latency 2098653, :count 1&#125;</span><br><span class="line">Received event : &#123;:tx &quot;login&quot;, :time #inst &quot;2017-01-11T17:29:35.145-00:00&quot;, :user &quot;imushroom&quot;, :host &quot;andromeda&quot;, :caudal/latency 12395903, :count 2&#125;</span><br><span class="line">Received event : &#123;:tweet-id &quot;114729583239036718&quot;, :user &quot;ClojurianX&quot;, :text &quot;How to use a charting library in Reagent http://buff.ly/2i0q23R  #clojure #chart #reagent&quot;, :retweeted false, :coordinates [19.3660316 -99.1843784], :created_at &quot;Wed Jan 11 10:07:23 +0000 2017&quot;, :caudal/latency 11766637, :count 3&#125;</span><br><span class="line">Received event : &#123;:tweet-id &quot;114729583239036819&quot;, :user &quot;ClojurianX&quot;, :text &quot;Why #Clojure is better than C, Python,Ruby and Java and why should you care&quot;, :retweeted true, :coordinates [19.3660316 -99.1843784], :created_at &quot;Wed Jan 11 10:17:28 +0000 2017&quot;, :caudal/latency 24829791, :count 4&#125;</span><br><span class="line">Received event : &#123;:tweet-id &quot;114729583239050123&quot;, :user &quot;ClojurianY&quot;, :text &quot;Official #Neo4j Driver for Python 1.1.0 beta 4 has just been released&quot;, :retweeted false, :coordinates [27.2550316 -80.1666784], :created_at &quot;Wed Jan 11 12:21:11 +0000 2017&quot;, :caudal/latency 25634089, :count 5&#125;</span><br><span class="line">Received event : &#123;:tweet-id &quot;114729583239050542&quot;, :user &quot;ClojurianY&quot;, :text &quot;Learn live! \&quot;getless - better every day\&quot; https://www.livecoding. #software #agile #Clojure&quot;, :retweeted false, :coordinates [27.2550316 -80.1666784], :created_at &quot;Wed Jan 11 12:30:25 +0000 2017&quot;, :caudal/latency 25721860, :count 6&#125;</span><br><span class="line">16:55:08.029 [NioProcessor-2] INFO  o.a.m.filter.logging.LoggingFilter - RECEIVED: HeapBuffer[pos=0 lim=5 cap=2048: 45 4F 54 0D 0A]</span><br><span class="line">16:55:08.029 [NioProcessor-2] DEBUG o.a.m.f.codec.ProtocolCodecFilter - Processing a MESSAGE_RECEIVED for session 1</span><br><span class="line">16:55:08.032 [NioProcessor-2] INFO  o.a.m.filter.logging.LoggingFilter - CLOSED</span><br></pre></td></tr></table></figure>
+<p>Note that for every received event the attribute ‘count’ was added containing the current count</p>
+<h2 id="Setting-up-a-transformer-streamer" class="article-heading"><a href="#Setting-up-a-transformer-streamer" class="headerlink" title="Setting up a transformer streamer"></a>Setting up a transformer streamer<a class="article-anchor" href="#Setting-up-a-transformer-streamer" aria-hidden="true"></a></h2><ol>
+<li>Edit <strong>config/caudal-config.clj</strong> file to configure a <strong>smap</strong> streamer that transform every received event message applying a transformation function to them<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">(ns caudal-labs)</span><br><span class="line"></span><br><span class="line">(require &apos;[mx.interware.caudal.streams.common :refer :all])</span><br><span class="line">(require &apos;[mx.interware.caudal.streams.stateful :refer :all])</span><br><span class="line">(require &apos;[mx.interware.caudal.streams.stateless :refer :all])</span><br><span class="line"></span><br><span class="line">(defn calculate-iva [event]</span><br><span class="line">  (let [ammount (:ammount event)</span><br><span class="line">        iva     (* 0.16 ammount)</span><br><span class="line">        total   (+ ammount iva)]</span><br><span class="line">    (assoc event &#123;:iva iva :total total&#125;)))</span><br><span class="line"></span><br><span class="line">(defsink streamer-1 10000</span><br><span class="line">  (smap [calculate-iva]</span><br><span class="line">        (printe [&quot;Transformed event : &quot;])))</span><br><span class="line"></span><br><span class="line">(deflistener tcp-listener [&#123;:type &apos;mx.interware.caudal.io.tcp-server </span><br><span class="line">                            :parameters &#123;:port 9900</span><br><span class="line">                                         :idle-period 60&#125;&#125;])</span><br><span class="line"></span><br><span class="line">(wire [tcp-listener] [streamer-1])</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="Testing-the-transformer-streamer" class="article-heading"><a href="#Testing-the-transformer-streamer" class="headerlink" title="Testing the transformer streamer"></a>Testing the transformer streamer<a class="article-anchor" href="#Testing-the-transformer-streamer" aria-hidden="true"></a></h2><ol>
+<li>Restart Caudal for applying changes in configuration</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mactirio:caudal-labs axis$ ./bin/start-caudal.sh -c ./config/caudal-config.clj</span><br><span class="line">Verifying JAVA instalation ...</span><br><span class="line">...</span><br><span class="line">16:57:49.825 [main] INFO  mx.interware.caudal.core.starter-dsl - &#123;:loading-dsl &#123;:file ./config/caudal-config.clj&#125;&#125;</span><br><span class="line">16:57:51.001 [main] INFO  mx.interware.caudal.io.tcp-server - Starting server on port :  9900  ...</span><br></pre></td></tr></table></figure>
+<ol>
+<li>Open another terminal and send some event message through the Caudal <strong>tcp</strong> channel running on port <strong>9900</strong></li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ telnet localhost 9900</span><br><span class="line">Trying ::1...</span><br><span class="line">Connected to localhost.</span><br><span class="line">Escape character is &apos;^]&apos;.</span><br><span class="line">&#123;:tx &quot;sale&quot; :product &quot;CDTO-12&quot; :price 12.50&#125;</span><br><span class="line">&#123;:tx &quot;sale&quot; :product &quot;JTAP-01&quot; :price 23.30&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>Verify the generated log for the received events</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">17:02:48.033 [NioProcessor-2] INFO  o.a.m.filter.logging.LoggingFilter - RECEIVED: HeapBuffer[pos=0 lim=46 cap=4096: 7B 3A 74 78 20 22 73 61 6C 65 22 20 3A 70 72 6F...]</span><br><span class="line">17:02:48.035 [NioProcessor-2] DEBUG o.a.m.f.codec.ProtocolCodecFilter - Processing a MESSAGE_RECEIVED for session 1</span><br><span class="line">Transformed event : &#123;:tx &quot;sale&quot;, :product &quot;CDTO-12&quot;, :price 12.5, :caudal/latency 676227, :iva 2.0, :total 14.5&#125;</span><br><span class="line">17:02:54.446 [NioProcessor-2] INFO  o.a.m.filter.logging.LoggingFilter - RECEIVED: HeapBuffer[pos=0 lim=46 cap=4096: 7B 3A 74 78 20 22 73 61 6C 65 22 20 3A 70 72 6F...]</span><br><span class="line">17:02:54.446 [NioProcessor-2] DEBUG o.a.m.f.codec.ProtocolCodecFilter - Processing a MESSAGE_RECEIVED for session 1</span><br><span class="line">Transformed event : &#123;:tx &quot;sale&quot;, :product &quot;JTAP-01&quot;, :price 23.3, :caudal/latency 433533, :iva 3.728, :total 27.028000000000002&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Setting-up-an-event-filter-streamer" class="article-heading"><a href="#Setting-up-an-event-filter-streamer" class="headerlink" title="Setting up an event filter streamer"></a>Setting up an event filter streamer<a class="article-anchor" href="#Setting-up-an-event-filter-streamer" aria-hidden="true"></a></h2><ol>
+<li>Modify <strong>config/caudal-config.clj</strong> configuration file so that streamer sink <strong>streamer-1</strong> is set as shown. Only events having <strong>tweet-id</strong> attribute should be counted.<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">...</span><br><span class="line">(defsink streamer-1 10000</span><br><span class="line">  (where [:tweet-id]</span><br><span class="line">         (counter [:tweet-counter :count]</span><br><span class="line">                  (printe [&quot;Received tweet : &quot;]))))</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="Testing-event-filter-streamer" class="article-heading"><a href="#Testing-event-filter-streamer" class="headerlink" title="Testing event filter streamer"></a>Testing event filter streamer<a class="article-anchor" href="#Testing-event-filter-streamer" aria-hidden="true"></a></h2><ol>
+<li>Restart Caudal for applying changes in configuration</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ ./bin/start-caudal.sh -c ./config/caudal-config.clj</span><br><span class="line">Verifying JAVA instalation ...</span><br><span class="line">...</span><br><span class="line">17:05:31.472 [main] INFO  mx.interware.caudal.core.starter-dsl - &#123;:loading-dsl &#123;:file ./config/caudal-config.clj&#125;&#125;</span><br><span class="line">17:05:32.648 [main] INFO  mx.interware.caudal.io.tcp-server - Starting server on port :  9900  ...</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>Open another terminal and send the events shown below through the <strong>tcp channel</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ telnet localhost 9900</span><br><span class="line">Trying ::1...</span><br><span class="line">Connected to localhost.</span><br><span class="line">Escape character is &apos;^]&apos;.</span><br><span class="line">&#123;:tx &quot;login&quot; :time #inst&quot;2017-01-11T17:29:34.712-00:00&quot; :user &quot;schatsi&quot; :host &quot;tirio&quot;&#125;</span><br><span class="line">&#123;:tx &quot;login&quot; :time #inst&quot;2017-01-11T17:29:35.145-00:00&quot; :user &quot;imushroom&quot; :host &quot;andromeda&quot;&#125;</span><br><span class="line">&#123;:tweet-id &quot;114729583239036718&quot; :user &quot;ClojurianX&quot; :text &quot;How to use a charting library in Reagent http://buff.ly/2i0q23R  #clojure #chart #reagent&quot; :retweeted false :coordinates [19.3660316 -99.1843784] :created_at &quot;Wed Jan 11 10:07:23 +0000 2017&quot;&#125;</span><br><span class="line">&#123;:tweet-id &quot;114729583239036819&quot; :user &quot;ClojurianX&quot; :text &quot;Why #Clojure is better than C, Python,Ruby and Java and why should you care&quot; :retweeted true :coordinates [19.3660316 -99.1843784] :created_at &quot;Wed Jan 11 10:17:28 +0000 2017&quot;&#125;</span><br><span class="line">&#123;:tweet-id &quot;114729583239050123&quot; :user &quot;ClojurianY&quot; :text &quot;Official #Neo4j Driver for Python 1.1.0 beta 4 has just been released&quot; :retweeted false :coordinates [27.2550316 -80.1666784] :created_at &quot;Wed Jan 11 12:21:11 +0000 2017&quot;&#125;</span><br><span class="line">&#123;:tweet-id &quot;114729583239050542&quot; :user &quot;ClojurianY&quot; :text &quot;Learn live! \&quot;getless - better every day\&quot; https://www.livecoding. #software #agile #Clojure&quot; :retweeted false :coordinates [27.2550316 -80.1666784] :created_at &quot;Wed Jan 11 12:30:25 +0000 2017&quot;&#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Verify the generated log for the received events</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">...</span><br><span class="line">Received tweet : &#123;:tweet-id &quot;114729583239036718&quot;, :user &quot;ClojurianX&quot;, :text &quot;How to use a charting library in Reagent http://buff.ly/2i0q23R  #clojure #chart #reagent&quot;, :retweeted false, :coordinates [19.3660316 -99.1843784], :created_at &quot;Wed Jan 11 10:07:23 +0000 2017&quot;, :caudal/latency 614706, :count 1&#125;</span><br><span class="line">Received tweet : &#123;:tweet-id &quot;114729583239036819&quot;, :user &quot;ClojurianX&quot;, :text &quot;Why #Clojure is better than C, Python,Ruby and Java and why should you care&quot;, :retweeted true, :coordinates [19.3660316 -99.1843784], :created_at &quot;Wed Jan 11 10:17:28 +0000 2017&quot;, :caudal/latency 19507629, :count 2&#125;</span><br><span class="line">Received tweet : &#123;:tweet-id &quot;114729583239050123&quot;, :user &quot;ClojurianY&quot;, :text &quot;Official #Neo4j Driver for Python 1.1.0 beta 4 has just been released&quot;, :retweeted false, :coordinates [27.2550316 -80.1666784], :created_at &quot;Wed Jan 11 12:21:11 +0000 2017&quot;, :caudal/latency 20246520, :count 3&#125;</span><br><span class="line">Received tweet : &#123;:tweet-id &quot;114729583239050542&quot;, :user &quot;ClojurianY&quot;, :text &quot;Learn live! \&quot;getless - better every day\&quot; https://www.livecoding. #software #agile #Clojure&quot;, :retweeted false, :coordinates [27.2550316 -80.1666784], :created_at &quot;Wed Jan 11 12:30:25 +0000 2017&quot;, :caudal/latency 20207344, :count 4&#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>As you can see, this time the counter came only up to 4</p>
+<h2 id="Setting-up-an-event-classifier-streamer" class="article-heading"><a href="#Setting-up-an-event-classifier-streamer" class="headerlink" title="Setting up an event classifier streamer"></a>Setting up an event classifier streamer<a class="article-anchor" href="#Setting-up-an-event-classifier-streamer" aria-hidden="true"></a></h2><ol>
+<li>Modify <strong>config/caudal-config.clj</strong> configuration file so that streamer sink <strong>streamer-1</strong> is set as shown. Events having <strong>tweet-id</strong> attribute should be classified by <strong>:user</strong> attribute and then counted.<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">...</span><br><span class="line">(defsink streamer-1 10000</span><br><span class="line">  (where [:tweet-id]</span><br><span class="line">         (by [:user]</span><br><span class="line">             (counter [:tweet-counter :count]</span><br><span class="line">                      (printe [&quot;Received tweet : &quot;])))))</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="Testing-event-calssifier-streamer" class="article-heading"><a href="#Testing-event-calssifier-streamer" class="headerlink" title="Testing event calssifier streamer"></a>Testing event calssifier streamer<a class="article-anchor" href="#Testing-event-calssifier-streamer" aria-hidden="true"></a></h2><ol>
+<li>Restart Caudal for applying changes in configuration</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ ./bin/start-caudal.sh -c ./config/caudal-config.clj</span><br><span class="line">Verifying JAVA instalation ...</span><br><span class="line">...</span><br><span class="line">17:10:43.179 [main] INFO  mx.interware.caudal.core.starter-dsl - &#123;:loading-dsl &#123;:file ./config/caudal-config.clj&#125;&#125;</span><br><span class="line">17:10:44.588 [main] INFO  mx.interware.caudal.io.tcp-server - Starting server on port :  9900  ...</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>Open another terminal and send through the <strong>tcp channel</strong> the events shown below</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ telnet localhost 9900</span><br><span class="line">Trying ::1...</span><br><span class="line">Connected to localhost.</span><br><span class="line">Escape character is &apos;^]&apos;.</span><br><span class="line">&#123;:tx &quot;login&quot; :time #inst&quot;2017-01-11T17:29:34.712-00:00&quot; :user &quot;schatsi&quot; :host &quot;tirio&quot;&#125;</span><br><span class="line">&#123;:tx &quot;login&quot; :time #inst&quot;2017-01-11T17:29:35.145-00:00&quot; :user &quot;imushroom&quot; :host &quot;andromeda&quot;&#125;</span><br><span class="line">&#123;:tweet-id &quot;114729583239036718&quot; :user &quot;ClojurianX&quot; :text &quot;How to use a charting library in Reagent http://buff.ly/2i0q23R  #clojure #chart #reagent&quot; :retweeted false :coordinates [19.3660316 -99.1843784] :created_at &quot;Wed Jan 11 10:07:23 +0000 2017&quot;&#125;</span><br><span class="line">&#123;:tweet-id &quot;114729583239036819&quot; :user &quot;ClojurianX&quot; :text &quot;Why #Clojure is better than C, Python,Ruby and Java and why should you care&quot; :retweeted true :coordinates [19.3660316 -99.1843784] :created_at &quot;Wed Jan 11 10:17:28 +0000 2017&quot;&#125;</span><br><span class="line">&#123;:tweet-id &quot;114729583239050123&quot; :user &quot;ClojurianY&quot; :text &quot;Official #Neo4j Driver for Python 1.1.0 beta 4 has just been released&quot; :retweeted false :coordinates [27.2550316 -80.1666784] :created_at &quot;Wed Jan 11 12:21:11 +0000 2017&quot;&#125;</span><br><span class="line">&#123;:tweet-id &quot;114729583239050542&quot; :user &quot;ClojurianY&quot; :text &quot;Learn live! \&quot;getless - better every day\&quot; https://www.livecoding. #software #agile #Clojure&quot; :retweeted false :coordinates [27.2550316 -80.1666784] :created_at &quot;Wed Jan 11 12:30:25 +0000 2017&quot;&#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Verify the generated log for the received events</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">...</span><br><span class="line">17:11:26.443 [NioProcessor-2] INFO  o.a.m.filter.logging.LoggingFilter - RECEIVED: HeapBuffer[pos=0 lim=900 cap=4096: 7B 3A 74 78 20 22 6C 6F 67 69 6E 22 20 3A 74 69...]</span><br><span class="line">17:11:26.447 [NioProcessor-2] DEBUG o.a.m.f.codec.ProtocolCodecFilter - Processing a MESSAGE_RECEIVED for session 1</span><br><span class="line">17:11:26.456 [NioProcessor-2] INFO  o.a.m.filter.logging.LoggingFilter - RECEIVED: HeapBuffer[pos=0 lim=254 cap=4096: 7B 3A 74 77 65 65 74 2D 69 64 20 22 31 31 34 37...]</span><br><span class="line">17:11:26.456 [NioProcessor-2] DEBUG o.a.m.f.codec.ProtocolCodecFilter - Processing a MESSAGE_RECEIVED for session 1</span><br><span class="line">Received tweet : &#123;:tweet-id &quot;114729583239036718&quot;, :user &quot;ClojurianX&quot;, :text &quot;How to use a charting library in Reagent http://buff.ly/2i0q23R  #clojure #chart #reagent&quot;, :retweeted false, :coordinates [19.3660316 -99.1843784], :created_at &quot;Wed Jan 11 10:07:23 +0000 2017&quot;, :caudal/latency 392488, :count 1&#125;</span><br><span class="line">Received tweet : &#123;:tweet-id &quot;114729583239036819&quot;, :user &quot;ClojurianX&quot;, :text &quot;Why #Clojure is better than C, Python,Ruby and Java and why should you care&quot;, :retweeted true, :coordinates [19.3660316 -99.1843784], :created_at &quot;Wed Jan 11 10:17:28 +0000 2017&quot;, :caudal/latency 20958119, :count 2&#125;</span><br><span class="line">Received tweet : &#123;:tweet-id &quot;114729583239050123&quot;, :user &quot;ClojurianY&quot;, :text &quot;Official #Neo4j Driver for Python 1.1.0 beta 4 has just been released&quot;, :retweeted false, :coordinates [27.2550316 -80.1666784], :created_at &quot;Wed Jan 11 12:21:11 +0000 2017&quot;, :caudal/latency 19182546, :count 1&#125;</span><br><span class="line">Received tweet : &#123;:tweet-id &quot;114729583239050542&quot;, :user &quot;ClojurianY&quot;, :text &quot;Learn live! \&quot;getless - better every day\&quot; https://www.livecoding. #software #agile #Clojure&quot;, :retweeted false, :coordinates [27.2550316 -80.1666784], :created_at &quot;Wed Jan 11 12:30:25 +0000 2017&quot;, :caudal/latency 19235139, :count 2&#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>As you can see, this time the counter came up to 2 for both kind of events, those having user ‘ClojurianX’ and ‘ClojurianY’</p>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2018-01-31T21:59:47.420Z" itemprop="dateModified">Last updated: 2018-01-31</time>
+                <a href="lab2.html" class="article-footer-prev" title="Listeners and Parsing"><i class="fa fa-chevron-left"></i><span>Prev</span></a><a href="lab4.html" class="article-footer-next" title="Statistics"><span>Next</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">              
+              <strong class="sidebar-title">Contents</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Requirements"><span class="toc-text">Requirements</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Setting-up-an-event-enricher-streamer"><span class="toc-text">Setting up an event enricher streamer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Testing-event-enricher-streamer"><span class="toc-text">Testing event enricher streamer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Setting-up-a-counter-streamer"><span class="toc-text">Setting up a counter streamer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Testing-the-counter-streamer"><span class="toc-text">Testing the counter streamer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Setting-up-a-transformer-streamer"><span class="toc-text">Setting up a transformer streamer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Testing-the-transformer-streamer"><span class="toc-text">Testing the transformer streamer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Setting-up-an-event-filter-streamer"><span class="toc-text">Setting up an event filter streamer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Testing-event-filter-streamer"><span class="toc-text">Testing event filter streamer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Setting-up-an-event-classifier-streamer"><span class="toc-text">Setting up an event classifier streamer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Testing-event-calssifier-streamer"><span class="toc-text">Testing event calssifier streamer</span></a></li></ol>
+              <a href="#" id="article-toc-top">Back to Top</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">Getting Started</strong><a href="index.html" class="sidebar-link">Overview</a><a href="setup.html" class="sidebar-link">Setup</a><a href="configuration.html" class="sidebar-link">Configuration</a><strong class="sidebar-title">Labs</strong><a href="lab1.html" class="sidebar-link">Getting Started and Setup</a><a href="lab2.html" class="sidebar-link">Listeners and Parsing</a><a href="lab3.html" class="sidebar-link current">Streamers</a><a href="lab4.html" class="sidebar-link">Statistics</a><a href="lab5.html" class="sidebar-link">Integration</a><a href="lab6.html" class="sidebar-link">Clustering</a><strong class="sidebar-title">Miscellaneous</strong><a href="java.html" class="sidebar-link">Java</a><a href="leiningen.html" class="sidebar-link">Leiningen</a><a href="troubleshooting.html" class="sidebar-link">Troubleshooting</a><a href="contributing.html" class="sidebar-link">Contributing</a>
+  </div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2018 <a href="http://www.interware.com.mx" target="_blank">interwaremx</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      <a href="https://twitter.com/caudal_iw" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://github.com/interwaremx/caudal" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/" class="mobile-nav-link">Caudal</a><a href="/docs/" class="mobile-nav-link">Docs</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/interwaremx/caudal" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">Getting Started</strong><a href="index.html" class="mobile-nav-link">Overview</a><a href="setup.html" class="mobile-nav-link">Setup</a><a href="configuration.html" class="mobile-nav-link">Configuration</a><strong class="mobile-nav-title">Labs</strong><a href="lab1.html" class="mobile-nav-link">Getting Started and Setup</a><a href="lab2.html" class="mobile-nav-link">Listeners and Parsing</a><a href="lab3.html" class="mobile-nav-link current">Streamers</a><a href="lab4.html" class="mobile-nav-link">Statistics</a><a href="lab5.html" class="mobile-nav-link">Integration</a><a href="lab6.html" class="mobile-nav-link">Clustering</a><strong class="mobile-nav-title">Miscellaneous</strong><a href="java.html" class="mobile-nav-link">Java</a><a href="leiningen.html" class="mobile-nav-link">Leiningen</a><a href="troubleshooting.html" class="mobile-nav-link">Troubleshooting</a><a href="contributing.html" class="mobile-nav-link">Contributing</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>English</span></span>
+    <select id="mobile-lang-select" data-canonical="docs/lab3.html">
+      
+        <option value="en" selected>English</option>
+      
+        <option value="es">Español</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+<!-- endbuild -->
+
+<!-- Algolia -->
+
+
+</body>
+</html>

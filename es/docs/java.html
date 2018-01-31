@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>Instalar Java 8 | Caudal</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://hexo.io/es/docs/java.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://hexo.io/docs/java.html">
+    
+      <link rel="alternative" hreflang="es" href="https://hexo.io/es/docs/java.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Caudal">
+  <!-- Open Graph -->
+  <meta name="description" content="Linux RHEL 7 &amp;amp; CentOS 7Descargar el último Java Nota: Si tu CentOS o RHEL es una instalación mínima reciente, tal vez debas instalar la utilería wget usando yum # yum -y install wget Descarga el ú">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Instalar Java 8">
+<meta property="og:url" content="https://hexo.io/es/docs/java.html">
+<meta property="og:site_name" content="Caudal">
+<meta property="og:description" content="Linux RHEL 7 &amp;amp; CentOS 7Descargar el último Java Nota: Si tu CentOS o RHEL es una instalación mínima reciente, tal vez debas instalar la utilería wget usando yum # yum -y install wget Descarga el ú">
+<meta property="og:locale" content="es">
+<meta property="og:image" content="https://hexo.io/es/docs/java-01.png">
+<meta property="og:updated_time" content="2018-01-31T21:59:47.480Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Instalar Java 8">
+<meta name="twitter:description" content="Linux RHEL 7 &amp;amp; CentOS 7Descargar el último Java Nota: Si tu CentOS o RHEL es una instalación mínima reciente, tal vez debas instalar la utilería wget usando yum # yum -y install wget Descarga el ú">
+<meta name="twitter:image" content="https://hexo.io/es/docs/java-01.png">
+<meta name="twitter:site" content="caudal_iw">
+  <!-- Google Analytics -->
+  
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/es/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/" class="main-nav-link">Caudal</a><a href="/es/docs/" class="main-nav-link">Documentación</a>
+      <a href="https://github.com/interwaremx/caudal" class="main-nav-link"><i class="fa fa-github-alt"></i></a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <input type="search" id="search-input" placeholder="Search...">
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>Español</span></label>
+      <select id="lang-select" data-canonical="docs/java.html">
+        
+          <option value="en">English</option>
+        
+          <option value="es" selected>Español</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">Instalar Java 8</h1>
+                <a href="https://github.com/interwaremx/caudal-wiki/edit/master/source/es/docs/java.md" class="article-edit-link" title="Mejorar este documento"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <h2 id="Linux-RHEL-7-amp-CentOS-7" class="article-heading"><a href="#Linux-RHEL-7-amp-CentOS-7" class="headerlink" title="Linux RHEL 7 &amp; CentOS 7"></a>Linux RHEL 7 &amp; CentOS 7<a class="article-anchor" href="#Linux-RHEL-7-amp-CentOS-7" aria-hidden="true"></a></h2><h3 id="Descargar-el-ultimo-Java" class="article-heading"><a href="#Descargar-el-ultimo-Java" class="headerlink" title="Descargar el último Java"></a>Descargar el último Java<a class="article-anchor" href="#Descargar-el-ultimo-Java" aria-hidden="true"></a></h3><p> <strong>Nota:</strong> <em>Si tu CentOS o RHEL es una instalación mínima reciente, tal vez debas instalar la utilería wget usando yum</em></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># yum -y install wget</span><br></pre></td></tr></table></figure>
+<p>Descarga el último Java SE Development Kit 8 desde el sitio oficial de descargas usando los siguientes comandos para descargar desde una <em>shell</em><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># cd /opt/</span><br><span class="line"># wget --no-cookies --no-check-certificate --header &quot;Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie&quot; &quot;http://download.oracle.com/otn-pub/java/jdk/8u111-b14/jdk-8u111-linux-x64.tar.gz&quot;</span><br><span class="line"># tar xzfv jdk-8u111-linux-x64.tar.gz</span><br></pre></td></tr></table></figure></p>
+<p> <strong>Nota:</strong> <em>Para servidores en producción es altamente recomendable instalar Java Server JRE. El Server JRE incluye herramientas para monitorear la JVM y herramientas comúnmente requeridas para servidores de aplicaciones, pero no incluye la integración con navegadores (el plug-in de Java)</em></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># cd /opt/</span><br><span class="line"># wget --no-cookies --no-check-certificate --header &quot;Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie&quot; &quot;http://download.oracle.com/otn-pub/java/jdk/8u111-b14/server-jre-8u111-linux-x64.tar.gz&quot;</span><br><span class="line"># tar xzfv server-jre-8u111-linux-x64.tar.gz</span><br></pre></td></tr></table></figure>
+<h3 id="Configurar-Variables-de-Ambiente" class="article-heading"><a href="#Configurar-Variables-de-Ambiente" class="headerlink" title="Configurar Variables de Ambiente"></a>Configurar Variables de Ambiente<a class="article-anchor" href="#Configurar-Variables-de-Ambiente" aria-hidden="true"></a></h3><p>La mayoria de las aplicaciones basadas en Java usan las variables de ambiente para trabajar. CentOS y RHEL proveen del directorio <code>/etc/profile.d/</code> para personalizar las variables de ambiente por aplicacion:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># echo &quot;export JAVA_HOME=/opt/jdk1.8.0_111/&quot; &gt;&gt; /etc/profile.d/java.sh</span><br><span class="line"># echo &quot;export JRE_HOME=/opt/jdk1.8.0_111/jre/&quot; &gt;&gt; /etc/profile.d/java.sh</span><br><span class="line"># echo &quot;export PATH=\$PATH:\$JAVA_HOME/bin/:\$JRE_HOME/bin/&quot; &gt;&gt; /etc/profile.d/java.sh</span><br><span class="line"># source /etc/profile.d/java.sh</span><br></pre></td></tr></table></figure></p>
+<h3 id="Instalar-Java-con-Alternatives" class="article-heading"><a href="#Instalar-Java-con-Alternatives" class="headerlink" title="Instalar Java con Alternatives"></a>Instalar Java con Alternatives<a class="article-anchor" href="#Instalar-Java-con-Alternatives" aria-hidden="true"></a></h3><p>Después de cambiar las Variable de Ambiente, usa Alternatives para instalar Java<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># alternatives --install /usr/bin/java java $JAVA_HOME/bin/java 1</span><br><span class="line"># alternatives --install /usr/bin/jar jar $JAVA_HOME/bin/jar 1</span><br><span class="line"># alternatives --set java $JAVA_HOME/bin/java</span><br><span class="line"># alternatives --set jar $JAVA_HOME/bin/jar</span><br></pre></td></tr></table></figure></p>
+<p>En este punto <em>Java 8</em> ha sido instalado satisfactoriamente en tu sistema.</p>
+<p> <strong>Nota:</strong> <em>Si realizaste esta instalación en un Servidor de Desarrollo, te recomentamos también la instalación del comando javac usando alternatives</em></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># alternatives --install /usr/bin/javac javac $JAVA_HOME/bin/javac 1</span><br><span class="line"># alternatives --set javac $JAVA_HOME/bin/javac</span><br></pre></td></tr></table></figure>
+<h2 id="Linux-Debian-amp-Ubuntu" class="article-heading"><a href="#Linux-Debian-amp-Ubuntu" class="headerlink" title="Linux Debian &amp; Ubuntu"></a>Linux Debian &amp; Ubuntu<a class="article-anchor" href="#Linux-Debian-amp-Ubuntu" aria-hidden="true"></a></h2><h3 id="Descargar-el-ultimo-Java-1" class="article-heading"><a href="#Descargar-el-ultimo-Java-1" class="headerlink" title="Descargar el último Java"></a>Descargar el último Java<a class="article-anchor" href="#Descargar-el-ultimo-Java-1" aria-hidden="true"></a></h3><p> <strong>Nota:</strong> <em>Si tu Ubuntu o Debian es una instalación mínima reciente, tal vez debas instalar la utilería wget usando apt-get</em></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ sudo apt-get install wget</span><br></pre></td></tr></table></figure>
+<p>Descarga el último Java SE Development Kit 8 desde el sitio oficial de descargas usando los siguientes comandos para descargar desde una <em>shell</em><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ cd /opt/</span><br><span class="line">$ sudo wget --no-cookies --no-check-certificate --header &quot;Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie&quot; &quot;http://download.oracle.com/otn-pub/java/jdk/8u111-b14/jdk-8u111-linux-x64.tar.gz&quot;</span><br><span class="line">$ sudo tar xzfv jdk-8u111-linux-x64.tar.gz</span><br></pre></td></tr></table></figure></p>
+<p> <strong>Nota:</strong> <em>Para servidores en producción es altamente recomendable instalar Java Server JRE. El Server JRE incluye herramientas para monitorear la JVM y herramientas comúnmente requeridas para servidores de aplicaciones, pero no incluye la integración con navegadores (el plug-in de Java)</em></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ cd /opt/</span><br><span class="line">$ sudo wget --no-cookies --no-check-certificate --header &quot;Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie&quot; &quot;http://download.oracle.com/otn-pub/java/jdk/8u111-b14/server-jre-8u111-linux-x64.tar.gz&quot;</span><br><span class="line">$ sudo tar xzfv server-jre-8u111-linux-x64.tar.gz</span><br></pre></td></tr></table></figure>
+<h3 id="Configurando-las-Variables-de-Ambiente" class="article-heading"><a href="#Configurando-las-Variables-de-Ambiente" class="headerlink" title="Configurando las Variables de Ambiente"></a>Configurando las Variables de Ambiente<a class="article-anchor" href="#Configurando-las-Variables-de-Ambiente" aria-hidden="true"></a></h3><p>La mayoria de las aplicaciones basadas en Java usan las variables de ambiente para trabajar. Ubuntu y Debian proveen del directorio <code>/etc/profile.d/</code> para personalizar las variables de ambiente por aplicacion:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ sudo echo &quot;export JAVA_HOME=/opt/jdk1.8.0_111/&quot; &gt;&gt; /etc/profile.d/java.sh</span><br><span class="line">$ sudo echo &quot;export JRE_HOME=/opt/jdk1.8.0_111/jre/&quot; &gt;&gt; /etc/profile.d/java.sh</span><br><span class="line">$ sudo echo &quot;export PATH=\$PATH:\$JAVA_HOME/bin/:\$JRE_HOME/bin/&quot; &gt;&gt; /etc/profile.d/java.sh</span><br><span class="line">$ source /etc/profile.d/java.sh</span><br></pre></td></tr></table></figure></p>
+<h3 id="Instala-Java-con-Alternatives" class="article-heading"><a href="#Instala-Java-con-Alternatives" class="headerlink" title="Instala Java con Alternatives"></a>Instala Java con Alternatives<a class="article-anchor" href="#Instala-Java-con-Alternatives" aria-hidden="true"></a></h3><p>Después de cambiar las Variable de Ambiente, usa Alternatives para instalar Java<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ sudo update-alternatives --install /usr/bin/java java $JAVA_HOME/bin/java 1</span><br><span class="line">$ sudo update-alternatives --install /usr/bin/jar jar $JAVA_HOME/bin/jar 1</span><br><span class="line">$ sudo update-alternatives --set java $JAVA_HOME/bin/java</span><br><span class="line">$ sudo update-alternatives --set jar $JAVA_HOME/bin/jar</span><br></pre></td></tr></table></figure></p>
+<p>En este punto <em>Java 8</em> ha sido instalado satisfactoriamente en tu sistema.</p>
+<p> <strong>Nota:</strong> <em>Si realizaste esta instalación en un Servidor de Desarrollo, te recomentamos también la instalación del comando javac usando alternatives</em></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ sudo update-alternatives --install /usr/bin/javac javac $JAVA_HOME/bin/javac 1</span><br><span class="line">$ sudo update-alternatives --set javac $JAVA_HOME/bin/javac</span><br></pre></td></tr></table></figure>
+<h2 id="MacOS-X" class="article-heading"><a href="#MacOS-X" class="headerlink" title="MacOS X"></a>MacOS X<a class="article-anchor" href="#MacOS-X" aria-hidden="true"></a></h2><h3 id="Descargar-el-ultimo-Java-2" class="article-heading"><a href="#Descargar-el-ultimo-Java-2" class="headerlink" title="Descargar el último Java"></a>Descargar el último Java<a class="article-anchor" href="#Descargar-el-ultimo-Java-2" aria-hidden="true"></a></h3><p> <strong>Note:</strong> <em>Si tu MacOS es una instalación reciente, tal vez debas instalar la utilería wget</em></p>
+<p>Primeramente, inicia Terminal (se encuentra en Aplicaciones/Utilidades). Descarga el último Java SE Development Kit 8 desde el sitio oficial de descargas usando los siguientes comandos:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ cd ~/Downloads/</span><br><span class="line">$ wget --no-cookies --no-check-certificate --header &quot;Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie&quot; &quot;http://download.oracle.com/otn-pub/java/jdk/8u111-b14/jdk-8u111-macosx-x64.dmg&quot;</span><br></pre></td></tr></table></figure></p>
+<p>Abre el archivo descargado usando:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ open jdk-8u111-macosx-x64.dmg</span><br></pre></td></tr></table></figure></p>
+<p>Este comando lanza una ventana que contiene un archivo <em>*pkg</em>. Haz doble click y sigue las instrucciones</p>
+<p><img src="java-01.png" alt=""></p>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2018-01-31T21:59:47.480Z" itemprop="dateModified">Última actualización: 2018-01-31</time>
+                <a href="lab6.html" class="article-footer-prev" title="Clustering"><i class="fa fa-chevron-left"></i><span>Previo</span></a><a href="leiningen.html" class="article-footer-next" title="Leiningen"><span>Siguiente</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">              
+              <strong class="sidebar-title">Contenido</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux-RHEL-7-amp-CentOS-7"><span class="toc-text">Linux RHEL 7 &amp; CentOS 7</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Descargar-el-ultimo-Java"><span class="toc-text">Descargar el último Java</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Configurar-Variables-de-Ambiente"><span class="toc-text">Configurar Variables de Ambiente</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Instalar-Java-con-Alternatives"><span class="toc-text">Instalar Java con Alternatives</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux-Debian-amp-Ubuntu"><span class="toc-text">Linux Debian &amp; Ubuntu</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Descargar-el-ultimo-Java-1"><span class="toc-text">Descargar el último Java</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Configurando-las-Variables-de-Ambiente"><span class="toc-text">Configurando las Variables de Ambiente</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Instala-Java-con-Alternatives"><span class="toc-text">Instala Java con Alternatives</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MacOS-X"><span class="toc-text">MacOS X</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Descargar-el-ultimo-Java-2"><span class="toc-text">Descargar el último Java</span></a></li></ol></li></ol>
+              <a href="#" id="article-toc-top">Volver arriba</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">Comenzando</strong><a href="index.html" class="sidebar-link">Resumen</a><a href="setup.html" class="sidebar-link">Instalación</a><a href="configuration.html" class="sidebar-link">Configuración</a><strong class="sidebar-title">Guías</strong><a href="lab1.html" class="sidebar-link">Instalación</a><a href="lab2.html" class="sidebar-link">Escuchas y Parseo</a><a href="lab3.html" class="sidebar-link">Streamers</a><a href="lab4.html" class="sidebar-link">Estadísticas</a><a href="lab5.html" class="sidebar-link">Integración</a><a href="lab6.html" class="sidebar-link">Clustering</a><strong class="sidebar-title">Miscellaneous</strong><a href="java.html" class="sidebar-link current">Java</a><a href="leiningen.html" class="sidebar-link">Leiningen</a><a href="troubleshooting.html" class="sidebar-link">Solución de Problemas</a><a href="contributing.html" class="sidebar-link">Contribuir</a>
+  </div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2018 <a href="http://www.interware.com.mx" target="_blank">interwaremx</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      <a href="https://twitter.com/caudal_iw" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://github.com/interwaremx/caudal" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/" class="mobile-nav-link">Caudal</a><a href="/es/docs/" class="mobile-nav-link">Documentación</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/interwaremx/caudal" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">Comenzando</strong><a href="index.html" class="mobile-nav-link">Resumen</a><a href="setup.html" class="mobile-nav-link">Instalación</a><a href="configuration.html" class="mobile-nav-link">Configuración</a><strong class="mobile-nav-title">Guías</strong><a href="lab1.html" class="mobile-nav-link">Instalación</a><a href="lab2.html" class="mobile-nav-link">Escuchas y Parseo</a><a href="lab3.html" class="mobile-nav-link">Streamers</a><a href="lab4.html" class="mobile-nav-link">Estadísticas</a><a href="lab5.html" class="mobile-nav-link">Integración</a><a href="lab6.html" class="mobile-nav-link">Clustering</a><strong class="mobile-nav-title">Miscellaneous</strong><a href="java.html" class="mobile-nav-link current">Java</a><a href="leiningen.html" class="mobile-nav-link">Leiningen</a><a href="troubleshooting.html" class="mobile-nav-link">Solución de Problemas</a><a href="contributing.html" class="mobile-nav-link">Contribuir</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>Español</span></span>
+    <select id="mobile-lang-select" data-canonical="docs/java.html">
+      
+        <option value="en">English</option>
+      
+        <option value="es" selected>Español</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+<!-- endbuild -->
+
+<!-- Algolia -->
+
+
+</body>
+</html>

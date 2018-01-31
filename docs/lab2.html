@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>Lab 2 - Listeners and Parsing | Caudal</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://hexo.io/docs/lab2.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://hexo.io/docs/lab2.html">
+    
+      <link rel="alternative" hreflang="es" href="https://hexo.io/es/docs/lab2.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Caudal">
+  <!-- Open Graph -->
+  <meta name="description" content="A lab exercise intended to show the configuration and the use of listeners and parsers inside the Caudal Platform Requirements Have successfully completed Lab 1: Getting Started and Setup  Creating a">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Lab 2 - Listeners and Parsing">
+<meta property="og:url" content="https://hexo.io/docs/lab2.html">
+<meta property="og:site_name" content="Caudal">
+<meta property="og:description" content="A lab exercise intended to show the configuration and the use of listeners and parsers inside the Caudal Platform Requirements Have successfully completed Lab 1: Getting Started and Setup  Creating a">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-01-31T21:59:47.420Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Lab 2 - Listeners and Parsing">
+<meta name="twitter:description" content="A lab exercise intended to show the configuration and the use of listeners and parsers inside the Caudal Platform Requirements Have successfully completed Lab 1: Getting Started and Setup  Creating a">
+<meta name="twitter:site" content="caudal_iw">
+  <!-- Google Analytics -->
+  
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/" class="main-nav-link">Caudal</a><a href="/docs/" class="main-nav-link">Docs</a>
+      <a href="https://github.com/interwaremx/caudal" class="main-nav-link"><i class="fa fa-github-alt"></i></a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <input type="search" id="search-input" placeholder="Search...">
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>English</span></label>
+      <select id="lang-select" data-canonical="docs/lab2.html">
+        
+          <option value="en" selected>English</option>
+        
+          <option value="es">Español</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">Lab 2 - Listeners and Parsing</h1>
+                <a href="https://github.com/interwaremx/caudal-wiki/edit/master/source/docs/lab2.md" class="article-edit-link" title="Improve this doc"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <p>A lab exercise intended to show the configuration and the use of listeners and parsers inside the Caudal Platform</p>
+<h2 id="Requirements" class="article-heading"><a href="#Requirements" class="headerlink" title="Requirements"></a>Requirements<a class="article-anchor" href="#Requirements" aria-hidden="true"></a></h2><ul>
+<li>Have successfully completed <strong>Lab 1</strong>: <a href="lab1.html">Getting Started and Setup</a></li>
+</ul>
+<h2 id="Creating-a-TCP-listener" class="article-heading"><a href="#Creating-a-TCP-listener" class="headerlink" title="Creating a TCP listener"></a>Creating a TCP listener<a class="article-anchor" href="#Creating-a-TCP-listener" aria-hidden="true"></a></h2><ol>
+<li>Change current directory to the <strong>caudal-labs</strong> project</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ cd caudal-labs/</span><br></pre></td></tr></table></figure>
+<ol>
+<li>Edit <strong>config/caudal-config.clj</strong> file to configure a <strong>tcp</strong> listener running on port <strong>9900</strong>. File content must be the following:<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">(ns caudal-labs)</span><br><span class="line"></span><br><span class="line">(require &apos;[mx.interware.caudal.streams.common :refer :all])</span><br><span class="line">(require &apos;[mx.interware.caudal.streams.stateful :refer :all])</span><br><span class="line">(require &apos;[mx.interware.caudal.streams.stateless :refer :all])</span><br><span class="line"></span><br><span class="line">(defsink streamer-1 10000</span><br><span class="line">  (printe [&quot;Received event : &quot;]))</span><br><span class="line"></span><br><span class="line">(deflistener tcp-listener [&#123;:type &apos;mx.interware.caudal.io.tcp-server</span><br><span class="line">                            :parameters &#123;:port 9900</span><br><span class="line">                                         :idle-period 60&#125;&#125;])</span><br><span class="line"></span><br><span class="line">(wire [tcp-listener] [streamer-1])</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="Running-Caudal" class="article-heading"><a href="#Running-Caudal" class="headerlink" title="Running Caudal"></a>Running Caudal<a class="article-anchor" href="#Running-Caudal" aria-hidden="true"></a></h2><ol>
+<li>Start Caudal using the configuration from the modified file <strong>config/caudal-config.clj</strong></li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ ./bin/start-caudal.sh -c ./config/caudal-config.clj</span><br><span class="line">Verifying JAVA instalation ...</span><br><span class="line">/usr/bin/java</span><br><span class="line">JAVA executable found in PATH</span><br><span class="line">JAVA Version : 1.8.0_91</span><br><span class="line">BIN path /projects/caudal-labs/bin</span><br><span class="line">Starting Caudal from /projects/caudal-labs</span><br><span class="line">                        __      __</span><br><span class="line">  _________ ___  ______/ /___ _/ /</span><br><span class="line"> / ___/ __ `/ / / / __  / __ `/ /</span><br><span class="line">/ /__/ /_/ / /_/ / /_/ / /_/ / /</span><br><span class="line">\___/\__,_/\__,_/\__,_/\__,_/_/</span><br><span class="line"></span><br><span class="line">Caudal 0.7.4-SNAPSHOT</span><br><span class="line">log4j:WARN [stdout] should be System.out or System.err.</span><br><span class="line">log4j:WARN Using previously set target, System.out by default.</span><br><span class="line">log4j:WARN [stdout] should be System.out or System.err.</span><br><span class="line">log4j:WARN Using previously set target, System.out by default.</span><br><span class="line">SLF4J: Class path contains multiple SLF4J bindings.</span><br><span class="line">SLF4J: Found binding in [jar:file:/projects/caudal-labs/lib/logback-classic-1.1.3.jar!/org/slf4j/impl/StaticLoggerBinder.class]</span><br><span class="line">SLF4J: Found binding in [jar:file:/projects/caudal-labs/lib/slf4j-log4j12-1.7.5.jar!/org/slf4j/impl/StaticLoggerBinder.class]</span><br><span class="line">SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.</span><br><span class="line">SLF4J: Actual binding is of type [ch.qos.logback.classic.util.ContextSelectorStaticBinder]</span><br><span class="line">16:27:37.788 [main] INFO  mx.interware.caudal.core.starter-dsl - &#123;:loading-dsl &#123;:file ./config/caudal-config.clj&#125;&#125;</span><br><span class="line">16:27:39.162 [main] INFO  mx.interware.caudal.io.tcp-server - Starting server on port :  9900  ...</span><br></pre></td></tr></table></figure>
+<h2 id="Testing-the-TCP-listener" class="article-heading"><a href="#Testing-the-TCP-listener" class="headerlink" title="Testing the TCP listener"></a>Testing the TCP listener<a class="article-anchor" href="#Testing-the-TCP-listener" aria-hidden="true"></a></h2><ol>
+<li>Open another terminal and send an event message through the Caudal <strong>tcp</strong> channel running on port <strong>9900</strong></li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ telnet localhost 9900</span><br><span class="line">Trying ::1...</span><br><span class="line">Connected to localhost.</span><br><span class="line">Escape character is &apos;^]&apos;.</span><br><span class="line">&#123;:tx &quot;getOperation&quot; :customer &quot;Nile&quot; :id 96 :ammount 57.1428&#125;</span><br><span class="line">EOT</span><br><span class="line">Connection closed by foreign host.</span><br><span class="line">$</span><br></pre></td></tr></table></figure>
+<ol>
+<li>Verify the generated log for the received event<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">16:29:17.801 [NioProcessor-3] INFO  o.a.m.filter.logging.LoggingFilter - CREATED</span><br><span class="line">16:29:17.801 [NioProcessor-3] INFO  o.a.m.filter.logging.LoggingFilter - OPENED</span><br><span class="line">16:29:24.669 [NioProcessor-3] INFO  o.a.m.filter.logging.LoggingFilter - RECEIVED: HeapBuffer[pos=0 lim=63 cap=4096: 7B 3A 74 78 20 22 67 65 74 4F 70 65 72 61 74 69...]</span><br><span class="line">16:29:24.670 [NioProcessor-3] DEBUG o.a.m.f.codec.ProtocolCodecFilter - Processing a MESSAGE_RECEIVED for session 2</span><br><span class="line">Received event : &#123;:tx &quot;getOperation&quot;, :customer &quot;Nile&quot;, :id 96, :ammount 57.1428, :caudal/latency 509612&#125;</span><br><span class="line">16:29:28.091 [NioProcessor-3] INFO  o.a.m.filter.logging.LoggingFilter - RECEIVED: HeapBuffer[pos=0 lim=5 cap=4096: 45 4F 54 0D 0A]</span><br><span class="line">16:29:28.091 [NioProcessor-3] DEBUG o.a.m.f.codec.ProtocolCodecFilter - Processing a MESSAGE_RECEIVED for session 2</span><br><span class="line">16:29:28.091 [NioProcessor-3] INFO  o.a.m.filter.logging.LoggingFilter - CLOSED</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="Creating-a-tailer-listener" class="article-heading"><a href="#Creating-a-tailer-listener" class="headerlink" title="Creating a tailer listener"></a>Creating a tailer listener<a class="article-anchor" href="#Creating-a-tailer-listener" aria-hidden="true"></a></h3><ol>
+<li>Modify <strong>config/caudal-config.clj</strong> configuration file to use tailer listener that reads events from <strong>data/input.txt</strong> file. Add the listener configuration to the end of the file as shown below:<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">...</span><br><span class="line"></span><br><span class="line">(deflistener tcp-listener [&#123;:type &apos;mx.interware.caudal.io.tcp-server</span><br><span class="line">                            :parameters &#123;:port 9900</span><br><span class="line">                                         :idle-period 60&#125;&#125;])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">(deflistener tailer [&#123;:type &apos;mx.interware.caudal.io.tailer-server</span><br><span class="line">                      :parameters &#123;:parser      &apos;mx.interware.caudal.test.simple-parser/parse-log-line</span><br><span class="line">                                   :inputs      &#123;:directory  &quot;./data&quot;</span><br><span class="line">                                                 :wildcard   &quot;*txt&quot;</span><br><span class="line">                                                 :expiration 5&#125;</span><br><span class="line">                                   :delta       1000</span><br><span class="line">                                   :from-end    true</span><br><span class="line">                                   :reopen      true</span><br><span class="line">                                   :buffer-size 16384&#125;&#125;])</span><br><span class="line"></span><br><span class="line">(wire [tcp-listener tailer] [streamer-1])</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><em>Note :</em> Now Caudal is ready for receiving event messages from two sources, a tcp channel and tailing txt files in data directory</p>
+<ol>
+<li>Restart Caudal for applying changes in configuration. Caudal can be stopped pressing <strong>ctrl+c</strong> key combination</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mactirio:caudal-labs axis$ ./bin/start-caudal.sh -c ./config/caudal-config.clj</span><br><span class="line">Verifying JAVA instalation ...</span><br><span class="line">...</span><br><span class="line">16:35:29.705 [main] INFO  mx.interware.caudal.io.tcp-server - Starting server on port :  9900  ...</span><br><span class="line">16:35:29.759 [main] INFO  mx.interware.caudal.io.tailer-server - Tailing files :  (/projects/caudal-labs/./data/input.txt)  ...</span><br><span class="line">16:35:29.769 [main] INFO  mx.interware.caudal.io.tailer-server - Channel created for file  input.txt  - &gt; channel :  #object[clojure.core.async.impl.channels.ManyToManyChannel 0x49cf9028 clojure.core.async.impl.channels.ManyToManyChannel@49cf9028]</span><br><span class="line">16:35:29.846 [main] INFO  mx.interware.caudal.io.tailer-server - register-channels for tailer</span><br></pre></td></tr></table></figure>
+<h3 id="Testing-tailer-listener" class="article-heading"><a href="#Testing-tailer-listener" class="headerlink" title="Testing tailer listener"></a>Testing tailer listener<a class="article-anchor" href="#Testing-tailer-listener" aria-hidden="true"></a></h3><ol>
+<li><p>Open another terminal and send a test event using the Caudal <strong>tailer</strong>, appending the message to <strong>data/input.txt</strong> file</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ echo &quot;&#123;:tx \&quot;findSales\&quot; :customer \&quot;Congo\&quot; :id 88 :key \&quot;XSA-89\&quot;&#125;&quot; &gt; data/input.txt</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Verify the generated log for the tailed event</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">line :  &#123;:tx &quot;findSales&quot; :customer &quot;Congo&quot; :id 88 :key &quot;XSA-89&quot;&#125;</span><br><span class="line">Received event : &#123;:tx &quot;findSales&quot;, :customer &quot;Congo&quot;, :id 88, :key &quot;XSA-89&quot;, :caudal/latency 608933&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="Creating-custom-parser" class="article-heading"><a href="#Creating-custom-parser" class="headerlink" title="Creating custom parser"></a>Creating custom parser<a class="article-anchor" href="#Creating-custom-parser" aria-hidden="true"></a></h3><ol>
+<li>Create a clojure namespace file on <strong>src/caudal_labs/parser.clj</strong> and set the following code to it:</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">(ns caudal-labs.parser</span><br><span class="line">  (:require [clojure.string :refer [split]]))</span><br><span class="line"></span><br><span class="line">(defn parse-piped-line [line]</span><br><span class="line">  (let [_        (println &quot;piped line : &quot; line)</span><br><span class="line">        elements (split line #&quot;\|&quot;)</span><br><span class="line">        event    &#123;:operation (nth elements 0)</span><br><span class="line">                  :product   (nth elements 1)</span><br><span class="line">                  :volume    (Integer/parseInt (nth elements 2))</span><br><span class="line">                  :price     (Double/parseDouble (nth elements 3))&#125;]</span><br><span class="line">    event))</span><br></pre></td></tr></table></figure>
+<ol>
+<li>Modify tailer listener definition in <strong>config/caudal-config</strong> for using <strong>parse-piped-line</strong> function as the parser</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">...</span><br><span class="line">(deflistener tailer [&#123;:type &apos;mx.interware.caudal.io.tailer-server</span><br><span class="line">                      :parameters &#123;:parser      &apos;caudal-labs.parser/parse-piped-line</span><br><span class="line">                                   :inputs      &#123;:directory  &quot;./data&quot;</span><br><span class="line">                                                 :wildcard   &quot;*txt&quot;</span><br><span class="line">                                                 :expiration 5&#125;</span><br><span class="line">                                   :delta       1000</span><br><span class="line">                                   :from-end    true</span><br><span class="line">                                   :reopen      true</span><br><span class="line">                                   :buffer-size 16384&#125;&#125;])</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<ol>
+<li>Build project to use the namespace recently created</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ lein jar</span><br><span class="line">Warning: specified :main without including it in :aot.</span><br><span class="line">Implicit AOT of :main will be removed in Leiningen 3.0.0.</span><br><span class="line">If you only need AOT for your uberjar, consider adding :aot :all into your</span><br><span class="line">:uberjar profile instead.</span><br><span class="line">Compiling caudal-labs.custom</span><br><span class="line">Warning: The Main-Class specified does not exist within the jar. It may not be executable as expected. A gen-class directive may be missing in the namespace which contains the main method.</span><br><span class="line">Created /projects/caudal-labs/target/caudal-labs-0.1.2-SNAPSHOT.jar</span><br><span class="line"></span><br><span class="line">$ cp target/caudal-labs-0.1.2-SNAPSHOT.jar lib</span><br></pre></td></tr></table></figure>
+<ol>
+<li>Restart Caudal for applying changes in configuration</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ ./bin/start-caudal.sh -c ./config/caudal-config.clj</span><br><span class="line">Verifying JAVA instalation ...</span><br><span class="line">...</span><br><span class="line">16:43:43.791 [main] INFO  mx.interware.caudal.io.tcp-server - Starting server on port :  9900  ...</span><br><span class="line">16:43:43.850 [main] INFO  mx.interware.caudal.io.tailer-server - Tailing files :  (/projects/caudal-labs/./data/input.txt)  ...</span><br><span class="line">16:43:43.857 [main] INFO  mx.interware.caudal.io.tailer-server - Channel created for file  input.txt  - &gt; channel :  #object[clojure.core.async.impl.channels.ManyToManyChannel 0x1ad8df52 clojure.core.async.impl.channels.ManyToManyChannel@1ad8df52]</span><br><span class="line">16:43:43.876 [main] INFO  mx.interware.caudal.io.tailer-server - register-channels for tailer</span><br></pre></td></tr></table></figure>
+<h3 id="Testing-custom-parser" class="article-heading"><a href="#Testing-custom-parser" class="headerlink" title="Testing custom parser"></a>Testing custom parser<a class="article-anchor" href="#Testing-custom-parser" aria-hidden="true"></a></h3><ol>
+<li><p>Open another terminal and send a test event using the Caudal <strong>tailer</strong>, appending the message to <strong>data/input.txt</strong> file</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ echo &quot;sale|flash memory|2|5.0&quot; &gt; data/input.txt</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Verify the generated log for the tailed event</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">piped line :  sale|flash memory|2|5.0</span><br><span class="line">Received event : &#123;:operation &quot;sale&quot;, :product &quot;flash memory&quot;, :volume 2, :price 5.0, :caudal/latency 4205855&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2018-01-31T21:59:47.420Z" itemprop="dateModified">Last updated: 2018-01-31</time>
+                <a href="lab1.html" class="article-footer-prev" title="Getting Started and Setup"><i class="fa fa-chevron-left"></i><span>Prev</span></a><a href="lab3.html" class="article-footer-next" title="Streamers"><span>Next</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">              
+              <strong class="sidebar-title">Contents</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Requirements"><span class="toc-text">Requirements</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Creating-a-TCP-listener"><span class="toc-text">Creating a TCP listener</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Running-Caudal"><span class="toc-text">Running Caudal</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Testing-the-TCP-listener"><span class="toc-text">Testing the TCP listener</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Creating-a-tailer-listener"><span class="toc-text">Creating a tailer listener</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Testing-tailer-listener"><span class="toc-text">Testing tailer listener</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Creating-custom-parser"><span class="toc-text">Creating custom parser</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Testing-custom-parser"><span class="toc-text">Testing custom parser</span></a></li></ol></li></ol>
+              <a href="#" id="article-toc-top">Back to Top</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">Getting Started</strong><a href="index.html" class="sidebar-link">Overview</a><a href="setup.html" class="sidebar-link">Setup</a><a href="configuration.html" class="sidebar-link">Configuration</a><strong class="sidebar-title">Labs</strong><a href="lab1.html" class="sidebar-link">Getting Started and Setup</a><a href="lab2.html" class="sidebar-link current">Listeners and Parsing</a><a href="lab3.html" class="sidebar-link">Streamers</a><a href="lab4.html" class="sidebar-link">Statistics</a><a href="lab5.html" class="sidebar-link">Integration</a><a href="lab6.html" class="sidebar-link">Clustering</a><strong class="sidebar-title">Miscellaneous</strong><a href="java.html" class="sidebar-link">Java</a><a href="leiningen.html" class="sidebar-link">Leiningen</a><a href="troubleshooting.html" class="sidebar-link">Troubleshooting</a><a href="contributing.html" class="sidebar-link">Contributing</a>
+  </div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2018 <a href="http://www.interware.com.mx" target="_blank">interwaremx</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      <a href="https://twitter.com/caudal_iw" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://github.com/interwaremx/caudal" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/" class="mobile-nav-link">Caudal</a><a href="/docs/" class="mobile-nav-link">Docs</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/interwaremx/caudal" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">Getting Started</strong><a href="index.html" class="mobile-nav-link">Overview</a><a href="setup.html" class="mobile-nav-link">Setup</a><a href="configuration.html" class="mobile-nav-link">Configuration</a><strong class="mobile-nav-title">Labs</strong><a href="lab1.html" class="mobile-nav-link">Getting Started and Setup</a><a href="lab2.html" class="mobile-nav-link current">Listeners and Parsing</a><a href="lab3.html" class="mobile-nav-link">Streamers</a><a href="lab4.html" class="mobile-nav-link">Statistics</a><a href="lab5.html" class="mobile-nav-link">Integration</a><a href="lab6.html" class="mobile-nav-link">Clustering</a><strong class="mobile-nav-title">Miscellaneous</strong><a href="java.html" class="mobile-nav-link">Java</a><a href="leiningen.html" class="mobile-nav-link">Leiningen</a><a href="troubleshooting.html" class="mobile-nav-link">Troubleshooting</a><a href="contributing.html" class="mobile-nav-link">Contributing</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>English</span></span>
+    <select id="mobile-lang-select" data-canonical="docs/lab2.html">
+      
+        <option value="en" selected>English</option>
+      
+        <option value="es">Español</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+<!-- endbuild -->
+
+<!-- Algolia -->
+
+
+</body>
+</html>

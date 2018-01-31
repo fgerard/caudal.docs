@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>Lab 1 - Instalación para ambiente de desarrollo | Caudal</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://hexo.io/es/docs/lab1.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://hexo.io/docs/lab1.html">
+    
+      <link rel="alternative" hreflang="es" href="https://hexo.io/es/docs/lab1.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Caudal">
+  <!-- Open Graph -->
+  <meta name="description" content="Una guía usada para iniciar proyectos nuevo de Caudal. Requerimientos Java 1.8 (OpenJDK or OracleJDK) Leiningen 2.6.1  Construyendo Crea un proyecto nuevo llamado caudal-labs desde caudal-template $ l">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Lab 1 - Instalación para ambiente de desarrollo">
+<meta property="og:url" content="https://hexo.io/es/docs/lab1.html">
+<meta property="og:site_name" content="Caudal">
+<meta property="og:description" content="Una guía usada para iniciar proyectos nuevo de Caudal. Requerimientos Java 1.8 (OpenJDK or OracleJDK) Leiningen 2.6.1  Construyendo Crea un proyecto nuevo llamado caudal-labs desde caudal-template $ l">
+<meta property="og:locale" content="es">
+<meta property="og:updated_time" content="2018-01-31T21:59:47.480Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Lab 1 - Instalación para ambiente de desarrollo">
+<meta name="twitter:description" content="Una guía usada para iniciar proyectos nuevo de Caudal. Requerimientos Java 1.8 (OpenJDK or OracleJDK) Leiningen 2.6.1  Construyendo Crea un proyecto nuevo llamado caudal-labs desde caudal-template $ l">
+<meta name="twitter:site" content="caudal_iw">
+  <!-- Google Analytics -->
+  
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/es/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/" class="main-nav-link">Caudal</a><a href="/es/docs/" class="main-nav-link">Documentación</a>
+      <a href="https://github.com/interwaremx/caudal" class="main-nav-link"><i class="fa fa-github-alt"></i></a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <input type="search" id="search-input" placeholder="Search...">
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>Español</span></label>
+      <select id="lang-select" data-canonical="docs/lab1.html">
+        
+          <option value="en">English</option>
+        
+          <option value="es" selected>Español</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">Lab 1 - Instalación para ambiente de desarrollo</h1>
+                <a href="https://github.com/interwaremx/caudal-wiki/edit/master/source/es/docs/lab1.md" class="article-edit-link" title="Mejorar este documento"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <p>Una guía usada para iniciar proyectos nuevo de Caudal.</p>
+<h2 id="Requerimientos" class="article-heading"><a href="#Requerimientos" class="headerlink" title="Requerimientos"></a>Requerimientos<a class="article-anchor" href="#Requerimientos" aria-hidden="true"></a></h2><ul>
+<li><a href="java.html">Java 1.8 (OpenJDK or OracleJDK)</a></li>
+<li><a href="leiningen.html">Leiningen 2.6.1</a></li>
+</ul>
+<h2 id="Construyendo" class="article-heading"><a href="#Construyendo" class="headerlink" title="Construyendo"></a>Construyendo<a class="article-anchor" href="#Construyendo" aria-hidden="true"></a></h2><ol>
+<li><p>Crea un proyecto nuevo llamado <strong>caudal-labs</strong> desde <strong>caudal-template</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ lein new caudal-template caudal-labs</span><br><span class="line">Generating fresh &apos;lein new&apos; caudal-template project.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Cambia el directorio actual al del proyecto creado recientemente</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ cd caudal-labs/</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Transfiere todas las dependencias al directorio <strong>lib</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ lein libdir</span><br><span class="line">Copied 143 file(s) to: /projects/caudal-labs/lib</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Construye el nuevo proyecto <strong>caudal-labs</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ lein jar</span><br><span class="line">Warning: specified :main without including it in :aot.</span><br><span class="line">Implicit AOT of :main will be removed in Leiningen 3.0.0.</span><br><span class="line">If you only need AOT for your uberjar, consider adding :aot :all into your</span><br><span class="line">:uberjar profile instead.</span><br><span class="line">Compiling caudal-labs.custom</span><br><span class="line">Warning: The Main-Class specified does not exist within the jar. It may not be executable as expected. A gen-class directive may be missing in the namespace which contains the main method.</span><br><span class="line">Created /projects/caudal-labs/target/caudal-labs-0.1.2-SNAPSHOT.jar</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Copia el jar del proyecto en el directorio <strong>lib</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ cp target/caudal-labs-0.1.2-SNAPSHOT.jar lib/</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="Arrancando" class="article-heading"><a href="#Arrancando" class="headerlink" title="Arrancando"></a>Arrancando<a class="article-anchor" href="#Arrancando" aria-hidden="true"></a></h2><ol>
+<li>Inicia el proyecto Caudal usando la configuración por defecto desde el archivo <strong>./config/caudal-config.clj</strong><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ ./bin/start-caudal.sh -c ./config/caudal-config.clj</span><br><span class="line">Verifying JAVA instalation ...</span><br><span class="line">/usr/bin/java</span><br><span class="line">JAVA executable found in PATH</span><br><span class="line">JAVA Version : 1.8.0_91</span><br><span class="line">BIN path /projects/caudal-labs/bin</span><br><span class="line">Starting Caudal from /projects/caudal-labs</span><br><span class="line">                        __      __</span><br><span class="line">  _________ ___  ______/ /___ _/ /</span><br><span class="line"> / ___/ __ `/ / / / __  / __ `/ /</span><br><span class="line">/ /__/ /_/ / /_/ / /_/ / /_/ / /</span><br><span class="line">\___/\__,_/\__,_/\__,_/\__,_/_/</span><br><span class="line"></span><br><span class="line">Caudal 0.7.4-SNAPSHOT</span><br><span class="line">log4j:WARN [stdout] should be System.out or System.err.</span><br><span class="line">log4j:WARN Using previously set target, System.out by default.</span><br><span class="line">log4j:WARN [stdout] should be System.out or System.err.</span><br><span class="line">log4j:WARN Using previously set target, System.out by default.</span><br><span class="line">SLF4J: Class path contains multiple SLF4J bindings.</span><br><span class="line">SLF4J: Found binding in [jar:file:/projects/caudal-labs/lib/logback-classic-1.1.3.jar!/org/slf4j/impl/StaticLoggerBinder.class]</span><br><span class="line">SLF4J: Found binding in [jar:file:/projects/caudal-labs/lib/slf4j-log4j12-1.7.5.jar!/org/slf4j/impl/StaticLoggerBinder.class]</span><br><span class="line">SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.</span><br><span class="line">SLF4J: Actual binding is of type [ch.qos.logback.classic.util.ContextSelectorStaticBinder]</span><br><span class="line">15:15:08.327 [main] INFO  mx.interware.caudal.core.starter-dsl - &#123;:loading-dsl &#123;:file ./config/caudal-config.clj&#125;&#125;</span><br><span class="line">15:15:09.711 [main] INFO  mx.interware.caudal.io.tcp-server - Starting server on port :  9900  ...</span><br><span class="line">15:15:09.767 [main] INFO  mx.interware.caudal.io.tailer-server - Tailing files :  (/projects/caudal-labs/./data/input.txt)  ...</span><br><span class="line">15:15:09.775 [main] INFO  mx.interware.caudal.io.tailer-server - Channel created for file  input.txt  - &gt; channel :  #object[clojure.core.async.impl.channels.ManyToManyChannel 0x8d7b252 clojure.core.async.impl.channels.ManyToManyChannel@8d7b252]</span><br><span class="line">15:15:09.855 [main] INFO  mx.interware.caudal.io.tailer-server - register-channels for tailer</span><br><span class="line">15:15:10.064 INFO  [org.quartz.core.QuartzScheduler] (main) Quartz Scheduler v.2.2.1 created.</span><br><span class="line">15:15:10.068 INFO  [org.quartz.core.QuartzScheduler] (main) Scheduler meta-data: Quartz Scheduler (v2.2.1) &apos;SimpleQuartzScheduler:-1011881444&apos; with instanceId &apos;SIMPLE_NON_CLUSTERED:-1011881444&apos;</span><br><span class="line">  Scheduler class: &apos;org.quartz.core.QuartzScheduler&apos; - running locally.</span><br><span class="line">  NOT STARTED.</span><br><span class="line">  Currently in standby mode.</span><br><span class="line">  Number of jobs executed: 0</span><br><span class="line">  Using thread pool &apos;org.quartz.simpl.SimpleThreadPool&apos; - with 5 threads.</span><br><span class="line">  Using job-store &apos;org.quartz.simpl.RAMJobStore&apos; - which does not support persistence. and is not clustered.</span><br><span class="line"></span><br><span class="line">15:15:10.069 INFO  [org.quartz.core.QuartzScheduler] (main) Scheduler SimpleQuartzScheduler:-1011881444_$_SIMPLE_NON_CLUSTERED:-1011881444 started.</span><br><span class="line">15:15:10.069 INFO  [org.projectodd.wunderboss.scheduling.Scheduling] (main) Quartz started</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="Probando" class="article-heading"><a href="#Probando" class="headerlink" title="Probando"></a>Probando<a class="article-anchor" href="#Probando" aria-hidden="true"></a></h2><ol>
+<li><p>Abre otra terminal y envía un evento de prueba usando el <strong>tailer</strong> de Caudal, agregando el mensaje al archivo <strong>data/input.txt</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ echo &quot;&#123;:host \&quot;server1\&quot; :service \&quot;http\&quot; :customer \&quot;orinoco\&quot; :id 42 :cost 14.2857&#125;&quot; &gt; data/input.txt</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Verifica la bitácora generada por el evento entrante</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">line :  &#123;:host &quot;server1&quot; :service &quot;http&quot; :customer &quot;orinoco&quot; :id 42 :cost 14.2857&#125;</span><br><span class="line">&#123;:event-1 &#123;:host server1, :service http, :customer orinoco, :id 42, :cost 14.2857, :caudal/latency 713696&#125;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Envía otro evento usando el canal <strong>tcp</strong> de Caudal corriendo en el puerto <strong>9900</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ telnet localhost 9900</span><br><span class="line">Trying ::1...</span><br><span class="line">Connected to localhost.</span><br><span class="line">Escape character is &apos;^]&apos;.</span><br><span class="line">&#123;:host &quot;server2&quot; :service &quot;ssl&quot; :customer &quot;amazonas&quot; :id 101 :cost 28.5714&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Verifica la bitácora generada para el evento recibido</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">15:19:19.832 INFO  [org.apache.mina.filter.logging.LoggingFilter] (NioProcessor-2) CREATED</span><br><span class="line">15:19:19.832 INFO  [org.apache.mina.filter.logging.LoggingFilter] (NioProcessor-2) OPENED</span><br><span class="line">15:19:21.109 INFO  [org.apache.mina.filter.logging.LoggingFilter] (NioProcessor-2) RECEIVED: HeapBuffer[pos=0 lim=77 cap=4096: 7B 3A 68 6F 73 74 20 22 73 65 72 76 65 72 32 22...]</span><br><span class="line">&#123;:event-1 &#123;:host server2, :service ssl, :customer amazonas, :id 101, :cost 28.5714, :caudal/latency 268423&#125;&#125;</span><br><span class="line">MAIN - Customer    : &#123;:host &quot;server2&quot;, :service &quot;ssl&quot;, :customer &quot;amazonas&quot;, :id 101, :cost 28.5714, :caudal/latency 555964, :path &quot;A good one&quot;&#125;</span><br><span class="line">MAIN - Adjusted *  : &#123;:host &quot;server2&quot;, :service &quot;ssl&quot;, :customer &quot;amazonas&quot;, :id 101, :cost 33.142824, :caudal/latency 555964, :path &quot;A good one&quot;, :count 1&#125;</span><br><span class="line">MAIN - Adjusted +  : &#123;:host &quot;server2&quot;, :service &quot;ssl&quot;, :customer &quot;amazonas&quot;, :id 101, :cost 133.142824, :caudal/latency 555964, :path &quot;A good one&quot;, :count 1&#125;</span><br><span class="line">MAIN - Timestamped : &#123;:host &quot;server2&quot;, :service &quot;ssl&quot;, :customer &quot;amazonas&quot;, :id 101, :cost 28.5714, :caudal/latency 555964, :path &quot;A good one&quot;, :time 1485206361129&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2018-01-31T21:59:47.480Z" itemprop="dateModified">Última actualización: 2018-01-31</time>
+                <a href="configuration.html" class="article-footer-prev" title="Configuración"><i class="fa fa-chevron-left"></i><span>Previo</span></a><a href="lab2.html" class="article-footer-next" title="Escuchas y Parseo"><span>Siguiente</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">              
+              <strong class="sidebar-title">Contenido</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Requerimientos"><span class="toc-text">Requerimientos</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Construyendo"><span class="toc-text">Construyendo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Arrancando"><span class="toc-text">Arrancando</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Probando"><span class="toc-text">Probando</span></a></li></ol>
+              <a href="#" id="article-toc-top">Volver arriba</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">Comenzando</strong><a href="index.html" class="sidebar-link">Resumen</a><a href="setup.html" class="sidebar-link">Instalación</a><a href="configuration.html" class="sidebar-link">Configuración</a><strong class="sidebar-title">Guías</strong><a href="lab1.html" class="sidebar-link current">Instalación</a><a href="lab2.html" class="sidebar-link">Escuchas y Parseo</a><a href="lab3.html" class="sidebar-link">Streamers</a><a href="lab4.html" class="sidebar-link">Estadísticas</a><a href="lab5.html" class="sidebar-link">Integración</a><a href="lab6.html" class="sidebar-link">Clustering</a><strong class="sidebar-title">Miscellaneous</strong><a href="java.html" class="sidebar-link">Java</a><a href="leiningen.html" class="sidebar-link">Leiningen</a><a href="troubleshooting.html" class="sidebar-link">Solución de Problemas</a><a href="contributing.html" class="sidebar-link">Contribuir</a>
+  </div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2018 <a href="http://www.interware.com.mx" target="_blank">interwaremx</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      <a href="https://twitter.com/caudal_iw" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://github.com/interwaremx/caudal" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/" class="mobile-nav-link">Caudal</a><a href="/es/docs/" class="mobile-nav-link">Documentación</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/interwaremx/caudal" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">Comenzando</strong><a href="index.html" class="mobile-nav-link">Resumen</a><a href="setup.html" class="mobile-nav-link">Instalación</a><a href="configuration.html" class="mobile-nav-link">Configuración</a><strong class="mobile-nav-title">Guías</strong><a href="lab1.html" class="mobile-nav-link current">Instalación</a><a href="lab2.html" class="mobile-nav-link">Escuchas y Parseo</a><a href="lab3.html" class="mobile-nav-link">Streamers</a><a href="lab4.html" class="mobile-nav-link">Estadísticas</a><a href="lab5.html" class="mobile-nav-link">Integración</a><a href="lab6.html" class="mobile-nav-link">Clustering</a><strong class="mobile-nav-title">Miscellaneous</strong><a href="java.html" class="mobile-nav-link">Java</a><a href="leiningen.html" class="mobile-nav-link">Leiningen</a><a href="troubleshooting.html" class="mobile-nav-link">Solución de Problemas</a><a href="contributing.html" class="mobile-nav-link">Contribuir</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>Español</span></span>
+    <select id="mobile-lang-select" data-canonical="docs/lab1.html">
+      
+        <option value="en">English</option>
+      
+        <option value="es" selected>Español</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+<!-- endbuild -->
+
+<!-- Algolia -->
+
+
+</body>
+</html>
