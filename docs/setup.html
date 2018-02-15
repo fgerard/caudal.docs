@@ -48,7 +48,7 @@
 <meta property="og:site_name" content="Caudal">
 <meta property="og:description" content="Installing Caudal is quite easy. However, you do need to have a couple of other things installed first: Requirements Java 1.8 (OpenJDK or OracleJDK) Leiningen 2.6.1  Installation from binary distribut">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-02-11T04:34:09.678Z">
+<meta property="og:updated_time" content="2018-02-15T01:26:37.036Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Setup">
 <meta name="twitter:description" content="Installing Caudal is quite easy. However, you do need to have a couple of other things installed first: Requirements Java 1.8 (OpenJDK or OracleJDK) Leiningen 2.6.1  Installation from binary distribut">
@@ -111,18 +111,13 @@
 </ul>
 <h2 id="Installation-from-binary-distribution" class="article-heading"><a href="#Installation-from-binary-distribution" class="headerlink" title="Installation from binary distribution"></a>Installation from binary distribution<a class="article-anchor" href="#Installation-from-binary-distribution" aria-hidden="true"></a></h2><p>There are several Caudal binary distributions. They are packaged in the form of compressed tar files.</p>
 <h3 id="Obtaining" class="article-heading"><a href="#Obtaining" class="headerlink" title="Obtaining"></a>Obtaining<a class="article-anchor" href="#Obtaining" aria-hidden="true"></a></h3><ol>
-<li>Get the binary file for the lastest Caudal distribution at <a href="http://caudal.io/downloads" target="_blank" rel="noopener">Caudal downloads</a></li>
+<li>Get the binary file for the lastest Caudal distribution at <a href="http://caudal.io/downloads" target="_blank" rel="noopener">downloads</a> section</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ wget http://caudal.io/downloads/caudal-0.7.4.tgz</span><br><span class="line">$ wget http://caudal.io/downloads/SHA256SUMS</span><br></pre></td></tr></table></figure>
-<ol>
-<li>Verify the integrity of the file by comparing contents of file <strong>SHA256SUMS</strong> against generated in the command line.</li>
-</ol>
-<p>On Linux<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ sha256sum caudal-0.7.4.tgz</span><br><span class="line">3e8116aaebb3d5c6362990fcdcc498f30ee06cb49b751979881088f07b40200f  caudal-0.7.4.tgz</span><br></pre></td></tr></table></figure></p>
-<p>On MAC OS X<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ shasum -a 256 caudal-0.7.4.tgz</span><br><span class="line">3e8116aaebb3d5c6362990fcdcc498f30ee06cb49b751979881088f07b40200f  caudal-0.7.4.tgz</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ wget http://caudal.io/downloads/caudal-0.7.4-SNAPSHOT.tar.gz</span><br></pre></td></tr></table></figure>
 <h3 id="Unpacking" class="article-heading"><a href="#Unpacking" class="headerlink" title="Unpacking"></a>Unpacking<a class="article-anchor" href="#Unpacking" aria-hidden="true"></a></h3><ol>
 <li>Unpack downloaded file, wich creates the installation directory.</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ tar xvfz caudal-0.7.4.tgz</span><br><span class="line">x caudal/bin/</span><br><span class="line">x caudal/bin/start-caudal-with-els.sh</span><br><span class="line">x caudal/bin/start-caudal.sh</span><br><span class="line">x caudal/config/</span><br><span class="line">x caudal/config/caudal-config.clj</span><br><span class="line">...</span><br><span class="line">x caudal/log4j.properties</span><br><span class="line">x caudal/logs/</span><br><span class="line">x caudal/logs/caudal.log</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ tar xzvf caudal-0.7.4-SNAPSHOT.tar.gz</span><br><span class="line">x caudal/bin/</span><br><span class="line">x caudal/bin/start-caudal-with-els.sh</span><br><span class="line">x caudal/bin/start-caudal.sh</span><br><span class="line">x caudal/config/</span><br><span class="line">x caudal/config/caudal-config.clj</span><br><span class="line">...</span><br><span class="line">x caudal/log4j.properties</span><br><span class="line">x caudal/logs/</span><br><span class="line">x caudal/logs/caudal.log</span><br></pre></td></tr></table></figure>
 <ol>
 <li>Verify directory contents.</li>
 </ol>
@@ -198,7 +193,7 @@
 
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2018-02-11T04:34:09.678Z" itemprop="dateModified">Last updated: 2018-02-11</time>
+                <time class="article-footer-updated" datetime="2018-02-15T01:26:37.036Z" itemprop="dateModified">Last updated: 2018-02-15</time>
                 <a href="index.html" class="article-footer-prev" title="Overview"><i class="fa fa-chevron-left"></i><span>Prev</span></a><a href="configuration.html" class="article-footer-next" title="Configuration"><span>Next</span><i class="fa fa-chevron-right"></i></a>
               </footer>
               
