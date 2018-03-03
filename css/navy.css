@@ -1416,8 +1416,8 @@ a.article-title:hover {
 pre,
 code {
   font-family: "Source Code Pro", Monaco, Menlo, Consolas, monospace;
-  color: #4d4d4c;
-  background: #eee;
+  color: #5c6370;
+  background: #efefef;
   font-size: 0.95em;
 }
 code {
@@ -1433,9 +1433,9 @@ pre code {
   padding: 0;
 }
 .highlight {
-  background: #eee;
+  background: #efefef;
   padding: 10px 15px;
-  color: #4d4d4c;
+  color: #abb2bf;
   overflow: auto;
   margin: 0;
 }
@@ -1471,9 +1471,119 @@ pre code {
 .highlight .line {
   height: 22px;
 }
+.highlight .comment {
+  color: #abb2bf;
+  font-style: italic;
+}
+.highlight .quote {
+  color: #abb2bf;
+  font-style: italic;
+}
+.highlight .doctag {
+  color: #c678dd;
+}
+.highlight .keyword {
+  color: #c678dd;
+}
+.highlight .formula {
+  color: #c678dd;
+}
+.highlight .section {
+  color: #e06c75;
+}
+.highlight .name {
+  color: #e06c75;
+}
+.highlight .selector-tag {
+  color: #e06c75;
+}
+.highlight .deletion {
+  color: #e06c75;
+}
+.highlight .subst {
+  color: #e06c75;
+}
+.highlight .literal {
+  color: #56b6c2;
+}
+.highlight .string {
+  color: #98c379;
+}
+.highlight .regexp {
+  color: #98c379;
+}
+.highlight .addition {
+  color: #98c379;
+}
+.highlight .attribute {
+  color: #98c379;
+}
+.highlight .meta-string {
+  color: #98c379;
+}
+.highlight .built_in {
+  color: #e6c07b;
+}
+.highlight .class {
+  color: #e6c07b;
+}
+.highlight .title {
+  color: #e6c07b;
+}
+.highlight .attr {
+  color: #d19a66;
+}
+.highlight .variable {
+  color: #d19a66;
+}
+.highlight .template-variable {
+  color: #d19a66;
+}
+.highlight .type {
+  color: #d19a66;
+}
+.highlight .selector-class {
+  color: #d19a66;
+}
+.highlight .selector-attr {
+  color: #d19a66;
+}
+.highlight .selector-pseudo {
+  color: #d19a66;
+}
+.highlight .number {
+  color: #d19a66;
+}
+.highlight .symbol {
+  color: #61aeee;
+}
+.highlight .bullet {
+  color: #61aeee;
+}
+.highlight .link {
+  color: #61aeee;
+}
+.highlight .meta {
+  color: #61aeee;
+}
+.highlight .selector-id {
+  color: #61aeee;
+}
+.highlight .title {
+  color: #61aeee;
+}
+.highlight .emphasis {
+  font-style: italic;
+}
+.highlight .strong {
+  font-weight: bold;
+}
+.highlight .link {
+  text-decoration: underline;
+}
 pre .comment,
 pre .title {
-  color: #8e908c;
+  color: #abb2bf;
 }
 pre .variable,
 pre .attribute,
