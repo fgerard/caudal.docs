@@ -48,10 +48,12 @@
 <meta property="og:site_name" content="Caudal">
 <meta property="og:description" content="Welcome to Caudal documentation. If you encounter any problems when using Caudal, have a look at the troubleshooting guide or raise an issue on GitHub. What is Caudal?Caudal is a platform that analyze">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-03-04T16:14:04.479Z">
+<meta property="og:image" content="https://interwaremx.github.io/caudal.docs/docs/diagram-basic.svg">
+<meta property="og:updated_time" content="2018-03-05T17:36:53.579Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Documentation">
 <meta name="twitter:description" content="Welcome to Caudal documentation. If you encounter any problems when using Caudal, have a look at the troubleshooting guide or raise an issue on GitHub. What is Caudal?Caudal is a platform that analyze">
+<meta name="twitter:image" content="https://interwaremx.github.io/caudal.docs/docs/diagram-basic.svg">
 <meta name="twitter:site" content="caudal_iw">
   <!-- Google Analytics -->
   
@@ -106,10 +108,11 @@
               <div class="article-content" itemprop="articleBody">
                 <p>Welcome to Caudal documentation. If you encounter any problems when using Caudal, have a look at the <a href="troubleshooting.html">troubleshooting guide</a> or raise an issue on <a href="https://github.com/interwaremx/caudal/issues" target="_blank" rel="noopener">GitHub</a>.</p>
 <h2 id="What-is-Caudal" class="article-heading"><a href="#What-is-Caudal" class="headerlink" title="What is Caudal?"></a>What is Caudal?<a class="article-anchor" href="#What-is-Caudal" aria-hidden="true"></a></h2><p>Caudal is a platform that analyzes application events using predictive models in realtime in order to get rich information for reliability monitoring.</p>
+<p><img src="./diagram-basic.svg" alt="Caudal Basic Diagram"></p>
 <h2 id="What-is-an-Event" class="article-heading"><a href="#What-is-an-Event" class="headerlink" title="What is an Event?"></a>What is an Event?<a class="article-anchor" href="#What-is-an-Event" aria-hidden="true"></a></h2><p>Event are any data struct and is passed as a Clojure Inmutable Map. Events are registered in a State and are provided by Listeners.</p>
-<h2 id="What-is-the-State" class="article-heading"><a href="#What-is-the-State" class="headerlink" title="What is the State?"></a>What is the State?<a class="article-anchor" href="#What-is-the-State" aria-hidden="true"></a></h2><p>Caudal uses an application State in order to store data needed for metrics and statistics. State is global for all streamers and application. Internally, State is a Clojure Agent, so it is concurrent. State are allocated in memory, it is cleaned each time Caudal process is finished.</p>
 <h2 id="What-is-a-Listener" class="article-heading"><a href="#What-is-a-Listener" class="headerlink" title="What is a Listener?"></a>What is a Listener?<a class="article-anchor" href="#What-is-a-Listener" aria-hidden="true"></a></h2><p>A Listener is a mechanism to put information into Caudal. Anything can be a source of events: application logs, a chat, or Twitter. Caudal comes with some Listeners out of the box.</p>
-<h2 id="What-is-a-Streamer" class="article-heading"><a href="#What-is-a-Streamer" class="headerlink" title="What is a Streamer?"></a>What is a Streamer?<a class="article-anchor" href="#What-is-a-Streamer" aria-hidden="true"></a></h2><p>Streamers define a function to be applied to each event into data stream and can be composed and combinated to enrich the data stream.</p>
+<h2 id="What-are-Streamers" class="article-heading"><a href="#What-are-Streamers" class="headerlink" title="What are Streamers?"></a>What are Streamers?<a class="article-anchor" href="#What-are-Streamers" aria-hidden="true"></a></h2><p>Streamers are functions to be applied to each event into data stream and can be composed and combinated to enrich the data stream.</p>
+<h2 id="What-is-the-State" class="article-heading"><a href="#What-is-the-State" class="headerlink" title="What is the State?"></a>What is the State?<a class="article-anchor" href="#What-is-the-State" aria-hidden="true"></a></h2><p>Caudal uses an application State in order to store data needed for metrics and statistics. State is global for all streamers and application. Internally, State is a Clojure Agent, so it is concurrent. State are allocated in memory, it is cleaned each time Caudal process is finished.</p>
 <h2 id="Requirements" class="article-heading"><a href="#Requirements" class="headerlink" title="Requirements"></a>Requirements<a class="article-anchor" href="#Requirements" aria-hidden="true"></a></h2><ul>
 <li><a href="java.html">Java 1.8 (OpenJDK or OracleJDK)</a></li>
 </ul>
@@ -120,7 +123,7 @@
 
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2018-03-04T16:14:04.479Z" itemprop="dateModified">Last updated: 2018-03-04</time>
+                <time class="article-footer-updated" datetime="2018-03-05T17:36:53.579Z" itemprop="dateModified">Last updated: 2018-03-05</time>
                 <a href="setup.html" class="article-footer-next" title="Setup"><span>Next</span><i class="fa fa-chevron-right"></i></a>
               </footer>
               
@@ -129,7 +132,7 @@
           <aside id="article-toc" role="navigation">
             <div id="article-toc-inner">              
               <strong class="sidebar-title">Contents</strong>
-              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#What-is-Caudal"><span class="toc-text">What is Caudal?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#What-is-an-Event"><span class="toc-text">What is an Event?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#What-is-the-State"><span class="toc-text">What is the State?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#What-is-a-Listener"><span class="toc-text">What is a Listener?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#What-is-a-Streamer"><span class="toc-text">What is a Streamer?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Requirements"><span class="toc-text">Requirements</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Installing"><span class="toc-text">Installing</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Running"><span class="toc-text">Running</span></a></li></ol></li></ol>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#What-is-Caudal"><span class="toc-text">What is Caudal?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#What-is-an-Event"><span class="toc-text">What is an Event?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#What-is-a-Listener"><span class="toc-text">What is a Listener?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#What-are-Streamers"><span class="toc-text">What are Streamers?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#What-is-the-State"><span class="toc-text">What is the State?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Requirements"><span class="toc-text">Requirements</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Installing"><span class="toc-text">Installing</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Running"><span class="toc-text">Running</span></a></li></ol></li></ol>
               <a href="#" id="article-toc-top">Back to Top</a>
             </div>
           </aside>
