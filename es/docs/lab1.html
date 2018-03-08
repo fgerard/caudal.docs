@@ -2,7 +2,7 @@
 <html lang="es">
 <head prefix="og: http://ogp.me/ns#">
   <meta charset="utf-8">
-  <title>Lab 1 - Instalación para ambiente de desarrollo | Caudal</title>
+  <title>Lab 1 - Listeners (Escuchas) | Caudal</title>
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Canonical links -->
@@ -41,17 +41,22 @@
   <!-- RSS -->
   <link rel="alternate" href="/caudal.docs/atom.xml" title="Caudal">
   <!-- Open Graph -->
-  <meta name="description" content="Una guía usada para iniciar proyectos nuevo de Caudal. Requerimientos Java 1.8 (OpenJDK or OracleJDK) Leiningen 2.6.1  Construyendo Crea un proyecto nuevo llamado caudal-labs desde caudal-template $ l">
+  <meta name="description" content="Los Listeners toman una fuente de datos y alimentan nuestro Caudal. Requerimientos Instalación Configuración  ConfigurationCaudal define una macro llamada deflistener para declarar un nuevo listener,">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Lab 1 - Instalación para ambiente de desarrollo">
+<meta property="og:title" content="Lab 1 - Listeners (Escuchas)">
 <meta property="og:url" content="https://interwaremx.github.io/caudal.docs/es/docs/lab1.html">
 <meta property="og:site_name" content="Caudal">
-<meta property="og:description" content="Una guía usada para iniciar proyectos nuevo de Caudal. Requerimientos Java 1.8 (OpenJDK or OracleJDK) Leiningen 2.6.1  Construyendo Crea un proyecto nuevo llamado caudal-labs desde caudal-template $ l">
+<meta property="og:description" content="Los Listeners toman una fuente de datos y alimentan nuestro Caudal. Requerimientos Instalación Configuración  ConfigurationCaudal define una macro llamada deflistener para declarar un nuevo listener,">
 <meta property="og:locale" content="es">
-<meta property="og:updated_time" content="2018-03-08T23:50:38.748Z">
+<meta property="og:image" content="https://interwaremx.github.io/caudal.docs/es/docs/twitter-01.jpg">
+<meta property="og:image" content="https://interwaremx.github.io/caudal.docs/es/docs/twitter-02.jpg">
+<meta property="og:image" content="https://interwaremx.github.io/caudal.docs/es/docs/twitter-03.jpg">
+<meta property="og:image" content="https://interwaremx.github.io/caudal.docs/es/docs/twitter-04.jpg">
+<meta property="og:updated_time" content="2018-03-08T23:52:42.960Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Lab 1 - Instalación para ambiente de desarrollo">
-<meta name="twitter:description" content="Una guía usada para iniciar proyectos nuevo de Caudal. Requerimientos Java 1.8 (OpenJDK or OracleJDK) Leiningen 2.6.1  Construyendo Crea un proyecto nuevo llamado caudal-labs desde caudal-template $ l">
+<meta name="twitter:title" content="Lab 1 - Listeners (Escuchas)">
+<meta name="twitter:description" content="Los Listeners toman una fuente de datos y alimentan nuestro Caudal. Requerimientos Instalación Configuración  ConfigurationCaudal define una macro llamada deflistener para declarar un nuevo listener,">
+<meta name="twitter:image" content="https://interwaremx.github.io/caudal.docs/es/docs/twitter-01.jpg">
 <meta name="twitter:site" content="caudal_iw">
   <!-- Google Analytics -->
   
@@ -100,54 +105,196 @@
           <div class="article">
             <div class="inner">
               <header class="article-header">
-                <h1 class="article-title" itemprop="name">Lab 1 - Instalación para ambiente de desarrollo</h1>
+                <h1 class="article-title" itemprop="name">Lab 1 - Listeners (Escuchas)</h1>
                 <a href="https://github.com/interwaremx/caudal-wiki/edit/master/source/es/docs/lab1.md" class="article-edit-link" title="Mejorar este documento"><i class="fa fa-pencil"></i></a>
               </header>
               <div class="article-content" itemprop="articleBody">
-                <p>Una guía usada para iniciar proyectos nuevo de Caudal.</p>
+                <p>Los Listeners toman una fuente de datos y alimentan nuestro Caudal.</p>
 <h2 id="Requerimientos" class="article-heading"><a href="#Requerimientos" class="headerlink" title="Requerimientos"></a>Requerimientos<a class="article-anchor" href="#Requerimientos" aria-hidden="true"></a></h2><ul>
-<li><a href="java.html">Java 1.8 (OpenJDK or OracleJDK)</a></li>
-<li><a href="leiningen.html">Leiningen 2.6.1</a></li>
+<li><a href="setup.html">Instalación</a></li>
+<li><a href="configuration.html">Configuración</a></li>
 </ul>
-<h2 id="Construyendo" class="article-heading"><a href="#Construyendo" class="headerlink" title="Construyendo"></a>Construyendo<a class="article-anchor" href="#Construyendo" aria-hidden="true"></a></h2><ol>
-<li><p>Crea un proyecto nuevo llamado <strong>caudal-labs</strong> desde <strong>caudal-template</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ lein new caudal-template caudal-labs</span><br><span class="line">Generating fresh &apos;lein new&apos; caudal-template project.</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Cambia el directorio actual al del proyecto creado recientemente</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ cd caudal-labs/</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Transfiere todas las dependencias al directorio <strong>lib</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ lein libdir</span><br><span class="line">Copied 143 file(s) to: /projects/caudal-labs/lib</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Construye el nuevo proyecto <strong>caudal-labs</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ lein jar</span><br><span class="line">Warning: specified :main without including it in :aot.</span><br><span class="line">Implicit AOT of :main will be removed in Leiningen 3.0.0.</span><br><span class="line">If you only need AOT for your uberjar, consider adding :aot :all into your</span><br><span class="line">:uberjar profile instead.</span><br><span class="line">Compiling caudal-labs.custom</span><br><span class="line">Warning: The Main-Class specified does not exist within the jar. It may not be executable as expected. A gen-class directive may be missing in the namespace which contains the main method.</span><br><span class="line">Created /projects/caudal-labs/target/caudal-labs-0.1.2-SNAPSHOT.jar</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Copia el jar del proyecto en el directorio <strong>lib</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ cp target/caudal-labs-0.1.2-SNAPSHOT.jar lib/</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="Arrancando" class="article-heading"><a href="#Arrancando" class="headerlink" title="Arrancando"></a>Arrancando<a class="article-anchor" href="#Arrancando" aria-hidden="true"></a></h2><ol>
-<li>Inicia el proyecto Caudal usando la configuración por defecto desde el archivo <strong>./config/caudal-config.clj</strong><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ ./bin/start-caudal.sh -c ./config/caudal-config.clj</span><br><span class="line">Verifying JAVA instalation ...</span><br><span class="line">/usr/bin/java</span><br><span class="line">JAVA executable found in PATH</span><br><span class="line">JAVA Version : 1.8.0_91</span><br><span class="line">BIN path /projects/caudal-labs/bin</span><br><span class="line">Starting Caudal from /projects/caudal-labs</span><br><span class="line">                        __      __</span><br><span class="line">  _________ ___  ______/ /___ _/ /</span><br><span class="line"> / ___/ __ `/ / / / __  / __ `/ /</span><br><span class="line">/ /__/ /_/ / /_/ / /_/ / /_/ / /</span><br><span class="line">\___/\__,_/\__,_/\__,_/\__,_/_/</span><br><span class="line"></span><br><span class="line">Caudal 0.7.4-SNAPSHOT</span><br><span class="line">log4j:WARN [stdout] should be System.out or System.err.</span><br><span class="line">log4j:WARN Using previously set target, System.out by default.</span><br><span class="line">log4j:WARN [stdout] should be System.out or System.err.</span><br><span class="line">log4j:WARN Using previously set target, System.out by default.</span><br><span class="line">SLF4J: Class path contains multiple SLF4J bindings.</span><br><span class="line">SLF4J: Found binding in [jar:file:/projects/caudal-labs/lib/logback-classic-1.1.3.jar!/org/slf4j/impl/StaticLoggerBinder.class]</span><br><span class="line">SLF4J: Found binding in [jar:file:/projects/caudal-labs/lib/slf4j-log4j12-1.7.5.jar!/org/slf4j/impl/StaticLoggerBinder.class]</span><br><span class="line">SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.</span><br><span class="line">SLF4J: Actual binding is of type [ch.qos.logback.classic.util.ContextSelectorStaticBinder]</span><br><span class="line">15:15:08.327 [main] INFO  mx.interware.caudal.core.starter-dsl - &#123;:loading-dsl &#123;:file ./config/caudal-config.clj&#125;&#125;</span><br><span class="line">15:15:09.711 [main] INFO  mx.interware.caudal.io.tcp-server - Starting server on port :  9900  ...</span><br><span class="line">15:15:09.767 [main] INFO  mx.interware.caudal.io.tailer-server - Tailing files :  (/projects/caudal-labs/./data/input.txt)  ...</span><br><span class="line">15:15:09.775 [main] INFO  mx.interware.caudal.io.tailer-server - Channel created for file  input.txt  - &gt; channel :  #object[clojure.core.async.impl.channels.ManyToManyChannel 0x8d7b252 clojure.core.async.impl.channels.ManyToManyChannel@8d7b252]</span><br><span class="line">15:15:09.855 [main] INFO  mx.interware.caudal.io.tailer-server - register-channels for tailer</span><br><span class="line">15:15:10.064 INFO  [org.quartz.core.QuartzScheduler] (main) Quartz Scheduler v.2.2.1 created.</span><br><span class="line">15:15:10.068 INFO  [org.quartz.core.QuartzScheduler] (main) Scheduler meta-data: Quartz Scheduler (v2.2.1) &apos;SimpleQuartzScheduler:-1011881444&apos; with instanceId &apos;SIMPLE_NON_CLUSTERED:-1011881444&apos;</span><br><span class="line">  Scheduler class: &apos;org.quartz.core.QuartzScheduler&apos; - running locally.</span><br><span class="line">  NOT STARTED.</span><br><span class="line">  Currently in standby mode.</span><br><span class="line">  Number of jobs executed: 0</span><br><span class="line">  Using thread pool &apos;org.quartz.simpl.SimpleThreadPool&apos; - with 5 threads.</span><br><span class="line">  Using job-store &apos;org.quartz.simpl.RAMJobStore&apos; - which does not support persistence. and is not clustered.</span><br><span class="line"></span><br><span class="line">15:15:10.069 INFO  [org.quartz.core.QuartzScheduler] (main) Scheduler SimpleQuartzScheduler:-1011881444_$_SIMPLE_NON_CLUSTERED:-1011881444 started.</span><br><span class="line">15:15:10.069 INFO  [org.projectodd.wunderboss.scheduling.Scheduling] (main) Quartz started</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="Probando" class="article-heading"><a href="#Probando" class="headerlink" title="Probando"></a>Probando<a class="article-anchor" href="#Probando" aria-hidden="true"></a></h2><ol>
-<li><p>Abre otra terminal y envía un evento de prueba usando el <strong>tailer</strong> de Caudal, agregando el mensaje al archivo <strong>data/input.txt</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ echo &quot;&#123;:host \&quot;server1\&quot; :service \&quot;http\&quot; :customer \&quot;orinoco\&quot; :id 42 :cost 14.2857&#125;&quot; &gt; data/input.txt</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Verifica la bitácora generada por el evento entrante</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">line :  &#123;:host &quot;server1&quot; :service &quot;http&quot; :customer &quot;orinoco&quot; :id 42 :cost 14.2857&#125;</span><br><span class="line">&#123;:event-1 &#123;:host server1, :service http, :customer orinoco, :id 42, :cost 14.2857, :caudal/latency 713696&#125;&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Envía otro evento usando el canal <strong>tcp</strong> de Caudal corriendo en el puerto <strong>9900</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ telnet localhost 9900</span><br><span class="line">Trying ::1...</span><br><span class="line">Connected to localhost.</span><br><span class="line">Escape character is &apos;^]&apos;.</span><br><span class="line">&#123;:host &quot;server2&quot; :service &quot;ssl&quot; :customer &quot;amazonas&quot; :id 101 :cost 28.5714&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Verifica la bitácora generada para el evento recibido</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">15:19:19.832 INFO  [org.apache.mina.filter.logging.LoggingFilter] (NioProcessor-2) CREATED</span><br><span class="line">15:19:19.832 INFO  [org.apache.mina.filter.logging.LoggingFilter] (NioProcessor-2) OPENED</span><br><span class="line">15:19:21.109 INFO  [org.apache.mina.filter.logging.LoggingFilter] (NioProcessor-2) RECEIVED: HeapBuffer[pos=0 lim=77 cap=4096: 7B 3A 68 6F 73 74 20 22 73 65 72 76 65 72 32 22...]</span><br><span class="line">&#123;:event-1 &#123;:host server2, :service ssl, :customer amazonas, :id 101, :cost 28.5714, :caudal/latency 268423&#125;&#125;</span><br><span class="line">MAIN - Customer    : &#123;:host &quot;server2&quot;, :service &quot;ssl&quot;, :customer &quot;amazonas&quot;, :id 101, :cost 28.5714, :caudal/latency 555964, :path &quot;A good one&quot;&#125;</span><br><span class="line">MAIN - Adjusted *  : &#123;:host &quot;server2&quot;, :service &quot;ssl&quot;, :customer &quot;amazonas&quot;, :id 101, :cost 33.142824, :caudal/latency 555964, :path &quot;A good one&quot;, :count 1&#125;</span><br><span class="line">MAIN - Adjusted +  : &#123;:host &quot;server2&quot;, :service &quot;ssl&quot;, :customer &quot;amazonas&quot;, :id 101, :cost 133.142824, :caudal/latency 555964, :path &quot;A good one&quot;, :count 1&#125;</span><br><span class="line">MAIN - Timestamped : &#123;:host &quot;server2&quot;, :service &quot;ssl&quot;, :customer &quot;amazonas&quot;, :id 101, :cost 28.5714, :caudal/latency 555964, :path &quot;A good one&quot;, :time 1485206361129&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
+<h2 id="Configuration" class="article-heading"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration<a class="article-anchor" href="#Configuration" aria-hidden="true"></a></h2><p>Caudal define una macro llamada <code>deflistener</code> para declarar un nuevo listener, recibe como parametro un vector con un mapa que contiene <code>:type</code> y <code>:parameters</code></p>
+<figure class="highlight clojure"><table><tr><td class="code"><pre><span class="line"><span class="comment">;; macro     ;; var-name  ;; listener-type</span></span><br><span class="line">(<span class="name">deflistener</span> foo-listener [&#123;<span class="symbol">:type</span> 'mx.interware.caudal.io.listener </span><br><span class="line">                            <span class="symbol">:parameters</span> &#123;<span class="symbol">:param1</span> <span class="string">"a"</span>       <span class="comment">;; Ad-hoc params</span></span><br><span class="line">                                         <span class="symbol">:param2</span> <span class="string">"b"</span> ...&#125;&#125;])</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>Elemento</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>foo-listener</td>
+<td>Nombre del listener. Un archivo de configuración puede tener un o mas listeners. 1</td>
+</tr>
+<tr>
+<td>:type</td>
+<td>Simbolo que apunta a una implementacion de listener valida. Véase <code>mx.interware.caudal.io</code> en la sección <a href=".../api">API</a>.</td>
+</tr>
+<tr>
+<td>:parameters</td>
+<td>Mapa con los parametros acorde con el uso del listener.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="TCP" class="article-heading"><a href="#TCP" class="headerlink" title="TCP"></a>TCP<a class="article-anchor" href="#TCP" aria-hidden="true"></a></h3><p>En <a href="configuration.html">Configuración</a> usamos la macro <code>deflistener</code> para definir un canal TCP en el puerto 9900:</p>
+<figure class="highlight clojure"><table><tr><td class="code"><pre><span class="line">(<span class="name">deflistener</span> tcp [&#123;<span class="symbol">:type</span> 'mx.interware.caudal.io.tcp-server</span><br><span class="line">                   <span class="symbol">:parameters</span> &#123;<span class="symbol">:port</span>        <span class="number">9900</span> </span><br><span class="line">                                <span class="symbol">:idle-period</span> <span class="number">60</span>&#125;&#125;])</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>:port</td>
+<td>Numero de puerto (1-65535) para escuchar eventos. Los eventos entrantes son recibidos en formato [EDN] (<a href="https://learnxinyminutes.com/docs/edn/" target="_blank" rel="noopener">https://learnxinyminutes.com/docs/edn/</a>) .</td>
+</tr>
+<tr>
+<td>:idle-period</td>
+<td>Idle period for socket.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Configuracion" class="article-heading"><a href="#Configuracion" class="headerlink" title="Configuración"></a>Configuración<a class="article-anchor" href="#Configuracion" aria-hidden="true"></a></h3><p>Escribe la siguiente configuración en el directorio <code>config/</code>:</p>
+<figure class="highlight clojure"><figcaption><span>config/example-tcp.clj</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="comment">;; Requires</span></span><br><span class="line">(<span class="name"><span class="builtin-name">ns</span></span> caudal.example.tcp</span><br><span class="line">  (<span class="symbol">:require</span></span><br><span class="line">   [mx.interware.caudal.io.rest-server <span class="symbol">:refer</span> <span class="symbol">:all</span>]</span><br><span class="line">   [mx.interware.caudal.streams.common <span class="symbol">:refer</span> <span class="symbol">:all</span>]</span><br><span class="line">   [mx.interware.caudal.streams.stateful <span class="symbol">:refer</span> <span class="symbol">:all</span>]</span><br><span class="line">   [mx.interware.caudal.streams.stateless <span class="symbol">:refer</span> <span class="symbol">:all</span>]))</span><br><span class="line"></span><br><span class="line"><span class="comment">;; Listeners</span></span><br><span class="line">(<span class="name">deflistener</span> tcp [&#123;<span class="symbol">:type</span> 'mx.interware.caudal.io.tcp-server</span><br><span class="line">                   <span class="symbol">:parameters</span> &#123;<span class="symbol">:port</span> <span class="number">9900</span></span><br><span class="line">                                <span class="symbol">:idle-period</span> <span class="number">60</span>&#125;&#125;])</span><br><span class="line"><span class="comment">;; Sinks</span></span><br><span class="line">(<span class="name">defsink</span> example <span class="number">1</span> <span class="comment">;; backpressure</span></span><br><span class="line">  (<span class="name">-&gt;INFO</span> [<span class="symbol">:all</span>]))</span><br><span class="line"></span><br><span class="line"><span class="comment">;; Wire</span></span><br><span class="line">(<span class="name">wire</span> [tcp] [example])</span><br></pre></td></tr></table></figure>
+<p>Inicia Caudal pasando el archivo creado como config:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ bin/caudal  -c config/example-tcp.clj start</span><br></pre></td></tr></table></figure></p>
+<p>Abre un telenet to <code>localhost</code> al puerto <code>9900</code>:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ telnet localhost 9900</span><br></pre></td></tr></table></figure></p>
+<p>y escribe un mapa EDN como se muestra:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ telnet localhost 9900</span><br><span class="line">Trying ::1...</span><br><span class="line">Connected to localhost.</span><br><span class="line">Escape character is &apos;^]&apos;.</span><br><span class="line">&#123;:foo 1&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Verifica el log generado para el nuevo evento entrante:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">2018-01-02 22:55:15.295 INFO  [clojure-agent-send-pool-1] streams.stateless - &#123;:foo 1, :caudal/latency 2546987&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Tailer" class="article-heading"><a href="#Tailer" class="headerlink" title="Tailer"></a>Tailer<a class="article-anchor" href="#Tailer" aria-hidden="true"></a></h3><p>Lee una linea entrante desde un archivo, similar al comando <code>tail</code>.<br><figure class="highlight clojure"><table><tr><td class="code"><pre><span class="line">(<span class="name">deflistener</span> tailer [&#123;<span class="symbol">:type</span> 'mx.interware.caudal.io.tailer-server</span><br><span class="line">                      <span class="symbol">:parameters</span> &#123;<span class="symbol">:parser</span>       read-string </span><br><span class="line">                                   <span class="symbol">:inputs</span>       &#123;<span class="symbol">:directory</span> <span class="string">"."</span> </span><br><span class="line">                                                  <span class="symbol">:wildcard</span> <span class="string">"*.log"</span>&#125;</span><br><span class="line">                                   <span class="symbol">:delta</span>        <span class="number">200</span></span><br><span class="line">                                   <span class="symbol">:from-end</span>     <span class="literal">true</span></span><br><span class="line">                                   <span class="symbol">:reopen</span>       <span class="literal">true</span></span><br><span class="line">                                   <span class="symbol">:buffer-size</span>  <span class="number">1024</span>&#125;&#125;])</span><br></pre></td></tr></table></figure></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>:parser</td>
+<td>Función que recibe una nueva linea y regresa un EDN. <code>read-string</code> es util si tu log esta escrito en EDN.</td>
+</tr>
+<tr>
+<td>:inputs</td>
+<td>Mapa con <code>:directory</code> ruta de los archivos y <code>:wildcard</code> archivos a filtrar desde la cola .</td>
+</tr>
+<tr>
+<td>:delta</td>
+<td>Tiempo de actualización de archivo en milisegundos.</td>
+</tr>
+<tr>
+<td>:from-end</td>
+<td>Boolean, si es true ignora las entradas previas y solo lee las nuevas modificaciones, false para leer el archivo completo.</td>
+</tr>
+<tr>
+<td>:reopen</td>
+<td>Boolean, si es true abre los archivos si no existen, false se pierde el archivo.</td>
+</tr>
+<tr>
+<td>:buffer-size</td>
+<td>Número indicando los bytes a leer cada delta tiempo.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Configuracion-1" class="article-heading"><a href="#Configuracion-1" class="headerlink" title="Configuración"></a>Configuración<a class="article-anchor" href="#Configuracion-1" aria-hidden="true"></a></h3><p>Escribe la siguiente configuracion en el directorio <code>config/</code>:<br><figure class="highlight clojure"><figcaption><span>config/example-tailer.clj</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="comment">;; Requires</span></span><br><span class="line">(<span class="name"><span class="builtin-name">ns</span></span> caudal.example.tcp</span><br><span class="line">  (<span class="symbol">:require</span></span><br><span class="line">   [mx.interware.caudal.io.rest-server <span class="symbol">:refer</span> <span class="symbol">:all</span>]</span><br><span class="line">   [mx.interware.caudal.streams.common <span class="symbol">:refer</span> <span class="symbol">:all</span>]</span><br><span class="line">   [mx.interware.caudal.streams.stateful <span class="symbol">:refer</span> <span class="symbol">:all</span>]</span><br><span class="line">   [mx.interware.caudal.streams.stateless <span class="symbol">:refer</span> <span class="symbol">:all</span>]))</span><br><span class="line"></span><br><span class="line"><span class="comment">;; Listeners</span></span><br><span class="line">(<span class="name">deflistener</span> tailer [&#123;<span class="symbol">:type</span> 'mx.interware.caudal.io.tailer-server</span><br><span class="line">                      <span class="symbol">:parameters</span> &#123;<span class="symbol">:parser</span> read-string</span><br><span class="line">                                   <span class="symbol">:inputs</span>  &#123;<span class="symbol">:directory</span> <span class="string">"."</span></span><br><span class="line">                                             <span class="symbol">:wildcard</span>  <span class="string">"my-edn.log"</span>&#125;</span><br><span class="line">                                   <span class="symbol">:delta</span>        <span class="number">200</span></span><br><span class="line">                                   <span class="symbol">:from-end</span>     <span class="literal">true</span></span><br><span class="line">                                   <span class="symbol">:reopen</span>       <span class="literal">true</span></span><br><span class="line">                                   <span class="symbol">:buffer-size</span>  <span class="number">1024</span>&#125;&#125;])</span><br><span class="line"><span class="comment">;; Sinks</span></span><br><span class="line">(<span class="name">defsink</span> example <span class="number">1</span> <span class="comment">;; backpressure</span></span><br><span class="line">  (<span class="name">-&gt;INFO</span> [<span class="symbol">:all</span>]))</span><br><span class="line"></span><br><span class="line"><span class="comment">;; Wire</span></span><br><span class="line">(<span class="name">wire</span> [tailer] [example])</span><br></pre></td></tr></table></figure></p>
+<p>Inicia Caudal pasando el archivo creado como config:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ bin/caudal -c config/example-tailer.clj start</span><br></pre></td></tr></table></figure></p>
+<p>En el directorio de Caudal, escribe un nuevo archivo <code>me-edn.log</code> con un simple EDN usando el siguiente comando:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ bin/caudal -c config/example-tailer.clj start</span><br></pre></td></tr></table></figure></p>
+<p>Verifica el log generado para el nuevo evento:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">2018-01-02 23:38:11.091 INFO  [main] io.tailer-server - &#123;:tailing-files ()&#125;</span><br><span class="line">2018-01-02 23:38:11.093 WARN  [main] io.tailer-server - &#123;:files-not-found &#123;:directory &quot;.&quot;, :wildcard &quot;my-edn.log&quot;&#125;&#125;</span><br><span class="line">2018-01-02 23:38:21.199 INFO  [async-dispatch-2] io.tailer-server - &#123;:added-files-to-tailer (&quot;/opt/caudal-0.7.14/./my-edn.log&quot;)&#125;</span><br><span class="line">2018-01-02 23:38:21.205 INFO  [clojure-agent-send-pool-1] streams.stateless - &#123;:foo 1, :caudal/latency 1741426&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Syslog" class="article-heading"><a href="#Syslog" class="headerlink" title="Syslog"></a>Syslog<a class="article-anchor" href="#Syslog" aria-hidden="true"></a></h3><p>Captura el log de salida usando el protocolo Syslog.<br><figure class="highlight clojure"><table><tr><td class="code"><pre><span class="line">(<span class="name">deflistener</span> syslog [&#123;<span class="symbol">:type</span> 'mx.interware.caudal.io.syslog-server</span><br><span class="line">                      <span class="symbol">:parameters</span> &#123;<span class="symbol">:port</span> <span class="number">1111</span></span><br><span class="line">                                   <span class="symbol">:parser</span> message-parser-fn&#125;&#125;])</span><br></pre></td></tr></table></figure></p>
+<table>
+<thead>
+<tr>
+<th>Paramereo</th>
+<th>Descripcion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>:port</td>
+<td>Numero del puerto (1-65535) para escuchar los eventos. Los eventos de entrada son recibidos con el protocolo Syslog</td>
+</tr>
+<tr>
+<td>:parser</td>
+<td>Función que recibe el mensaje del evento de Syslog y returna un EDN</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Log4j" class="article-heading"><a href="#Log4j" class="headerlink" title="Log4j"></a>Log4j<a class="article-anchor" href="#Log4j" aria-hidden="true"></a></h3><p>Captura el log de slida usando el framework Log4j.<br><figure class="highlight clojure"><table><tr><td class="code"><pre><span class="line">(<span class="name">deflistener</span> log4j [&#123;<span class="symbol">:type</span> 'mx.interware.caudal.io.log4j-server</span><br><span class="line">                     <span class="symbol">:parameters</span> &#123;<span class="symbol">:port</span>   <span class="number">2222</span></span><br><span class="line">                                  <span class="symbol">:parser</span> message-parser-fn&#125;&#125;])</span><br></pre></td></tr></table></figure></p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>:port</td>
+<td>Número del puerto (1-65535) para escuchar eventos. Eventos de entrada son recibidos en el protocolo Log4j</td>
+</tr>
+<tr>
+<td>:parser</td>
+<td>Funcion que recibe el mensaje del evento de Log4j y returna un EDN.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Twitter" class="article-heading"><a href="#Twitter" class="headerlink" title="Twitter"></a>Twitter<a class="article-anchor" href="#Twitter" aria-hidden="true"></a></h3><p>Lee tweets desde la Twitter API.<br><figure class="highlight clojure"><table><tr><td class="code"><pre><span class="line">(<span class="name">deflistener</span> twitter [&#123;<span class="symbol">:type</span>       'mx.interware.caudal.io.twitter</span><br><span class="line">                       <span class="symbol">:parameters</span> &#123;<span class="symbol">:name</span>            <span class="string">"Caudal"</span></span><br><span class="line">                                    <span class="symbol">:consumer-key</span>    <span class="string">"key----------------------"</span></span><br><span class="line">                                    <span class="symbol">:consumer-secret</span> <span class="string">"consumer-secret-----------------------------------"</span></span><br><span class="line">                                    <span class="symbol">:token</span>           <span class="string">"token---------------------------------------------"</span></span><br><span class="line">                                    <span class="symbol">:token-secret</span>    <span class="string">"token-secret---------------------------------"</span></span><br><span class="line">                                    <span class="symbol">:terms</span>           [<span class="string">"challenge"</span>]&#125;&#125;])</span><br></pre></td></tr></table></figure></p>
+<table>
+<thead>
+<tr>
+<th>Parametro</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>:name</td>
+<td>String, representa el nombre de nuestra aplicación. Esta aplicación debe estar registrada en Twitter</td>
+</tr>
+<tr>
+<td>:consumer-key</td>
+<td>String, proporcionado por Twitter</td>
+</tr>
+<tr>
+<td>:consumer-secret</td>
+<td>String, proporcionado por Twitter</td>
+</tr>
+<tr>
+<td>:token</td>
+<td>String, proporcionado por Twitter</td>
+</tr>
+<tr>
+<td>:token-secret</td>
+<td>String, proporcionado por Twitter</td>
+</tr>
+<tr>
+<td>:terms</td>
+<td>Vector, palabra clave para buscar un tweet</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Configuracion-2" class="article-heading"><a href="#Configuracion-2" class="headerlink" title="Configuración"></a>Configuración<a class="article-anchor" href="#Configuracion-2" aria-hidden="true"></a></h3><p>Para obtener los keys y secrets de la API de Twitter, es necesario iniciar sesión con tu cuenta de Twitter.</p>
+<p>Ve a la pagina <a href="https://apps.twitter.com/" target="_blank" rel="noopener">Application Manager</a> y da click en el botón <code>Create New App</code>.</p>
+<p><img src="twitter-01.jpg" alt="Create New APP"></p>
+<p>Llena los datos requeridos nombre, descripción y website. Callback URL no es necesario. Recuerda de leer y aceptar los terminos y condiciones de Twitter antes de dar click en el botón <code>Create your Twitter application</code>.</p>
+<p><img src="twitter-02.jpg" alt="Create your Twitter application"></p>
+<p>Si tu aplicación es creada correctamente, veras la siguiente pantalla:</p>
+<p><img src="twitter-03.jpg" alt="MyCaudalExample APP"></p>
+<p>Ve a la sección <code>Keys and Access Token</code> para obtener tu <code>Consumer Key</code> y <code>Consumer Secret</code>. Da click en el botón <code>Create my acces token</code> para obtener tu <code>Token</code> y <code>Token Secret Pair</code>.</p>
+<p><img src="twitter-04.jpg" alt="Keys and Secrets"></p>
+<p>Escribe la siguiente configuración en el directorio <code>config/</code></p>
+<figure class="highlight clojure"><figcaption><span>config/example-twitter.clj</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="comment">;; Requires</span></span><br><span class="line">(<span class="name"><span class="builtin-name">ns</span></span> caudal.example.tcp</span><br><span class="line">  (<span class="symbol">:require</span></span><br><span class="line">   [mx.interware.caudal.io.rest-server <span class="symbol">:refer</span> <span class="symbol">:all</span>]</span><br><span class="line">   [mx.interware.caudal.streams.common <span class="symbol">:refer</span> <span class="symbol">:all</span>]</span><br><span class="line">   [mx.interware.caudal.streams.stateful <span class="symbol">:refer</span> <span class="symbol">:all</span>]</span><br><span class="line">   [mx.interware.caudal.streams.stateless <span class="symbol">:refer</span> <span class="symbol">:all</span>]))</span><br><span class="line"></span><br><span class="line"><span class="comment">;; Listeners</span></span><br><span class="line">(<span class="name">deflistener</span> twitter [&#123;<span class="symbol">:type</span>       'mx.interware.caudal.io.twitter</span><br><span class="line">                       <span class="symbol">:parameters</span> &#123;<span class="symbol">:name</span>            <span class="string">"MyCaudalExample"</span></span><br><span class="line">                                    <span class="symbol">:consumer-key</span>    <span class="string">"CoNsuMerKey"</span></span><br><span class="line">                                    <span class="symbol">:consumer-secret</span> <span class="string">"CoNsUmErSeCrEt"</span></span><br><span class="line">                                    <span class="symbol">:token</span>           <span class="string">"00000000-AcCeSsToKeN"</span></span><br><span class="line">                                    <span class="symbol">:token-secret</span>    <span class="string">"AcCeSsToKeNsEcReT"</span></span><br><span class="line">                                    <span class="symbol">:terms</span>           [<span class="string">"WorldCup"</span>]&#125;&#125;])</span><br><span class="line"></span><br><span class="line"><span class="comment">;; Sinks</span></span><br><span class="line">(<span class="name">defsink</span> example <span class="number">1</span> <span class="comment">;; backpressure</span></span><br><span class="line">  (<span class="name">-&gt;INFO</span> [<span class="symbol">:all</span>]))</span><br><span class="line"></span><br><span class="line"><span class="comment">;; Wire</span></span><br><span class="line">(<span class="name">wire</span> [twitter] [example])</span><br></pre></td></tr></table></figure>
+<p>Inicia Caudal pasando el archivo creado como config:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ bin/caudal -c config/example-twitter.clj start</span><br></pre></td></tr></table></figure>
+<p>Verifica el log generado para los eventos entrantes.<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">2018-03-03 01:23:15.241 INFO  [main] httpclient.BasicClient - New connection executed: MyCaudalExample, endpoint: /1.1/statuses/filter.json?delimited=length&amp;stall_warnings=true</span><br><span class="line">2018-03-03 01:23:15.396 INFO  [hosebird-client-io-thread-0] httpclient.ClientBase - MyCaudalExample Establishing a connection</span><br><span class="line">log4j:WARN No appenders could be found for logger (org.apache.http.impl.conn.PoolingClientConnectionManager).</span><br><span class="line">log4j:WARN Please initialize the log4j system properly.</span><br><span class="line">log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.</span><br><span class="line">2018-03-03 01:23:48.358 INFO  [hosebird-client-io-thread-0] httpclient.ClientBase - MyCaudalExample Processing connection data</span><br><span class="line">2018-03-03 01:24:36.655 INFO  [clojure-agent-send-pool-1] streams.stateless - &#123;:quote_count 0, :in_reply_to_screen_name nil, :is_quote_status false, :coordinates nil, :filter_level &quot;low&quot;, :in_reply_to_status_id_str nil, :place nil, :timestamp_ms &quot;1520061876356&quot;, :geo nil, :in_reply_to_status_id nil, :entities &#123;:hashtags [&#123;:text &quot;WorldCup&quot;, :indices [18 27]&#125;], :urls [], :user_mentions [&#123;:screen_name &quot;History_Newz&quot;, :name &quot;History Newz&quot;, :id 881454090244501504, :id_str &quot;881454090244501504&quot;, :indices [3 16]&#125;], :symbols []&#125;, :retweeted_status &#123;:quote_count 0, :in_reply_to_screen_name nil, :is_quote_status false, :coordinates nil, :filter_level &quot;low&quot;, :in_reply_to_status_id_str nil, :place nil, :possibly_sensitive false, :geo nil, :in_reply_to_status_id nil, :extended_tweet &#123;:full_text &quot;#WorldCup Countdown: 16 Weeks to Go - The Magical Magyars, the Best Team Never to Win the World Cup? https://t.co/gJQLuKnOZD https://t.co/UmBXRCQbjd&quot;, :display_text_range [0 124], :entities &#123;:hashtags [&#123;:text &quot;WorldCup&quot;, :indices [0 9]&#125;], :urls [&#123;:url &quot;https://t.co/gJQLuKnOZD&quot;, :expanded_url &quot;https://goo.gl/3iahJG&quot;, :display_url &quot;goo.gl/3iahJG&quot;, :indices [101 124]&#125;], :user_mentions [], :symbols [], :media [&#123;:sizes &#123;:large &#123;:w 660, :h 345, :resize &quot;fit&quot;&#125;, :thumb &#123;:w 150, :h 150, :resize &quot;crop&quot;&#125;, :medium &#123;:w 660, :h 345, :resize &quot;fit&quot;&#125;, :small &#123;:w 660, :h 345, :resize &quot;fit&quot;&#125;&#125;, :media_url_https &quot;https://pbs.twimg.com/media/DXUkikZWsAA9q7w.jpg&quot;, :type &quot;photo&quot;, :media_url &quot;http://pbs.twimg.com/media/DXUkikZWsAA9q7w.jpg&quot;, :id 969721471072382976, :expanded_url &quot;https://twitter.com/History_Newz/status/969721473437970433/photo/1&quot;, :url &quot;https://t.co/UmBXRCQbjd&quot;, :display_url &quot;pic.twitter.com/UmBXRCQbjd&quot;, :indices [125 148], :id_str &quot;969721471072382976&quot;&#125;]&#125;, :extended_entities &#123;:media [&#123;:sizes &#123;:large &#123;:w 660, :h 345, :resize &quot;fit&quot;&#125;, :thumb &#123;:w 150, :h 150, :resize &quot;crop&quot;&#125;, :medium &#123;:w 660, :h 345, :resize &quot;fit&quot;&#125;, :small &#123;:w 660, :h 345, :resize &quot;fit&quot;&#125;&#125;, :media_url_https &quot;https://pbs.twimg.com/media/DXUkikZWsAA9q7w.jpg&quot;, :type &quot;photo&quot;, :media_url &quot;http://pbs.twimg.com/media/DXUkikZWsAA9q7w.jpg&quot;, :id 969721471072382976, :expanded_url &quot;https://twitter.com/History_Newz/status/969721473437970433/photo/1&quot;, :url &quot;https://t.co/UmBXRCQbjd&quot;, :display_url &quot;pic.twitter.com/UmBXRCQbjd&quot;, :indices [125 148], :id_str &quot;969721471072382976&quot;&#125;]&#125;&#125;, :entities &#123;:hashtags [&#123;:text &quot;WorldCup&quot;, :indices [0 9]&#125;], :urls [&#123;:url &quot;https://t.co/PX1cYSCN8h&quot;, :expanded_url &quot;https://twitter.com/i/web/status/969721473437970433&quot;, :display_url &quot;twitter.com/i/web/status/9…&quot;, :indices [102 125]&#125;], :user_mentions [], :symbols []&#125;, :source &quot;&lt;a href=\&quot;http://twittamp.dev2.hu/\&quot; rel=\&quot;nofollow\&quot;&gt;TwittAMP&lt;/a&gt;&quot;, :lang &quot;en&quot;, :in_reply_to_user_id_str nil, :id 969721473437970433, :contributors nil, :display_text_range [0 140], :truncated true, :retweeted false, :in_reply_to_user_id nil, :id_str &quot;969721473437970433&quot;, :favorited false, :user &#123;:description &quot;The latest news of interest about #history #ancient in one place!&quot;, :profile_link_color &quot;ABB8C2&quot;, :profile_sidebar_border_color &quot;000000&quot;, :profile_image_url &quot;http://pbs.twimg.com/profile_images/881525990123610112/3oJls2gK_normal.jpg&quot;, :profile_use_background_image false, :default_profile false, :profile_background_image_url &quot;http://abs.twimg.com/images/themes/theme1/bg.png&quot;, :is_translator false, :profile_text_color &quot;000000&quot;, :profile_banner_url &quot;https://pbs.twimg.com/profile_banners/881454090244501504/1498999477&quot;, :name &quot;History Newz&quot;, :profile_background_image_url_https &quot;https://abs.twimg.com/images/themes/theme1/bg.png&quot;, :favourites_count 32, :screen_name &quot;History_Newz&quot;, :listed_count 171, :profile_image_url_https &quot;https://pbs.twimg.com/profile_images/881525990123610112/3oJls2gK_normal.jpg&quot;, :statuses_count 2225, :contributors_enabled false, :following nil, :lang &quot;en&quot;, :utc_offset nil, :notifications nil, :default_profile_image false, :profile_background_color &quot;000000&quot;, :id 881454090244501504, :follow_request_sent nil, :url nil, :translator_type &quot;none&quot;, :time_zone nil, :profile_sidebar_fill_color &quot;000000&quot;, :protected false, :profile_background_tile false, :id_str &quot;881454090244501504&quot;, :geo_enabled false, :location &quot;Global&quot;, :followers_count 36162, :friends_count 1999, :verified false, :created_at &quot;Sun Jul 02 10:06:46 +0000 2017&quot;&#125;, :reply_count 0, :retweet_count 1, :favorite_count 0, :created_at &quot;Fri Mar 02 23:49:50 +0000 2018&quot;, :text &quot;#WorldCup Countdown: 16 Weeks to Go - The Magical Magyars, the Best Team Never to Win the World Cup?… https://t.co/PX1cYSCN8h&quot;&#125;, :source &quot;&lt;a href=\&quot;http://twitter.com/download/android\&quot; rel=\&quot;nofollow\&quot;&gt;Twitter for Android&lt;/a&gt;&quot;, :lang &quot;en&quot;, :in_reply_to_user_id_str nil, :id 969835918705045504, :contributors nil, :truncated false, :retweeted false, :in_reply_to_user_id nil, :id_str &quot;969835918705045504&quot;, :favorited false, :user &#123;:description &quot;✍🎨💕&quot;, :profile_link_color &quot;1DA1F2&quot;, :profile_sidebar_border_color &quot;C0DEED&quot;, :profile_image_url &quot;http://pbs.twimg.com/profile_images/894032388166098945/f-_miJBo_normal.jpg&quot;, :profile_use_background_image true, :default_profile true, :profile_background_image_url &quot;&quot;, :is_translator false, :profile_text_color &quot;333333&quot;, :profile_banner_url &quot;https://pbs.twimg.com/profile_banners/874473957285650432/1507700544&quot;, :name &quot;AYAN 🖤NEOGI🖤🖤&quot;, :profile_background_image_url_https &quot;&quot;, :favourites_count 6906, :screen_name &quot;AyanNeog001&quot;, :listed_count 1, :profile_image_url_https &quot;https://pbs.twimg.com/profile_images/894032388166098945/f-_miJBo_normal.jpg&quot;, :statuses_count 11182, :contributors_enabled false, :following nil, :lang &quot;en&quot;, :utc_offset nil, :notifications nil, :default_profile_image false, :profile_background_color &quot;F5F8FA&quot;, :id 874473957285650432, :follow_request_sent nil, :url nil, :translator_type &quot;none&quot;, :time_zone nil, :profile_sidebar_fill_color &quot;DDEEF6&quot;, :protected false, :profile_background_tile false, :id_str &quot;874473957285650432&quot;, :geo_enabled true, :location &quot;🌐&quot;, :followers_count 332, :friends_count 1020, :verified false, :created_at &quot;Tue Jun 13 03:50:13 +0000 2017&quot;&#125;, :reply_count 0, :caudal/latency 1941968, :retweet_count 0, :favorite_count 0, :created_at &quot;Sat Mar 03 07:24:36 +0000 2018&quot;, :text &quot;RT @History_Newz: #WorldCup Countdown: 16 Weeks to Go - The Magical Magyars, the Best Team Never to Win the World Cup? https://t.co/gJQLuKn…&quot;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Caudal recibe todos los tweets con la palabra clave <code>WorldCup</code> in EDN format, para información especifica acerca de los campos y la información recibida, echa un vistazo a [Twitter API documentation] (<a href="https://developer.twitter.com/en/docs/tweets/filter-realtime/overview)" target="_blank" rel="noopener">https://developer.twitter.com/en/docs/tweets/filter-realtime/overview)</a>.</p>
 
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2018-03-08T23:50:38.748Z" itemprop="dateModified">Última actualización: 2018-03-08</time>
+                <time class="article-footer-updated" datetime="2018-03-08T23:52:42.960Z" itemprop="dateModified">Última actualización: 2018-03-08</time>
                 <a href="configuration.html" class="article-footer-prev" title="Configuración"><i class="fa fa-chevron-left"></i><span>Previo</span></a><a href="lab2.html" class="article-footer-next" title="Escuchas y Parseo"><span>Siguiente</span><i class="fa fa-chevron-right"></i></a>
               </footer>
               
@@ -156,7 +303,7 @@
           <aside id="article-toc" role="navigation">
             <div id="article-toc-inner">              
               <strong class="sidebar-title">Contenido</strong>
-              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Requerimientos"><span class="toc-text">Requerimientos</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Construyendo"><span class="toc-text">Construyendo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Arrancando"><span class="toc-text">Arrancando</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Probando"><span class="toc-text">Probando</span></a></li></ol>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Requerimientos"><span class="toc-text">Requerimientos</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Configuration"><span class="toc-text">Configuration</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP"><span class="toc-text">TCP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Configuracion"><span class="toc-text">Configuración</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tailer"><span class="toc-text">Tailer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Configuracion-1"><span class="toc-text">Configuración</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Syslog"><span class="toc-text">Syslog</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Log4j"><span class="toc-text">Log4j</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Twitter"><span class="toc-text">Twitter</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Configuracion-2"><span class="toc-text">Configuración</span></a></li></ol></li></ol>
               <a href="#" id="article-toc-top">Volver arriba</a>
             </div>
           </aside>
