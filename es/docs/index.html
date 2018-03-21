@@ -49,7 +49,7 @@
 <meta property="og:description" content="Bienvenido a la documentación de Caudal. Si encuentras algún problema usando Caudal, hecha un vistazo a la sección de Solución de Problemas o crea una incidencia en GitHub. ¿Qué es Caudal?Caudal es un">
 <meta property="og:locale" content="es">
 <meta property="og:image" content="https://interwaremx.github.io/caudal.docs/docs/diagram-basic.svg">
-<meta property="og:updated_time" content="2018-03-21T23:22:38.594Z">
+<meta property="og:updated_time" content="2018-03-21T23:24:20.914Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Documentación">
 <meta name="twitter:description" content="Bienvenido a la documentación de Caudal. Si encuentras algún problema usando Caudal, hecha un vistazo a la sección de Solución de Problemas o crea una incidencia en GitHub. ¿Qué es Caudal?Caudal es un">
@@ -111,7 +111,7 @@
 <p><img src="../../docs/diagram-basic.svg" alt="Caudal Basic Diagram"></p>
 <h2 id="¿Que-es-un-Evento" class="article-heading"><a href="#¿Que-es-un-Evento" class="headerlink" title="¿Que es un Evento?"></a>¿Que es un Evento?<a class="article-anchor" href="#¿Que-es-un-Evento" aria-hidden="true"></a></h2><p>Un evento es cualquier estructura de datos y es pasada como un Mapa Inmutable de Clojure. Los eventos son registrados en un Estado y son provistos por Listeners.</p>
 <h2 id="¿Que-es-un-Listener" class="article-heading"><a href="#¿Que-es-un-Listener" class="headerlink" title="¿Qué es un Listener ?"></a>¿Qué es un <em>Listener</em> ?<a class="article-anchor" href="#¿Que-es-un-Listener" aria-hidden="true"></a></h2><p>Un <em>Listener</em> es un mecanismo para poner información dentro de Caudal. Cualquier cosa puede ser una fuente de eventos: bitácoras de aplicaciones, un chat o Twitter. Caudal viene con varios <em>Listeners</em> listos para usar.</p>
-<h2 id="¿Que-es-son-los-Streamers" class="article-heading"><a href="#¿Que-es-son-los-Streamers" class="headerlink" title="¿Qué es son los Streamers ?"></a>¿Qué es son los <em>Streamers</em> ?<a class="article-anchor" href="#¿Que-es-son-los-Streamers" aria-hidden="true"></a></h2><p>Los <em>Streamers</em> son funciones que serán aplicadas a cada evento dentro del flujo de datos y pueden ser compuestas y combinadas para enriquecer el flujo de datos.</p>
+<h2 id="¿Que-son-los-Streamers" class="article-heading"><a href="#¿Que-son-los-Streamers" class="headerlink" title="¿Qué son los Streamers ?"></a>¿Qué son los <em>Streamers</em> ?<a class="article-anchor" href="#¿Que-son-los-Streamers" aria-hidden="true"></a></h2><p>Los <em>Streamers</em> son funciones que serán aplicadas a cada evento dentro del flujo de datos y pueden ser compuestas y combinadas para enriquecer el flujo de datos.</p>
 <h2 id="¿Que-es-el-Estado" class="article-heading"><a href="#¿Que-es-el-Estado" class="headerlink" title="¿Qué es el Estado?"></a>¿Qué es el Estado?<a class="article-anchor" href="#¿Que-es-el-Estado" aria-hidden="true"></a></h2><p>Caudal usa un Estado de aplicación para guardar los datos necesarios para métricas y estadísticas. El Estado es global para todos los streamers y para la aplicación. Internamente, el Estado es un Agente Clojure, así que es concurrente. El Estado esta guardado en memoria, y es limpiado cada vez que el proceso de Caudal finaliza.</p>
 <h2 id="Requerimientos" class="article-heading"><a href="#Requerimientos" class="headerlink" title="Requerimientos"></a>Requerimientos<a class="article-anchor" href="#Requerimientos" aria-hidden="true"></a></h2><ul>
 <li><a href="java.html">Java 1.8 (OpenJDK or OracleJDK)</a></li>
@@ -121,7 +121,7 @@
 
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2018-03-21T23:22:38.594Z" itemprop="dateModified">Última actualización: 2018-03-21</time>
+                <time class="article-footer-updated" datetime="2018-03-21T23:24:20.914Z" itemprop="dateModified">Última actualización: 2018-03-21</time>
                 <a href="setup.html" class="article-footer-next" title="Instalación"><span>Siguiente</span><i class="fa fa-chevron-right"></i></a>
               </footer>
               
@@ -130,7 +130,7 @@
           <aside id="article-toc" role="navigation">
             <div id="article-toc-inner">              
               <strong class="sidebar-title">Contenido</strong>
-              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#¿Que-es-Caudal"><span class="toc-text">¿Qué es Caudal?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#¿Que-es-un-Evento"><span class="toc-text">¿Que es un Evento?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#¿Que-es-un-Listener"><span class="toc-text">¿Qué es un Listener ?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#¿Que-es-son-los-Streamers"><span class="toc-text">¿Qué es son los Streamers ?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#¿Que-es-el-Estado"><span class="toc-text">¿Qué es el Estado?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Requerimientos"><span class="toc-text">Requerimientos</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Instalando"><span class="toc-text">Instalando</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Arrancando"><span class="toc-text">Arrancando</span></a></li></ol>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#¿Que-es-Caudal"><span class="toc-text">¿Qué es Caudal?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#¿Que-es-un-Evento"><span class="toc-text">¿Que es un Evento?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#¿Que-es-un-Listener"><span class="toc-text">¿Qué es un Listener ?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#¿Que-son-los-Streamers"><span class="toc-text">¿Qué son los Streamers ?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#¿Que-es-el-Estado"><span class="toc-text">¿Qué es el Estado?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Requerimientos"><span class="toc-text">Requerimientos</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Instalando"><span class="toc-text">Instalando</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Arrancando"><span class="toc-text">Arrancando</span></a></li></ol>
               <a href="#" id="article-toc-top">Volver arriba</a>
             </div>
           </aside>
