@@ -52,7 +52,7 @@
 <meta property="og:image" content="https://interwaremx.github.io/caudal.docs/docs/twitter-02.jpg">
 <meta property="og:image" content="https://interwaremx.github.io/caudal.docs/docs/twitter-03.jpg">
 <meta property="og:image" content="https://interwaremx.github.io/caudal.docs/docs/twitter-04.jpg">
-<meta property="og:updated_time" content="2018-07-24T04:37:09.785Z">
+<meta property="og:updated_time" content="2018-07-24T04:38:55.097Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Lab 1 - Listeners">
 <meta name="twitter:description" content="Listeners takes a datasource and feed our Caudal.  Requirements Setup Configuration  ConfigurationCaudal defines deflistener macro to declare a new listener, receives a vector with a map that contains">
@@ -203,7 +203,7 @@
 <p>Run Caudal passing this file as config:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ bin/caudal -c config/example-tailer.clj start</span><br></pre></td></tr></table></figure></p>
 <p>In Caudal directory, write a new file <code>my-edn.log</code> with a simple EDN using the following command:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ echo &quot;&#123;:foo 1&#125;&quot; &gt;&gt; my-edn.log</span><br></pre></td></tr></table></figure></p>
 <p>Verify generated log for new incoming event:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">2018-01-02 23:38:11.091 INFO  [main] io.tailer-server - &#123;:tailing-files ()&#125;</span><br><span class="line">2018-01-02 23:38:11.093 WARN  [main] io.tailer-server - &#123;:files-not-found &#123;:directory &quot;.&quot;, :wildcard &quot;my-edn.log&quot;&#125;&#125;</span><br><span class="line">2018-01-02 23:38:21.199 INFO  [async-dispatch-2] io.tailer-server - &#123;:added-files-to-tailer (&quot;/opt/caudal-0.7.14/./my-edn.log&quot;)&#125;</span><br><span class="line">2018-01-02 23:38:21.205 INFO  [clojure-agent-send-pool-1] streams.stateless - &#123;:foo 1, :caudal/latency 1741426&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="Syslog" class="article-heading"><a href="#Syslog" class="headerlink" title="Syslog"></a>Syslog<a class="article-anchor" href="#Syslog" aria-hidden="true"></a></h3><p>Capture log outputs using Syslog protocol<br><figure class="highlight clojure"><table><tr><td class="code"><pre><span class="line">(<span class="name">deflistener</span> syslog [&#123;<span class="symbol">:type</span> 'mx.interware.caudal.io.syslog-server</span><br><span class="line">                      <span class="symbol">:parameters</span> &#123;<span class="symbol">:port</span> <span class="number">1111</span></span><br><span class="line">                                   <span class="symbol">:parser</span> message-parser-fn&#125;&#125;])</span><br></pre></td></tr></table></figure></p>
+<h3 id="Syslog" class="article-heading"><a href="#Syslog" class="headerlink" title="Syslog"></a>Syslog<a class="article-anchor" href="#Syslog" aria-hidden="true"></a></h3><p>Capture log outputs using Syslog protocol.<br><figure class="highlight clojure"><table><tr><td class="code"><pre><span class="line">(<span class="name">deflistener</span> syslog [&#123;<span class="symbol">:type</span> 'mx.interware.caudal.io.syslog-server</span><br><span class="line">                      <span class="symbol">:parameters</span> &#123;<span class="symbol">:port</span> <span class="number">1111</span></span><br><span class="line">                                   <span class="symbol">:parser</span> message-parser-fn&#125;&#125;])</span><br></pre></td></tr></table></figure></p>
 <table>
 <thead>
 <tr>
@@ -222,7 +222,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="Log4j" class="article-heading"><a href="#Log4j" class="headerlink" title="Log4j"></a>Log4j<a class="article-anchor" href="#Log4j" aria-hidden="true"></a></h3><p>Catch log outputs using Log4j framework</p>
+<h3 id="Log4j" class="article-heading"><a href="#Log4j" class="headerlink" title="Log4j"></a>Log4j<a class="article-anchor" href="#Log4j" aria-hidden="true"></a></h3><p>Catch log outputs using Log4j framework.</p>
 <figure class="highlight clojure"><table><tr><td class="code"><pre><span class="line">(<span class="name">deflistener</span> log4j [&#123;<span class="symbol">:type</span> 'mx.interware.caudal.io.log4j-server</span><br><span class="line">                     <span class="symbol">:parameters</span> &#123;<span class="symbol">:port</span>   <span class="number">2222</span></span><br><span class="line">                                  <span class="symbol">:parser</span> message-parser-fn&#125;&#125;])</span><br></pre></td></tr></table></figure>
 <table>
 <thead>
@@ -242,7 +242,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="Telegram" class="article-heading"><a href="#Telegram" class="headerlink" title="Telegram"></a>Telegram<a class="article-anchor" href="#Telegram" aria-hidden="true"></a></h3><p>Catch messages from Telegram</p>
+<h3 id="Telegram" class="article-heading"><a href="#Telegram" class="headerlink" title="Telegram"></a>Telegram<a class="article-anchor" href="#Telegram" aria-hidden="true"></a></h3><p>Catch messages from Telegram chat.</p>
 <figure class="highlight clojure"><table><tr><td class="code"><pre><span class="line">(<span class="name">deflistener</span> telegram [&#123;<span class="symbol">:type</span> 'mx.interware.caudal.io.telegram</span><br><span class="line">                        <span class="symbol">:parameters</span> &#123;<span class="symbol">:token</span> <span class="string">"BOT-TOKEN"</span></span><br><span class="line">                                     <span class="symbol">:parser</span> text-parser-fn&#125;&#125;])</span><br></pre></td></tr></table></figure>
 <table>
 <thead>
@@ -315,7 +315,7 @@
 
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2018-07-24T04:37:09.785Z" itemprop="dateModified">Last updated: 2018-07-24</time>
+                <time class="article-footer-updated" datetime="2018-07-24T04:38:55.097Z" itemprop="dateModified">Last updated: 2018-07-24</time>
                 <a href="configuration.html" class="article-footer-prev" title="Configuration"><i class="fa fa-chevron-left"></i><span>Prev</span></a><a href="lab2.html" class="article-footer-next" title="Parsers"><span>Next</span><i class="fa fa-chevron-right"></i></a>
               </footer>
               
